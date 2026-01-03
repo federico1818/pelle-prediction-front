@@ -1,7 +1,4 @@
 :host {
-    --light-blue: #75aadb;
-    --sun-yellow: #fcbf45;
-    --white: #ffffff;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     height: inherit;
@@ -14,4 +11,7 @@
 
 .stripe-2 {
     background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
