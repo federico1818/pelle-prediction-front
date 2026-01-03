@@ -1,9 +1,10 @@
 :host {
-    height: 80px;
-    width: 80px;
+    height: 40%;
+    width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
     border-radius: 50%;
     background-color: var(--sun-yellow);
+    aspect-ratio: 1;
 }

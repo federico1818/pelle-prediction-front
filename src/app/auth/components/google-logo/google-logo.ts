@@ -1,4 +1,4 @@
-import { Component } from '@angular/core'
+import { Component, input, InputSignal } from '@angular/core'
 
 @Component({
     selector: 'app-google-logo',
@@ -8,5 +8,5 @@ import { Component } from '@angular/core'
 })
 
 export class GoogleLogo {
-
+    public url: InputSignal<string | null> = input<string | null>(null)
 }
