@@ -1,11 +1,11 @@
 import { Component, OnInit, signal, WritableSignal } from '@angular/core'
-import { GoogleLogo } from '../../components/google-logo/google-logo'
 import { GoogleAuthService } from '../../services/google-auth-service'
+import { GoogleUrl } from '../../components/google-url/google-url'
 
 @Component({
     selector: 'app-login',
     imports: [
-        GoogleLogo
+        GoogleUrl
     ],
     templateUrl: './login.html',
     styleUrl: './login.css',
