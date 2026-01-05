@@ -1,3 +1,4 @@
 @import "./styles/_reset.scss";
 @import "./styles/_colors.scss";
+@import "./styles/_sizes.scss";
 @import "./styles/_app.scss";

@@ -1,5 +1,11 @@
 :root {
     --light-blue: #75aadb;
+    --blue: #0B1F54;
     --sun-yellow: #fcbf45;
     --white: #ffffff;
+    --app-background: radial-gradient(circle at center, #16487D, #0B1F54);
+    --nav-color: var(--blue);
+    --nav-background-color: var(--white);
+    --nav-active-color: var(--white);
+    --nav-active-background-color: var(--light-blue);
 }
