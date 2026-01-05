@@ -1,5 +1,4 @@
 import { Routes } from '@angular/router'
-import { List } from './game/pages/list/list'
 
 export const routes: Routes = [
     {
@@ -12,7 +11,7 @@ export const routes: Routes = [
         loadChildren: () => import('./auth/auth.routes').then(r => r.authRoutes),
     },
     {
-        path: 'list',
-        component: List,
+        path: 'game',
+        loadChildren: () => import('./game/game.routes').then(r => r.gameRoutes),
     },
 ];

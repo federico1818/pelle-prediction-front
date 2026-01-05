@@ -16,13 +16,14 @@ ul {
     color: var(--nav-color);
 }
 
-li {
+a {
     padding: 16px;
     text-align: center;
     border-radius: var(--nav-border-radius);
+    display: block;
 }
 
-li.active {
+a.active {
     background: var(--nav-active-background-color);
     color: var(--nav-active-color);
 }
