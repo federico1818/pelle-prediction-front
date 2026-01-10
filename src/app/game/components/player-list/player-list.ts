@@ -15,17 +15,23 @@ export class PlayerList {
         {
             id: 1,
             name: 'Player 1',
-            position: 'del'
+            lastname: 'Player 1',
+            position: 'del',
+            image: 'player.webp'
         },
         {
             id: 2,
             name: 'Player 2',
-            position: 'mid'
+            lastname: 'Player 2',
+            position: 'mid',
+            image: 'player.webp'
         },
         {
             id: 3,
             name: 'Player 3',
-            position: 'mid'
+            lastname: 'Player 3',
+            position: 'mid',
+            image: 'player.webp'
         },
     ];
 }
