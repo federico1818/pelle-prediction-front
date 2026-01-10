@@ -1,0 +1,8 @@
+:host {
+    display: grid;
+    width: var(--player-width);
+    height: var(--player-height);
+    background-color: var(--player-background-color);
+    border-radius: 8px;
+    border: 2px solid var(--player-border-color);
+}
