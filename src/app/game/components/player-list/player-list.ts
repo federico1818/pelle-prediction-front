@@ -1,11 +1,11 @@
 import { Component } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { Player } from '../../models/player'
-import { Player as PlayerComponent } from '../player/player'
+import { PlayerItem } from '../player-item/player-item';
 
 @Component({
     selector: 'app-player-list',
-    imports: [CommonModule, PlayerComponent],
+    imports: [CommonModule, PlayerItem],
     templateUrl: './player-list.html',
     styleUrl: './player-list.css',
 })
