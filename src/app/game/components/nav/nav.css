@@ -18,25 +18,8 @@ ul {
     z-index: 0;
 }
 
-ul::after {
-    content: '';
-    width: 128px;
-    height: var(--nav-item-height);
-    background: var(--nav-active-background-color);
-    position: absolute;
+li {
     border-radius: var(--nav-border-radius);
-}
-
-ul.list::after {
-    transform: translateX(0);
-}
-
-ul.ranking::after {
-    transform: translateX(128px);
-}
-
-ul.necks::after {
-    transform: translateX(256px);
 }
 
 a {
@@ -46,8 +29,10 @@ a {
     height: var(--nav-item-height);
     position: relative;
     z-index: 1;
+    border-radius: inherit;
 }
 
 a.active {
     color: var(--nav-active-color);
+    background-color: var(--nav-active-background-color);
 }
