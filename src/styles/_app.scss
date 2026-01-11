@@ -1,7 +1,16 @@
+:root {
+    --background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('/assets/img/background.png');
+    --background-size: 128px;
+}
+
 app-root {
     display: inherit;
     height: inherit;
-    background-image: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), url('/assets/img/background.png');
-    background-size: 128px;
+    background-image: var(--background-image);
+    background-size: var(--background-size);
     font-family: sans-serif;
+}
+
+router-outlet+* {
+    grid-column: 1 / -1;
 }

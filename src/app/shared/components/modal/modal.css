@@ -1,0 +1,24 @@
+.modal-overlay {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(255, 255, 255, 0.9);
+    z-index: 1;
+}
+
+dialog {
+    border-radius: 8px;
+    margin: 0;
+    border: 1px solid var(--light-blue);
+    top: 5%;
+    left: 5%;
+    width: 90%;
+    height: 90%;
+    background-image: var(--background-image);
+    background-size: var(--background-size);
+    display: grid;
+    justify-content: center;
+    grid-template-rows: 32px 1fr 256px;
+    gap: 16px;
+    z-index: 1;
+}

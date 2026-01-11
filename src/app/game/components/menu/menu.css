@@ -1,0 +1,30 @@
+:host {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: var(--menu-button-size);
+    height: var(--menu-button-size);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+button:hover {
+    background-color: var(--light-blue);
+}
+
+.material-symbols-outlined {
+    color: var(--light-blue);
+    transition: all .2s ease-in-out;
+}
+
+button:hover .material-symbols-outlined {
+    color: var(--white);
+}

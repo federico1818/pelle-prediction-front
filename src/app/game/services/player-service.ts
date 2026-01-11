@@ -1,4 +1,4 @@
-import { Injectable, signal, WritableSignal } from '@angular/core'
+import { Injectable, signal, WritableSignal, inject } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs'
 import { tap } from 'rxjs/operators'
@@ -8,12 +8,10 @@ import { environment } from '../../../environments/environment'
 @Injectable({
     providedIn: 'root',
 })
+
 export class PlayerService {
     public players: WritableSignal<Player[]> = signal([])
-
-    constructor(
-        protected http: HttpClient
-    ) { }
+    protected http: HttpClient = inject(HttpClient)
 
     public all(): Observable<Player[]> {
         return this.http.get<Player[]>(environment.api.url + '/players').pipe(
