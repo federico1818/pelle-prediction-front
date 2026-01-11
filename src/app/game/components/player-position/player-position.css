@@ -1,0 +1,10 @@
+:host {
+    grid-row: 1;
+    grid-column: 1;
+    padding: 8px 8px;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--player-position-color);
+    font-style: oblique;
+}

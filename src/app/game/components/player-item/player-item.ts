@@ -2,10 +2,15 @@ import { Component, Input } from '@angular/core'
 import { Player } from '../../models/player'
 import { PlayerImage } from '../player-image/player-image'
 import { PlayerName } from '../player-name/player-name'
+import { PlayerPosition } from '../player-position/player-position'
 
 @Component({
     selector: 'app-player-item',
-    imports: [PlayerImage, PlayerName],
+    imports: [
+        PlayerImage,
+        PlayerName,
+        PlayerPosition
+    ],
     templateUrl: './player-item.html',
     styleUrl: './player-item.css',
 })
