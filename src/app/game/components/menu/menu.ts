@@ -1,4 +1,5 @@
-import { Component } from '@angular/core'
+import { Component, inject } from '@angular/core'
+import { ModalService } from '../../../shared/services/modal-service'
 
 @Component({
     selector: 'app-menu',
@@ -8,5 +9,9 @@ import { Component } from '@angular/core'
 })
 
 export class Menu {
+    protected _modalService: ModalService = inject(ModalService)
 
+    public openModal(): void {
+        this._modalService.open()
+    }
 }

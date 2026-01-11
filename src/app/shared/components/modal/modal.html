@@ -1,7 +1,10 @@
-<div class="modal-overlay"></div>
-<dialog open>
-    <div class="modal-header">
-        <ng-content select="app-modal-title"></ng-content>
-        <button class="modal-close">Close</button>
-    </div>
+<div class="modal-overlay" *ngIf="opened"></div>
+<dialog #dialogRef [open]="opened">
+    <ng-content select="app-modal-title"></ng-content>
+    <button class="modal-close" (click)="close()">
+        <span class="material-symbols-outlined">
+            close
+        </span>
+    </button>
+    <ng-content select="app-modal-content"></ng-content>
 </dialog>

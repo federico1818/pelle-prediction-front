@@ -1,6 +1,7 @@
-import { Component } from '@angular/core'
+import { Component, inject, ViewChild } from '@angular/core'
 import { Modal } from '../../../shared/components/modal/modal'
 import { ModalTitle } from '../../../shared/components/modal-title/modal-title'
+import { ModalService } from '../../../shared/services/modal-service'
 
 @Component({
     selector: 'app-instructions',
@@ -10,5 +11,12 @@ import { ModalTitle } from '../../../shared/components/modal-title/modal-title'
 })
 
 export class Instructions {
-    public open: boolean = false
+    @ViewChild(Modal) modal!: Modal;
+    protected _modalService: ModalService = inject(ModalService)
+
+    public ngOnInit(): void {
+        this._modalService.open$.subscribe(() => {
+            this.modal.open()
+        })
+    }
 }
