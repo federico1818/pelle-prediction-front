@@ -2,7 +2,7 @@ ul {
     display: grid;
     grid-template-columns: repeat(2, var(--player-width));
     justify-content: center;
-    gap: 24px;
+    gap: 16px 8px;
 }
 
 li {

@@ -1,7 +1,7 @@
 nav {
     color: var(--white);
     font-weight: normal;
-    font-size: 16px;
+    font-size: 15px;
     font-weight: bold;
     padding: 16px 0;
     display: flex;
@@ -10,7 +10,7 @@ nav {
 
 ul {
     display: grid;
-    grid-template-columns: repeat(3, 128px);
+    grid-template-columns: repeat(3, var(--nav-item-width));
     background: var(--nav-background-color);
     border-radius: var(--nav-border-radius);
     color: var(--nav-color);

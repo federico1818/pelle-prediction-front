@@ -1,6 +1,6 @@
 :host {
     display: grid;
-    grid-template-rows: 1fr 48px;
+    grid-template-rows: 148px 1fr;
     width: var(--player-width);
     height: var(--player-height);
     background-image: url('/assets/img/player-background.png');
