@@ -1,15 +1,17 @@
 :root {
     --light-blue: #75aadb;
+    --light-blue-50: rgba(117, 170, 219, .5);
     --blue: #0B1F54;
     --sun-yellow: #fcbf45;
     --white: #ffffff;
-    --app-background: radial-gradient(circle at center, #16487D, #0B1F54);
+    --app-background: url('/assets/img/background.png');
+    --border-color: var(--light-blue-50);
     --nav-color: var(--blue);
     --nav-background-color: var(--white);
     --nav-active-color: var(--white);
     --nav-active-background-color: var(--light-blue);
-    --player-background-color: var(--light-blue);
-    --player-background-color-20: rgba(117, 170, 219, .2);
+    --player-background-color: var(--white);
+    --player-background-color-50: rgba(255, 255, 255, .5);
     --player-border-color: var(--white);
     --player-name-color: var(--white);
     --player-name-border-color: var(--sun-yellow);

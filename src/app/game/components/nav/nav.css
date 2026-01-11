@@ -13,8 +13,10 @@ ul {
     grid-template-columns: repeat(3, var(--nav-item-width));
     background: var(--nav-background-color);
     border-radius: var(--nav-border-radius);
+    border: 1px solid var(--border-color);
     color: var(--nav-color);
     position: relative;
+    padding: 4px 4px;
     z-index: 0;
 }
 

@@ -3,11 +3,9 @@
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    color: var(--player-name-color);
     grid-row: 2;
     grid-column: 1;
     text-transform: uppercase;
-    background-color: var(--player-background-color-20);
     border-radius: inherit;
 }
 
