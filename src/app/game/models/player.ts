@@ -4,4 +4,5 @@ export class Player {
     public lastname!: string
     public position!: string
     public image!: string
+    public selected: boolean = false
 }

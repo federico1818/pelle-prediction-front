@@ -17,4 +17,8 @@ import { PlayerPosition } from '../player-position/player-position'
 
 export class PlayerItem {
     @Input() player!: Player
+
+    public toggleSelection() {
+        this.player.selected = !this.player.selected
+    }
 }
