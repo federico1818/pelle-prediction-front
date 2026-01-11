@@ -1,0 +1,38 @@
+:host {
+    position: relative;
+    display: grid;
+    width: 50%;
+    margin: 0 auto;
+}
+
+input {
+    width: 100%;
+    border: 1px solid var(--player-search-border-color);
+    height: var(--player-search-height);
+    border-radius: 8px;
+    padding: 0 16px;
+    color: var(--blue);
+    outline: 1px solid transparent;
+    transition: all .2s ease-in-out;
+}
+
+input:focus {
+    outline: 1px solid var(--light-blue);
+}
+
+button {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: var(--player-search-height);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--light-blue-50);
+    transition: all .2s ease-in-out;
+}
+
+input:focus+button {
+    color: var(--light-blue);
+}
