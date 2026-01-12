@@ -1,9 +1,5 @@
-.modal-overlay {
-    content: '';
-    position: fixed;
-    inset: 0;
+dialog::backdrop {
     background: rgba(255, 255, 255, 0.9);
-    z-index: 1;
 }
 
 dialog[open] {
