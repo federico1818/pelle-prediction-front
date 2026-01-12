@@ -1,0 +1,44 @@
+:host {
+    display: flex;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--white);
+    padding: 2px;
+    font-size: var(--font-size-dialogue);
+    font-family: var(--font-family-dialogue);
+    line-height: 24px;
+    color: var(--blue);
+}
+
+.dialogue {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 16px;
+    width: 100%;
+}
+
+.cursor {
+    animation: blink 1s infinite;
+    opacity: 1;
+    background-color: var(--blue);
+    position: relative;
+    top: 2px;
+    height: 16px;
+    width: 3px;
+    display: inline-block;
+    margin-left: 4px;
+}
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}

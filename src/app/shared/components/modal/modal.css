@@ -18,10 +18,11 @@ dialog {
     border: 1px solid var(--light-blue);
     top: 5%;
     left: 5%;
-    margin: 0;
+    margin: 0 auto;
     padding: 16px;
     height: 90%;
     width: 90%;
+    max-width: 576px;
     z-index: 1;
 }
 
