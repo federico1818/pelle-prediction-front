@@ -1,3 +1,8 @@
+:host {
+    align-self: center;
+    grid-row: 1;
+}
+
 nav {
     color: var(--white);
     font-weight: normal;
@@ -37,4 +42,10 @@ a {
 a.active {
     color: var(--nav-active-color);
     background-color: var(--nav-active-background-color);
+}
+
+@media (min-width: 576px) {
+    :host {
+        grid-column: 1 / 3;
+    }
 }

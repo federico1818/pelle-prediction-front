@@ -1,4 +1,7 @@
 :host {
     display: grid;
     gap: 16px 0;
+    height: 100%;
+    min-height: 0;
+    grid-template-rows: var(--player-search-height) 1fr;
 }

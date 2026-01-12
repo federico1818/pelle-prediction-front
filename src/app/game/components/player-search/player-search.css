@@ -8,7 +8,7 @@
 input {
     width: 100%;
     border: 1px solid var(--player-search-border-color);
-    height: var(--player-search-height);
+    height: 100%;
     border-radius: 8px;
     padding: 0 16px;
     color: var(--blue);
@@ -21,15 +21,16 @@ input:focus {
 }
 
 button {
+    color: var(--light-blue-50);
     position: absolute;
     right: 0;
     top: 0;
     bottom: 0;
-    width: var(--player-search-height);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--light-blue-50);
+    padding: 0;
+    width: var(--player-search-height);
     transition: all .2s ease-in-out;
 }
 

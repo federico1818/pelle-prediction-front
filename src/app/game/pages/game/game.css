@@ -1,5 +1,8 @@
 :host {
     display: grid;
     grid-template-columns: 1fr 64px;
+    grid-template-rows: 64px 1fr;
     padding: 0 8px;
+    height: 100dvh;
+    overflow: hidden;
 }

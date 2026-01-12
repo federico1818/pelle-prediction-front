@@ -1,5 +1,9 @@
-dialog {
+:host {
     position: fixed;
+}
+
+dialog {
+    position: inherit;
     top: 0;
     left: 0;
     width: 100%;

@@ -3,12 +3,20 @@
     --background-size: 128px;
 }
 
+body {
+    display: grid;
+}
+
 app-root {
     display: inherit;
     height: inherit;
     background-image: var(--background-image);
     background-size: var(--background-size);
     font-family: sans-serif;
+}
+
+router-outlet {
+    display: none;
 }
 
 router-outlet+* {
