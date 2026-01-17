@@ -41,4 +41,8 @@ export class PlayerService {
             })
         )
     }
+
+    public add(player: Player): void {
+        this._allPlayers.update(players => [...players, player])
+    }
 }

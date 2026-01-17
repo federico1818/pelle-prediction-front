@@ -27,6 +27,5 @@ export class PlayerItem {
 
     private adding(): void {
         this.player.status = PlayerStatus.ADDING
-        console.log(this.player)
     }
 }
