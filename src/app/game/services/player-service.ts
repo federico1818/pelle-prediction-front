@@ -1,9 +1,10 @@
 import { Injectable, signal, WritableSignal, inject, computed } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs'
-import { tap } from 'rxjs/operators'
+import { map, tap } from 'rxjs/operators'
 import { Player } from '../models/player'
 import { environment } from '../../../environments/environment'
+import { PlayerStatus } from '../models/player-status'
 
 @Injectable({
     providedIn: 'root',
@@ -31,6 +32,10 @@ export class PlayerService {
 
     public all(): Observable<Player[]> {
         return this._http.get<Player[]>(environment.api.url + '/players').pipe(
+            map((players: Player[]) => players.map((p: Player) => ({
+                ...p,
+                status: PlayerStatus.NOT_SELECTED,
+            }))),
             tap((players: Player[]) => {
                 this._allPlayers.set(players)
             })

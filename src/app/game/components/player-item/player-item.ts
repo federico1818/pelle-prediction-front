@@ -3,6 +3,7 @@ import { Player } from '../../models/player'
 import { PlayerImage } from '../player-image/player-image'
 import { PlayerName } from '../player-name/player-name'
 import { PlayerPosition } from '../player-position/player-position'
+import { PlayerStatus } from '../../models/player-status'
 
 @Component({
     selector: 'app-player-item',
@@ -18,7 +19,14 @@ import { PlayerPosition } from '../player-position/player-position'
 export class PlayerItem {
     @Input() player!: Player
 
-    public toggleSelection() {
-        this.player.selected = !this.player.selected
+    public select() {
+        if (this.player.status === PlayerStatus.NOT_SELECTED) {
+            this.adding()
+        }
+    }
+
+    private adding(): void {
+        this.player.status = PlayerStatus.ADDING
+        console.log(this.player)
     }
 }
