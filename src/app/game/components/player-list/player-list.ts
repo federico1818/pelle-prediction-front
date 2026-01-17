@@ -1,4 +1,4 @@
-import { Component, OnInit, signal, WritableSignal } from '@angular/core'
+import { Component, inject, OnInit, Signal, signal } from '@angular/core'
 import { CommonModule } from '@angular/common'
 import { Player } from '../../models/player'
 import { PlayerItem } from '../player-item/player-item';
@@ -12,15 +12,11 @@ import { PlayerService } from '../../services/player-service'
 })
 
 export class PlayerList implements OnInit {
-    protected players: WritableSignal<Player[]> = signal([]);
-
-    constructor(
-        protected playerService: PlayerService
-    ) { }
+    protected _playerService: PlayerService = inject(PlayerService);
+    protected players: Signal<Player[]> = signal([]);
 
     ngOnInit(): void {
-        this.playerService.all().subscribe((players: Player[]) => {
-            this.players.set(players)
-        })
+        this.players = this._playerService.players
+        this._playerService.all().subscribe()
     }
 }
