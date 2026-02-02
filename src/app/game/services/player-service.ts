@@ -50,4 +50,17 @@ export class PlayerService {
             })
         )
     }
+
+    public remove(player: Player): Observable<Player> {
+        return this._http.post<Player>(
+            environment.api.url + '/players/remove/' + player.id,
+            null
+        ).pipe(
+            tap((player: Player) => {
+                this._allPlayers.update((players) =>
+                    players.map((p) => (p.id === player.id ? player : p))
+                )
+            })
+        )
+    }
 }

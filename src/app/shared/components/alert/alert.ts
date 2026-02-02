@@ -16,4 +16,9 @@ export class Alert {
         this.dialogElement.nativeElement.showModal()
         this.opened = true
     }
+
+    public close(): void {
+        this.dialogElement.nativeElement.close()
+        this.opened = false
+    }
 }

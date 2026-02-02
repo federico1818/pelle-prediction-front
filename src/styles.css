@@ -2,4 +2,5 @@
 @import "./styles/_colors.scss";
 @import "./styles/_sizes.scss";
 @import "./styles/_font.scss";
+@import "./styles/_button.scss";
 @import "./styles/_app.scss";

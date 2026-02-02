@@ -21,14 +21,22 @@ export class PlayerItem {
     @Input() player!: Player
     private _playerService: PlayerService = inject(PlayerService)
 
-    public select() {
+    public toggleSelect() {
         if (this.player.status === PlayerStatus.NOT_SELECTED) {
-            this.adding()
+            return this.adding()
+        }
+        if (this.player.status === PlayerStatus.SELECTED) {
+            return this.removing()
         }
     }
 
     private adding(): void {
         this.player.status = PlayerStatus.ADDING
         this._playerService.select(this.player).subscribe()
+    }
+
+    private removing(): void {
+        this.player.status = PlayerStatus.REMOVING
+        this._playerService.remove(this.player).subscribe()
     }
 }

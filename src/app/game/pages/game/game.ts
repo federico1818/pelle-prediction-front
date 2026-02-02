@@ -4,6 +4,7 @@ import { Nav } from '../../components/nav/nav'
 import { Menu } from '../../components/menu/menu'
 import { Instructions } from '../../components/instructions/instructions'
 import { SessionExpired } from '../../../shared/components/session-expired/session-expired'
+import { ErrorAlert } from '../../../shared/components/error-alert/error-alert'
 
 @Component({
     selector: 'app-game',
@@ -12,7 +13,8 @@ import { SessionExpired } from '../../../shared/components/session-expired/sessi
         Nav,
         Menu,
         Instructions,
-        SessionExpired
+        SessionExpired,
+        ErrorAlert
     ],
     templateUrl: './game.html',
     styleUrl: './game.css',

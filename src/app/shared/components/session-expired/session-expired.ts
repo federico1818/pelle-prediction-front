@@ -1,4 +1,4 @@
-import { Component, inject, ViewChild } from '@angular/core'
+import { Component, inject, OnInit, ViewChild } from '@angular/core'
 import { Alert } from '../alert/alert'
 import { AlertImage } from '../alert-image/alert-image'
 import { AlertTitle } from '../alert-title/alert-title'
@@ -19,7 +19,7 @@ import { AuthService } from '../../services/auth-service'
     styleUrl: './session-expired.css',
 })
 
-export class SessionExpired {
+export class SessionExpired implements OnInit {
     @ViewChild(Alert) alert!: Alert
     private _authService: AuthService = inject(AuthService)
 

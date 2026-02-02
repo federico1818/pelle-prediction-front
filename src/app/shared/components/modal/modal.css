@@ -41,6 +41,7 @@ dialog::before {
     width: 40px;
     height: 40px;
     padding: 0;
+    outline: none;
     border-radius: 50%;
     transition: all 0.3s ease;
 }
