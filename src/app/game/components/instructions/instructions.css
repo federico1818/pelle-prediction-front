@@ -31,3 +31,11 @@ h2 {
     color: var(--light-blue);
     align-self: center;
 }
+
+app-modal-content {
+    display: flex;
+}
+
+app-video {
+    max-height: 320px;
+}
