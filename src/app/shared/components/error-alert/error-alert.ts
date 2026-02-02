@@ -5,7 +5,7 @@ import { ErrorMessage } from '../../models/error-message'
 import { AlertTitle } from '../alert-title/alert-title'
 import { AlertMessage } from '../alert-message/alert-message'
 import { AlertImage } from '../alert-image/alert-image'
-import { Button } from '../button/button'
+import { ButtonPrimary } from '../button-primary/button-primary'
 
 @Component({
     selector: 'app-error-alert',
@@ -14,7 +14,7 @@ import { Button } from '../button/button'
         AlertTitle,
         AlertMessage,
         AlertImage,
-        Button
+        ButtonPrimary
     ],
     templateUrl: './error-alert.html',
     styleUrl: './error-alert.css',

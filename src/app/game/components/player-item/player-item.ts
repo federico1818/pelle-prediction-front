@@ -32,7 +32,11 @@ export class PlayerItem {
 
     private adding(): void {
         this.player.status = PlayerStatus.ADDING
-        this._playerService.select(this.player).subscribe()
+        this._playerService.select(this.player).subscribe({
+            error: () => {
+                this.player.status = PlayerStatus.NOT_SELECTED
+            }
+        })
     }
 
     private removing(): void {

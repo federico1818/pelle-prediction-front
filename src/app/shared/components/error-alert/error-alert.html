@@ -4,7 +4,7 @@
         {{ title() }}
     </app-alert-title>
     <app-alert-message>
-        {{ text() }}
-        <app-button>Aceptar</app-button>
+        <p>{{ text() }}</p>
+        <app-button-primary (click)="close()">Aceptar</app-button-primary>
     </app-alert-message>
 </app-alert>

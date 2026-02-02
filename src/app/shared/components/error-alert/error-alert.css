@@ -1,0 +1,7 @@
+:host {
+    position: fixed;
+}
+
+app-button-primary {
+    margin-top: 16px;
+}
