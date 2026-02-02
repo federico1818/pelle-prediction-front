@@ -1,0 +1,8 @@
+:host {
+    position: fixed;
+}
+
+app-button-link {
+    margin-top: 16px;
+    justify-self: center;
+}

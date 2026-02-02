@@ -1,0 +1,27 @@
+:host {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.alert-image-container {
+    width: 128px;
+    position: relative;
+}
+
+.alert-image-container::after {
+    content: "";
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    height: 16px;
+    background: rgba(0, 0, 0, 0.35);
+    border-radius: 50%;
+    filter: blur(6px);
+}
+
+img {
+    width: 100%;
+}

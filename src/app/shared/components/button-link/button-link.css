@@ -1,0 +1,26 @@
+.button-link-container {
+    display: inline-flex;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    height: 40px;
+    padding: 4px;
+}
+
+a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    background-color: var(--light-blue-80);
+    padding: 0 16px;
+    border-radius: inherit;
+}
+
+a:hover {
+    background-color: var(--light-blue);
+}

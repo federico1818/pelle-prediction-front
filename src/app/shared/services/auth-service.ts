@@ -1,10 +1,18 @@
 import { Injectable } from '@angular/core'
+import { Subject } from 'rxjs'
 
 @Injectable({
     providedIn: 'root',
 })
 
 export class AuthService {
+
+    private _sessionExpired = new Subject<void>()
+    public sessionExpired$ = this._sessionExpired.asObservable()
+
+    public notifySessionExpired(): void {
+        this._sessionExpired.next()
+    }
 
     public login(token: string): void {
         localStorage.setItem('token', token)

@@ -1,0 +1,14 @@
+:host {
+    text-transform: uppercase;
+    color: var(--alert-title-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h2 {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: var(--font-family-dialogue);
+    letter-spacing: 1px;
+}
