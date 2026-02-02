@@ -1,1 +1,11 @@
-<p>player-selected-list works!</p>
+<div class="container">
+    <div class="header">
+        <h2>Jugadores seleccionados</h2>
+        <app-player-selected-count></app-player-selected-count>
+    </div>
+    <ul class="list">
+        <li *ngFor="let player of players()">
+            <app-player-selected-item [player]="player"></app-player-selected-item>
+        </li>
+    </ul>
+</div>

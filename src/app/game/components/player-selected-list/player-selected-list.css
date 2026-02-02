@@ -3,7 +3,26 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: 64px;
-    padding: 8px 16px;
+    height: var(--player-selected-list-height);
     background-color: var(--white);
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--player-selected-list-height);
+    background-color: var(--light-blue-secondary);
+    padding: 8px 16px;
+}
+
+h2 {
+    font-size: 10px;
+    font-family: var(--font-family-gaming);
+    font-weight: normal;
+    color: var(--blue);
+}
+
+.list {
+    display: none;
 }

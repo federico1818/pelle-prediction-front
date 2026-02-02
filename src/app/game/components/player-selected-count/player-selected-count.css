@@ -1,0 +1,14 @@
+:host {
+    width: 80px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: var(--light-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-weight: normal;
+    font-family: var(--font-family-gaming);
+    color: var(--white);
+    letter-spacing: 2px;
+}
