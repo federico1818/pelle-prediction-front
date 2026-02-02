@@ -11,8 +11,8 @@
     --nav-background-color: var(--white);
     --nav-active-color: var(--white);
     --nav-active-background-color: var(--light-blue);
-    --player-background-color: var(--white);
-    --player-background-color-50: rgba(255, 255, 255, .5);
+    --flag-background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.2)), url('/assets/img/player-background.png');
+    --player-background: var(--flag-background);
     --player-border-color: var(--white);
     --player-name-color: var(--white);
     --player-name-border-color: var(--sun-yellow);
@@ -20,4 +20,5 @@
     --player-search-border-color: var(--border-color);
     --alert-title-color: var(--blue);
     --alert-message-color: var(--blue);
+    --card-background: var(--flag-background);
 }
