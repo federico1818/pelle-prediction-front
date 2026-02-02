@@ -32,10 +32,6 @@ export class PlayerService {
 
     public all(): Observable<Player[]> {
         return this._http.get<Player[]>(environment.api.url + '/players').pipe(
-            map((players: Player[]) => players.map((p: Player) => ({
-                ...p,
-                status: PlayerStatus.NOT_SELECTED,
-            }))),
             tap((players: Player[]) => {
                 this._allPlayers.set(players)
             })
