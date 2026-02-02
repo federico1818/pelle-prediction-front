@@ -42,7 +42,16 @@ export class PlayerService {
         )
     }
 
-    public add(player: Player): void {
-        this._allPlayers.update(players => [...players, player])
+    public select(player: Player): Observable<Player> {
+        return this._http.post<Player>(
+            environment.api.url + '/players/select/' + player.id,
+            null
+        ).pipe(
+            tap((player: Player) => {
+                this._allPlayers.update((players) =>
+                    players.map((p) => (p.id === player.id ? player : p))
+                )
+            })
+        )
     }
 }

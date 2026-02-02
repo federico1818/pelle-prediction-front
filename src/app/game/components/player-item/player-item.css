@@ -50,10 +50,8 @@
 }
 
 .player-item.adding::after {
-    content: "Agregando...";
     color: var(--white);
     position: absolute;
-    background-color: var(--light-blue-80);
     border-radius: 8px;
     top: 50%;
     left: 50%;
