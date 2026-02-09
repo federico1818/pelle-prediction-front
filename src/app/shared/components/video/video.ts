@@ -16,6 +16,6 @@ export class Video {
     }
 
     public play(): void {
-        this.video.nativeElement.play()
+        this.video?.nativeElement.play()
     }
 }
