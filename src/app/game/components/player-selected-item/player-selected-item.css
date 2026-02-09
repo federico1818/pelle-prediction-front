@@ -1,6 +1,11 @@
 :host {
     display: grid;
     grid-template-columns: 40px 1fr 1fr;
+    align-items: center;
+    gap: 0 16px;
+    font-family: var(--font-family-gaming);
+    font-size: 10px;
+    color: var(--blue);
 }
 
 img {

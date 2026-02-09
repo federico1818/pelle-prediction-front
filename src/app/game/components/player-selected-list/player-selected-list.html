@@ -3,6 +3,9 @@
         <h2>Jugadores seleccionados</h2>
         <app-player-selected-count></app-player-selected-count>
     </div>
+    <button>
+        ˄
+    </button>
     <ul class="list">
         <li *ngFor="let player of players()">
             <app-player-selected-item [player]="player"></app-player-selected-item>
