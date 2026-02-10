@@ -14,11 +14,19 @@ import { PlayerSelectedCount } from '../player-selected-count/player-selected-co
     ],
     templateUrl: './player-selected-list.html',
     styleUrl: './player-selected-list.css',
+    host: {
+        '[class.expanded]': 'expanded()'
+    }
 })
 
 export class PlayerSelectedList implements OnInit {
     private _playerService: PlayerService = inject(PlayerService);
     public players: Signal<Player[]> = signal([]);
+    public expanded = signal(false);
+
+    toggleExpanded() {
+        this.expanded.set(!this.expanded());
+    }
 
     ngOnInit(): void {
         this.players = this._playerService.selected

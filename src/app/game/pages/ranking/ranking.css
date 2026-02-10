@@ -1,0 +1,21 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 16px;
+    padding-top: 16px;
+}
+
+h2 {
+    color: var(--blue);
+    font-family: var(--font-family-gaming);
+    font-size: 12px;
+    font-weight: normal;
+}
+
+video {
+    border-radius: 8px;
+    width: 100%;
+    max-width: 480px;
+}
