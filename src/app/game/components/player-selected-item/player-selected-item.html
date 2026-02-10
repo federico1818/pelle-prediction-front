@@ -1,3 +1,6 @@
 <img [src]="image" alt="{{ player.lastname }}">
 <div class="name">{{ player.name }}</div>
 <div class="lastname">{{ player.lastname }}</div>
+<app-button-icon (onClick)="remove()">
+    close
+</app-button-icon>
