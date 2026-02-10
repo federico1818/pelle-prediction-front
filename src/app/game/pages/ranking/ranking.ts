@@ -1,5 +1,4 @@
-import { Component, inject, OnInit } from '@angular/core'
-import { DialogueService } from '../../../shared/services/dialogue-service'
+import { AfterViewInit, Component, ViewChild } from '@angular/core'
 import { Dialogue } from '../../../shared/components/dialogue/dialogue'
 
 @Component({
@@ -11,10 +10,10 @@ import { Dialogue } from '../../../shared/components/dialogue/dialogue'
     styleUrl: './ranking.css',
 })
 
-export class Ranking implements OnInit {
-    private _dialogueService: DialogueService = inject(DialogueService)
+export class Ranking implements AfterViewInit {
+    @ViewChild('dialogueRef') dialogueElement!: Dialogue
 
-    public ngOnInit(): void {
-        this._dialogueService.setText('Scaloni está trabajando arduamente en el armado de la lista.')
+    public ngAfterViewInit(): void {
+        this.dialogueElement.write('Scaloni está trabajando arduamente en el armado de la lista.')
     }
 }

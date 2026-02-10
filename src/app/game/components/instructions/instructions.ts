@@ -1,13 +1,11 @@
-import { Component, inject, ViewChild } from '@angular/core'
+import { Component, inject, OnInit, ViewChild } from '@angular/core'
 import { Modal } from '../../../shared/components/modal/modal'
 import { ModalTitle } from '../../../shared/components/modal-title/modal-title'
 import { ModalContent } from '../../../shared/components/modal-content/modal-content'
 import { ModalFooter } from '../../../shared/components/modal-footer/modal-footer'
 import { ModalService } from '../../../shared/services/modal-service'
 import { Dialogue } from '../../../shared/components/dialogue/dialogue'
-import { DialogueService } from '../../../shared/services/dialogue-service'
 import { Video } from '../../../shared/components/video/video'
-
 
 @Component({
     selector: 'app-instructions',
@@ -23,17 +21,17 @@ import { Video } from '../../../shared/components/video/video'
     styleUrl: './instructions.css',
 })
 
-export class Instructions {
+export class Instructions implements OnInit {
     @ViewChild(Modal) modal!: Modal
     @ViewChild(Video) video!: Video
+    @ViewChild('dialogueRef') dialogueElement!: Dialogue
 
     protected _modalService: ModalService = inject(ModalService)
-    protected _dialogueService: DialogueService = inject(DialogueService)
 
     public ngOnInit(): void {
         this._modalService.open$.subscribe(() => {
             this.modal.open()
-            this._dialogueService.setText('No trates de entenderlo, disfrutalo.')
+            this.dialogueElement.write('No trates de entenderlo, disfrutalo.')
             this.video.play()
         })
     }

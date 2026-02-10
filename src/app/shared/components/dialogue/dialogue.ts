@@ -1,5 +1,4 @@
-import { Component, inject, OnInit, signal } from '@angular/core'
-import { DialogueService } from '../../services/dialogue-service'
+import { Component, signal } from '@angular/core'
 
 @Component({
     selector: 'app-dialogue',
@@ -8,19 +7,16 @@ import { DialogueService } from '../../services/dialogue-service'
     styleUrl: './dialogue.css',
 })
 
-export class Dialogue implements OnInit {
+export class Dialogue {
     public text = signal<string>('')
 
-    private _dialogueService: DialogueService = inject(DialogueService)
     private speed: number = 60
     private intervalId: number | null = null
 
-    public ngOnInit(): void {
-        this._dialogueService.text$.subscribe((text) => {
-            this.clear()
-            this.text.set('')
-            this.typeText(text)
-        })
+    public write(text: string): void {
+        this.clear()
+        this.text.set('')
+        this.typeText(text)
     }
 
     private typeText(text: string): void {
