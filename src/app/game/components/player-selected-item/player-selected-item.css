@@ -3,13 +3,24 @@
     grid-template-columns: 40px 1fr 1fr;
     align-items: center;
     gap: 0 16px;
-    font-family: var(--font-family-gaming);
-    font-size: 10px;
     color: var(--blue);
+    text-transform: uppercase;
 }
 
 img {
     width: 40px;
     height: 40px;
     border-radius: 50%;
+    background: var(--player-background);
+}
+
+.name {
+    font-weight: normal;
+    font-size: 12px;
+}
+
+.lastname {
+    font-weight: bold;
+    font-size: 13px;
+    font-style: italic;
 }
