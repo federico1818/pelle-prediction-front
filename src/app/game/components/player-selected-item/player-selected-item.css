@@ -5,6 +5,25 @@
     gap: 0 16px;
     color: var(--blue);
     text-transform: uppercase;
+    padding: 0 8px;
+    position: relative;
+}
+
+:host(:before) {
+    content: "";
+    display: block;
+    width: 2px;
+    height: 32px;
+    background-color: transparent;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background-color 0.2s ease-in-out;
+}
+
+:host(:hover):before {
+    background-color: var(--sun-yellow);
 }
 
 img {
