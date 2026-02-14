@@ -1,16 +1,14 @@
-import { CommonModule } from '@angular/common'
 import { Component, inject, OnInit, signal, Signal } from '@angular/core'
-import { PlayerService } from '../../services/player-service'
 import { Player } from '../../models/player'
-import { PlayerSelectedItem } from '../player-selected-item/player-selected-item'
 import { PlayerSelectedCount } from '../player-selected-count/player-selected-count'
+import { PlayerSelectedPositionList } from '../player-selected-position-list/player-selected-position-list'
+import { PlayerSelectedService } from '../../services/player-selected-service'
 
 @Component({
     selector: 'app-player-selected-list',
     imports: [
-        CommonModule,
-        PlayerSelectedItem,
-        PlayerSelectedCount
+        PlayerSelectedCount,
+        PlayerSelectedPositionList
     ],
     templateUrl: './player-selected-list.html',
     styleUrl: './player-selected-list.css',
@@ -20,8 +18,13 @@ import { PlayerSelectedCount } from '../player-selected-count/player-selected-co
 })
 
 export class PlayerSelectedList implements OnInit {
-    private _playerService: PlayerService = inject(PlayerService);
-    public players: Signal<Player[]> = signal([]);
+    private _playerSelectedService: PlayerSelectedService = inject(PlayerSelectedService)
+
+    public gk: Signal<Player[]> = signal([]);
+    public def: Signal<Player[]> = signal([]);
+    public mid: Signal<Player[]> = signal([]);
+    public att: Signal<Player[]> = signal([]);
+
     public expanded = signal(false);
 
     toggleExpanded() {
@@ -29,7 +32,9 @@ export class PlayerSelectedList implements OnInit {
     }
 
     ngOnInit(): void {
-        this.players = this._playerService.selected
-        this._playerService.all().subscribe()
+        this.gk = this._playerSelectedService.gk
+        this.def = this._playerSelectedService.def
+        this.mid = this._playerSelectedService.mid
+        this.att = this._playerSelectedService.att
     }
 }
