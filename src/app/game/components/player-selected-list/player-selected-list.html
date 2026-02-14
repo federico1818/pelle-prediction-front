@@ -6,7 +6,18 @@
     <button (click)="toggleExpanded()">
         <span class="icon">˄</span>
     </button>
-    <app-player-selected-position-list [players]="gk()">
-        <span position>GK</span>
-    </app-player-selected-position-list>
+    <div class="list">
+        <app-player-selected-position-list [players]="gk()">
+            <span position>GK</span>
+        </app-player-selected-position-list>
+        <app-player-selected-position-list [players]="def()">
+            <span position>DEF</span>
+        </app-player-selected-position-list>
+        <app-player-selected-position-list [players]="mid()">
+            <span position>MED</span>
+        </app-player-selected-position-list>
+        <app-player-selected-position-list [players]="fwd()">
+            <span position>DEL</span>
+        </app-player-selected-position-list>
+    </div>
 </div>

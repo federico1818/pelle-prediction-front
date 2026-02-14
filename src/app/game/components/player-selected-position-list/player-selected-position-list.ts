@@ -11,6 +11,9 @@ import { PlayerSelectedItem } from '../player-selected-item/player-selected-item
     ],
     templateUrl: './player-selected-position-list.html',
     styleUrl: './player-selected-position-list.css',
+    host: {
+        '[style.display]': 'players().length === 0 ? "none" : null'
+    }
 })
 
 export class PlayerSelectedPositionList {
