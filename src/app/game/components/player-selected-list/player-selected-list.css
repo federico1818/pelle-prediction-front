@@ -3,7 +3,7 @@
     bottom: 0;
     left: 0;
     right: 0;
-    height: var(--player-selected-list-height);
+    height: 64px;
     background-color: var(--white);
     transition: height 0.3s ease-in-out;
     z-index: 100;
@@ -18,15 +18,30 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    /* overflow: hidden; Removed to allow button visibility */
+}
+
+/* Hide the list when not expanded */
+app-player-selected-position-list {
+    display: none;
+}
+
+:host.expanded app-player-selected-position-list {
+    display: block;
 }
 
 .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    height: var(--player-selected-list-height);
+    height: 64px;
     background-color: var(--light-blue-secondary);
     padding: 8px 16px;
+    transition: height 0.3s ease-in-out;
+}
+
+:host.expanded .header {
+    height: 64px;
 }
 
 button {
