@@ -20,10 +20,10 @@ import { PlayerSelectedService } from '../../services/player-selected-service'
 export class PlayerSelectedList implements OnInit {
     private _playerSelectedService: PlayerSelectedService = inject(PlayerSelectedService)
 
-    public gk: Signal<Player[]> = signal([]);
-    public def: Signal<Player[]> = signal([]);
-    public mid: Signal<Player[]> = signal([]);
-    public att: Signal<Player[]> = signal([]);
+    public gk!: Signal<Player[]>
+    public def!: Signal<Player[]>
+    public mid!: Signal<Player[]>
+    public fwd!: Signal<Player[]>
 
     public expanded = signal(false);
 
@@ -35,6 +35,6 @@ export class PlayerSelectedList implements OnInit {
         this.gk = this._playerSelectedService.gk
         this.def = this._playerSelectedService.def
         this.mid = this._playerSelectedService.mid
-        this.att = this._playerSelectedService.att
+        this.fwd = this._playerSelectedService.fwd
     }
 }

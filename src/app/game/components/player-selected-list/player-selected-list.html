@@ -6,7 +6,7 @@
     <button (click)="toggleExpanded()">
         <span class="icon">˄</span>
     </button>
-    <app-player-selected-position-list>
-        <ng-content select="position">GK</ng-content>
+    <app-player-selected-position-list [players]="gk()">
+        <span position>GK</span>
     </app-player-selected-position-list>
 </div>

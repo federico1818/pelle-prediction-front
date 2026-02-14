@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common'
-import { Component, signal, Signal } from '@angular/core'
+import { Component, input } from '@angular/core'
 import { Player } from '../../models/player'
 import { PlayerSelectedItem } from '../player-selected-item/player-selected-item'
 
@@ -14,5 +14,5 @@ import { PlayerSelectedItem } from '../player-selected-item/player-selected-item
 })
 
 export class PlayerSelectedPositionList {
-    public players: Signal<Player[]> = signal([])
+    public players = input<Player[]>([])
 }
