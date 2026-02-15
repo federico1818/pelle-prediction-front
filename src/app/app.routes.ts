@@ -16,4 +16,8 @@ export const routes: Routes = [
         loadChildren: () => import('./game/game.routes').then(r => r.gameRoutes),
         canActivate: [authGuard],
     },
+    {
+        path: 'intro',
+        loadComponent: () => import('./game/pages/intro/intro').then(m => m.Intro),
+    },
 ];

@@ -6,6 +6,7 @@ import { routes } from './app.routes'
 import { authInterceptor } from './shared/interceptors/auth-interceptor'
 import { sessionExpiredInterceptor } from './shared/interceptors/session-expired-interceptor'
 import { errorInterceptor } from './shared/interceptors/error-interceptor'
+import { unauthorizedInterceptor } from './shared/interceptors/unauthorized-interceptor'
 
 export const appConfig: ApplicationConfig = {
     providers: [
@@ -14,7 +15,8 @@ export const appConfig: ApplicationConfig = {
         provideHttpClient(withInterceptors([
             authInterceptor,
             sessionExpiredInterceptor,
-            errorInterceptor
+            errorInterceptor,
+            unauthorizedInterceptor,
         ]))
     ]
 }
