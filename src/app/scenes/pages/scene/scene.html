@@ -1,0 +1,6 @@
+<ng-container *ngIf="scene$ | async as scene">
+    <h2>{{ scene.title }}</h2>
+    <video #video [src]="'/assets/video/' + scene.video" autoplay [muted]="true" playsinline
+        (loadedmetadata)="video.play()"></video>
+</ng-container>
+<app-dialogue #dialogueRef></app-dialogue>

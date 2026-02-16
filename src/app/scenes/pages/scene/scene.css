@@ -1,0 +1,21 @@
+:host {
+    display: grid;
+    align-content: start;
+    gap: 16px 0;
+    padding: 16px;
+}
+
+h2 {
+    text-align: center;
+    color: var(--scene-title-color);
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+video {
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto;
+    max-height: 60vh;
+}
