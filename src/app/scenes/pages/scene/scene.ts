@@ -1,31 +1,28 @@
-import { Component, inject, ViewChild } from '@angular/core'
+import { Component, inject, signal, WritableSignal } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
-import { SceneService } from '../../services/scene-service'
-import { Scene as SceneModel } from '../../../shared/models/scene'
 import { Observable } from 'rxjs'
 import { switchMap, tap } from 'rxjs/operators'
-import { AsyncPipe, NgIf } from '@angular/common'
-import { Dialogue } from '../../../shared/components/dialogue/dialogue'
+import { SceneService } from '../../services/scene-service'
+import { Scene as SceneModel } from '../../../shared/models/scene'
+import { Scene as SceneComponent } from '../../components/scene/scene'
 
 @Component({
-    selector: 'app-scene',
+    selector: 'app-scene-page',
     imports: [
-        AsyncPipe,
-        NgIf,
-        Dialogue
+        SceneComponent
     ],
     templateUrl: './scene.html',
     styleUrl: './scene.css',
 })
-export class Scene {
-    @ViewChild('dialogueRef') dialogueElement!: Dialogue
 
+export class Scene {
     private _sceneService = inject(SceneService)
     private _route = inject(ActivatedRoute)
+    public scene: WritableSignal<SceneModel | null> = signal(null)
 
     public scene$: Observable<SceneModel> = this._route.params.pipe(
         switchMap((params) => this._sceneService.get(+params['id']).pipe(
-            tap((scene) => this.dialogueElement.write(scene.dialogue))
+            tap((scene: SceneModel) => this.scene.set(scene))
         ))
     )
 }

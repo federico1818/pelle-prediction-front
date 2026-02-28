@@ -10,9 +10,9 @@ import { environment } from '../../../environments/environment'
 export class SceneService {
     private _http: HttpClient = inject(HttpClient)
 
-    public get(id: number): Observable<Scene> {
+    public get(id: number | string): Observable<Scene> {
         return this._http.get<Scene>(
-            environment.api.url + '/scenes/' + id
+            `${environment.api.url}/scenes/${id}`
         )
     }
 }

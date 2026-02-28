@@ -17,6 +17,10 @@ export const routes: Routes = [
         canActivate: [authGuard],
     },
     {
+        path: 'intro',
+        loadComponent: () => import('./scenes/pages/intro/intro').then(m => m.Intro),
+    },
+    {
         path: 'scenes/:id',
         loadComponent: () => import('./scenes/pages/scene/scene').then(m => m.Scene),
     },

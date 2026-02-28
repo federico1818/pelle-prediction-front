@@ -9,8 +9,7 @@ export const unauthorizedInterceptor: HttpInterceptorFn = (req, next) => {
     return next(req).pipe(
         catchError((e: HttpErrorResponse) => {
             if (e.status === 403) {
-                const { scene } = e.error
-                router.navigate(['/scenes', scene.id])
+                router.navigate([e.error.route])
             }
             return throwError(() => e)
         })
