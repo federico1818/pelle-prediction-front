@@ -1,12 +1,12 @@
 import { Component, inject, OnInit, signal, WritableSignal } from '@angular/core'
 import { SceneService } from '../../services/scene-service'
 import { Scene as SceneModel } from '../../../shared/models/scene'
-import { Scene } from '../../components/scene/scene'
+import { SceneComponent } from '../../components/scene/scene'
 
 @Component({
     selector: 'app-intro',
     imports: [
-        Scene
+        SceneComponent
     ],
     templateUrl: './intro.html',
     styleUrl: './intro.css',
