@@ -19,9 +19,10 @@ export const routes: Routes = [
     {
         path: 'intro',
         loadComponent: () => import('./scenes/pages/intro/intro').then(m => m.Intro),
+        canActivate: [authGuard],
     },
     {
         path: 'scenes/:id',
-        loadComponent: () => import('./scenes/pages/scene/scene').then(m => m.Scene),
+        loadComponent: () => import('./scenes/pages/scene/scene').then(m => m.ScenePage),
     },
 ];
