@@ -16,27 +16,23 @@ export class Dialogue {
     private queue: string[] = []
     private currentFullText: string = ''
 
-    public write(text: string, maxWords: number = 20): void {
+    public write(text: string): void {
         this.clear()
         this.queue = []
 
-        if (maxWords > 0) {
-            const words = text.split(' ')
-            let currentChunk: string[] = []
+        const matches = text.match(/[^.!?]+[.!?]*/g)
 
-            for (const word of words) {
-                currentChunk.push(word)
-                if (currentChunk.length >= maxWords) {
-                    this.queue.push(currentChunk.join(' '))
-                    currentChunk = []
+        if (matches) {
+            for (let sentence of matches) {
+                sentence = sentence.trim()
+                if (sentence.length > 0) {
+                    this.queue.push(sentence)
                 }
             }
-
-            if (currentChunk.length > 0) {
-                this.queue.push(currentChunk.join(' '))
-            }
         } else {
-            this.queue.push(text)
+            if (text.trim().length > 0) {
+                this.queue.push(text.trim())
+            }
         }
 
         this.next()
