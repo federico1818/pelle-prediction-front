@@ -1,4 +1,4 @@
-import { Component, input, ViewChild } from '@angular/core'
+import { Component, input, InputSignal, ViewChild, AfterViewInit } from '@angular/core'
 import { Dialogue } from '../../../shared/components/dialogue/dialogue'
 import { Scene as SceneModel } from '../../../shared/models/scene'
 
@@ -11,7 +11,11 @@ import { Scene as SceneModel } from '../../../shared/models/scene'
     styleUrl: './scene.css',
 })
 
-export class Scene {
+export class Scene implements AfterViewInit {
     @ViewChild('dialogueRef') dialogueElement!: Dialogue
-    public scene = input<SceneModel | null>(null)
+    public scene: InputSignal<SceneModel | null> = input<SceneModel | null>(null)
+
+    public ngAfterViewInit(): void {
+        this.dialogueElement.write(this.scene()?.dialogue!)
+    }
 }

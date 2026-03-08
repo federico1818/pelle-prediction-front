@@ -23,6 +23,6 @@ export const routes: Routes = [
     },
     {
         path: 'scenes/:id',
-        loadComponent: () => import('./scenes/pages/scene/scene').then(m => m.ScenePage),
+        loadComponent: () => import('./scenes/pages/scene/scene').then(m => m.Scene),
     },
 ];
