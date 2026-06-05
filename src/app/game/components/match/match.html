@@ -1,13 +1,13 @@
 @if (game) {
-<app-team-flag [team]="game.team_1"></app-team-flag>
-<div class="team-name team-name-1">{{ game.team_1.label }}</div>
-<div class="score-final">{{ game.score_1 ?? '-' }}</div>
-<div class="score-final">{{ game.score_2 ?? '-' }}</div>
-<div class="team-name team-name-2">{{ game.team_2.label }}</div>
-<app-team-flag [team]="game.team_2"></app-team-flag>
+<app-team-flag class="team-flag" [team]="game.team_1"></app-team-flag>
+<div class="score score-1">{{ game.score_1 }}</div>
+<div class="score score-2">{{ game.score_2 }}</div>
 
-<div class="score-box">{{ game.prediction_score_1 ?? '' }}</div>
-<div class="score-box">{{ game.prediction_score_2 ?? '' }}</div>
+<div class="team-name team-name-1">{{ game.team_1.label }}</div>
+<div class="prediction-box prediction-1">{{ game.prediction_score_1 ?? '' }}</div>
+<div class="prediction-box prediction-2">{{ game.prediction_score_2 ?? '' }}</div>
+<div class="team-name team-name-2">{{ game.team_2.label }}</div>
+<app-team-flag class="team-flag" [team]="game.team_2"></app-team-flag>
 
 <div class="date-time">
     {{ game.date_time | date: 'dd/MM/yyyy HH:mm' }}
