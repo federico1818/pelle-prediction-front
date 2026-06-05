@@ -1,1 +1,6 @@
-<p>champion</p>
+<p>champion works!</p>
+<ul>
+    @for (team of teams(); track team.id) {
+    <li>{{ team.label }} - {{ team.image }}</li>
+    }
+</ul>
