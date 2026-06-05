@@ -27,4 +27,14 @@
     justify-content: center;
     width: 100%;
     overflow: hidden;
+    flex-direction: column;
+}
+
+.team-title::after {
+    content: "";
+    display: block;
+    margin: 4px auto 0;
+    height: 2px;
+    width: 48px;
+    background-color: var(--player-name-border-color);
 }

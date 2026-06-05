@@ -6,8 +6,13 @@
     border: 1px solid var(--light-blue);
     padding: 4px;
     box-sizing: border-box;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }
 
+:host:hover {
+    transform: scale(1.05);
+}
 
 .flag-container {
     background: var(--flag-background);
