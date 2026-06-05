@@ -6,7 +6,7 @@ import { ChampionComponent } from '../champion/champion'
     selector: 'app-champion-list',
     imports: [ChampionComponent],
     templateUrl: './champion-list.html',
-    styleUrl: './champion-list.css',
+    styleUrl: './champion-list.scss',
 })
 export class ChampionListComponent {
     @Input() teams: Team[] = []
