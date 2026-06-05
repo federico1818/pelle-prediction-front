@@ -1,1 +1,7 @@
-/* Estilos para la página de campeón */
+:host {
+    display: block;
+    height: 100%;
+    overflow-y: auto;
+    padding-bottom: 96px;
+    box-sizing: border-box;
+}
