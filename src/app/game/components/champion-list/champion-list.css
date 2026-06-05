@@ -4,28 +4,16 @@
 }
 
 .carousel-wrapper {
-    display: flex;
-    overflow-x: auto;
-    scroll-snap-type: x mandatory;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
     gap: 24px;
     padding: 24px 12px;
-    scroll-behavior: smooth;
     width: 100%;
     box-sizing: border-box;
 }
 
-/* Ocultar barra de scroll en navegadores comunes manteniendo la funcionalidad */
-.carousel-wrapper::-webkit-scrollbar {
-    display: none;
-}
-.carousel-wrapper {
-    -ms-overflow-style: none;  /* IE and Edge */
-    scrollbar-width: none;  /* Firefox */
-}
-
 .carousel-slide {
     display: block;
-    flex: 0 0 75%; /* Ocupa el 75% para sugerir que hay más elementos al lado */
-    scroll-snap-align: center;
     box-sizing: border-box;
 }

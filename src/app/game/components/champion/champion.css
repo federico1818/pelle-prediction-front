@@ -1,23 +1,29 @@
 :host {
     display: block;
+    width: var(--player-width);
+    box-sizing: border-box;
 }
 
 .champion-container {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    border-radius: 16px;
-    padding: 24px;
-    text-align: center;
+    gap: 8px;
     width: 100%;
     box-sizing: border-box;
+    text-align: center;
 }
 
 .team-title {
-    margin: 0 0 16px 0;
-    font-size: 24px;
+    margin: 0;
+    font-size: 16px;
     font-weight: 600;
     color: var(--light-blue);
     text-transform: uppercase;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    overflow: hidden;
 }
