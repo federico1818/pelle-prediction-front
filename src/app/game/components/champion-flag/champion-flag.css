@@ -1,17 +1,21 @@
-:host {
+.champion-flag {
     display: block;
     height: 128px;
     width: 100%;
     border-radius: 8px;
-    border: 1px solid var(--light-blue);
-    padding: 4px;
+    border: 4px solid var(--flag-border-color);
+    box-shadow: 0 0 0 1px var(--border-color);
     box-sizing: border-box;
     cursor: pointer;
     transition: transform 0.3s ease-in-out;
 }
 
-:host:hover {
+.champion-flag:hover {
     transform: scale(1.05);
+}
+
+.champion-flag.selected {
+    border-color: var(--light-blue);
 }
 
 .flag-container {
@@ -21,7 +25,6 @@
     height: 100%;
     display: flex;
     align-items: center;
-
 }
 
 .flag-img {
