@@ -1,5 +1,6 @@
 :host {
     display: block;
+    height: 128px;
     width: 100%;
     border-radius: 8px;
     border: 1px solid var(--light-blue);
@@ -10,15 +11,16 @@
 
 .flag-container {
     background: var(--flag-background);
-    border: 1px solid var(--light-blue);
     border-radius: inherit;
     padding: 24px;
     height: 100%;
+    display: flex;
+    align-items: center;
+
 }
 
 .flag-img {
     width: 100%;
-    height: 100%;
     object-fit: cover;
     border-radius: 4px;
     box-sizing: border-box;
