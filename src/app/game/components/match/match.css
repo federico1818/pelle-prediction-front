@@ -2,14 +2,22 @@
     display: grid;
     grid-template-columns: 32px 1fr 24px 24px 1fr 32px;
     align-items: center;
-    gap: 8px 12px;
+    gap: 8px 8px;
     color: var(--blue);
     text-transform: uppercase;
     padding: 12px 16px;
-    border-bottom: 1px solid var(--border-color);
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
     position: relative;
-    width: 100%;
     box-sizing: border-box;
+    background-color: var(--match-background-color);
+    cursor: pointer;
+    width: 100%;
+    max-width: 480px;
+}
+
+:host:hover {
+    border-color: var(--light-blue);
 }
 
 .team-flag {
@@ -53,8 +61,9 @@
     justify-content: center;
     border: 1px solid var(--border-color);
     border-radius: 4px;
-    font-weight: bold;
+    font-weight: normal;
     font-size: 12px;
+    font-family: var(--font-family-gaming);
     background-color: rgba(255, 255, 255, 0.5);
     grid-row: 2;
 }
@@ -67,4 +76,5 @@
     opacity: 0.8;
     text-align: center;
     font-style: italic;
+    margin-top: 8px;
 }
