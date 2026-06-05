@@ -1,10 +1,11 @@
 import { Component, inject, OnInit, signal, WritableSignal } from '@angular/core'
 import { TeamsService } from '../../services/teams-service'
 import { Team } from '../../models/team'
+import { ChampionListComponent } from '../../components/champion-list/champion-list'
 
 @Component({
     selector: 'app-champion',
-    imports: [],
+    imports: [ChampionListComponent],
     templateUrl: './champion.html',
     styleUrl: './champion.css',
 })

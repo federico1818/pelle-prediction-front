@@ -1,0 +1,5 @@
+<div class="carousel-wrapper">
+    @for (team of teams; track team.id) {
+        <app-champion [team]="team" class="carousel-slide"></app-champion>
+    }
+</div>

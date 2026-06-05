@@ -1,6 +1,2 @@
 <p>champion works!</p>
-<ul>
-    @for (team of teams(); track team.id) {
-    <li>{{ team.label }} - {{ team.image }}</li>
-    }
-</ul>
+<app-champion-list [teams]="teams()"></app-champion-list>

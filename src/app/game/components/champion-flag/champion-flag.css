@@ -1,0 +1,6 @@
+.flag-img {
+    width: 100%;
+    max-width: 256px;
+    object-fit: cover;
+    border-radius: 8px;
+}
