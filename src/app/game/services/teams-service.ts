@@ -15,7 +15,12 @@ export class TeamsService {
     public readonly selectedChampion = computed(() => this._selectedChampion())
 
     public all(): Observable<Team[]> {
-        return this._http.get<Team[]>(environment.api.url + '/teams')
+        return this._http.get<Team[]>(environment.api.url + '/teams').pipe(
+            tap((teams) => {
+                const selected = teams.find(t => t.selected);
+                this._selectedChampion.set(selected || null);
+            })
+        )
     }
 
     public select(team: Team): Observable<any> {
@@ -25,18 +30,6 @@ export class TeamsService {
         ).pipe(
             tap(() => {
                 this._selectedChampion.set(team)
-            })
-        )
-    }
-
-    public loadSelectedChampion(): Observable<any> {
-        return this._http.get<any>(environment.api.url + '/champion').pipe(
-            tap((response) => {
-                if (response && response.champion && response.champion.team) {
-                    this._selectedChampion.set(response.champion.team)
-                } else {
-                    this._selectedChampion.set(null)
-                }
             })
         )
     }

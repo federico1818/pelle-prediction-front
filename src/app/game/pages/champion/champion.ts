@@ -22,6 +22,5 @@ export class Champion implements OnInit {
         this._teamsService.all().subscribe((teams: Team[]) => {
             this.teams.set(teams)
         })
-        this._teamsService.loadSelectedChampion().subscribe()
     }
 }
