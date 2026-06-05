@@ -9,4 +9,5 @@ import { Team } from '../../models/team'
 })
 export class ChampionFlag {
     @Input() team!: Team
+    @Input() isSelected: boolean = false
 }
