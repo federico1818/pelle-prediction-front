@@ -3,6 +3,7 @@ import { Champion } from './pages/champion/champion'
 import { List } from './pages/list/list'
 import { Ranking } from './pages/ranking/ranking'
 import { Necks } from './pages/necks/necks'
+import { Matches } from './pages/matches/matches'
 import { Game } from './pages/game/game';
 
 export const gameRoutes: Routes = [
@@ -15,6 +16,7 @@ export const gameRoutes: Routes = [
             { path: 'list', component: List },
             { path: 'ranking', component: Ranking },
             { path: 'necks', component: Necks },
+            { path: 'matches', component: Matches },
         ],
     },
 ];
