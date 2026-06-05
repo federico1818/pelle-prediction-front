@@ -1,0 +1,9 @@
+@if (game) {
+<app-team-flag [team]="game.team_1"></app-team-flag>
+<div class="team-name team-name-1">{{ game.team_1.label }}</div>
+<div class="date-time">
+    {{ game.date_time | date: 'dd/MM/yyyy HH:mm' }}
+</div>
+<div class="team-name team-name-2">{{ game.team_2.label }}</div>
+<app-team-flag [team]="game.team_2"></app-team-flag>
+}
