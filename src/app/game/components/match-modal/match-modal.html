@@ -11,26 +11,10 @@
             <span class="team-name team-1-name">{{ game.team_1.label }}</span>
 
             <!-- Marcador 1 -->
-            <input type="number" [(ngModel)]="score1" min="0" class="score-input score-1-input" [class.has-value]="score1 !== null" />
-
-            <!-- Controles 1 -->
-            <button type="button" class="arrow arrow-1-up" (click)="incrementScore1()">
-                <span class="material-symbols-outlined">expand_less</span>
-            </button>
-            <button type="button" class="arrow arrow-1-down" (click)="decrementScore1()">
-                <span class="material-symbols-outlined">expand_more</span>
-            </button>
-
-            <!-- Controles 2 (Espejo) -->
-            <button type="button" class="arrow arrow-2-up" (click)="incrementScore2()">
-                <span class="material-symbols-outlined">expand_less</span>
-            </button>
-            <button type="button" class="arrow arrow-2-down" (click)="decrementScore2()">
-                <span class="material-symbols-outlined">expand_more</span>
-            </button>
+            <app-match-score-input [(score)]="score1" side="left" class="score-input-1"></app-match-score-input>
 
             <!-- Marcador 2 -->
-            <input type="number" [(ngModel)]="score2" min="0" class="score-input score-2-input" [class.has-value]="score2 !== null" />
+            <app-match-score-input [(score)]="score2" side="right" class="score-input-2"></app-match-score-input>
 
             <!-- Equipo 2 -->
             <app-team-flag [team]="game.team_2" class="team-flag team-2-flag"></app-team-flag>

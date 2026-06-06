@@ -1,0 +1,71 @@
+.score-input-container {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    &.right {
+        flex-direction: row-reverse;
+    }
+}
+
+.score-input {
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--border-color);
+    border-radius: 2px;
+    background-color: transparent;
+    text-align: center;
+    font-size: 14px;
+    font-family: var(--font-family-gaming);
+    font-weight: bold;
+    color: var(--blue);
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.score-input.has-value {
+    background-color: var(--light-blue);
+    color: var(--white);
+    border-color: var(--light-blue);
+}
+
+/* Quitar spinners nativos */
+.score-input::-webkit-outer-spin-button,
+.score-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.score-input[type=number] {
+    -moz-appearance: textfield;
+    appearance: textfield;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.arrow {
+    background: none;
+    border: none;
+    color: var(--light-blue);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    height: 24px;
+    transition: transform 0.1s ease;
+}
+
+.arrow:active {
+    transform: scale(0.9);
+}
+
+.arrow span {
+    font-size: 24px;
+    user-select: none;
+}

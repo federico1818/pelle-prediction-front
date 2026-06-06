@@ -8,8 +8,8 @@ import { Game } from '../../models/game'
 import { ButtonPrimary } from '../../../shared/components/button-primary/button-primary'
 import { TeamFlagComponent } from '../team-flag/team-flag'
 import { GamesService } from '../../services/games-service'
-import { FormsModule } from '@angular/forms'
 import { DatePipe } from '@angular/common'
+import { MatchScoreInputComponent } from '../match-score-input/match-score-input'
 
 @Component({
     selector: 'app-match-modal',
@@ -20,8 +20,8 @@ import { DatePipe } from '@angular/common'
         ModalFooter,
         ButtonPrimary,
         TeamFlagComponent,
-        FormsModule,
-        DatePipe
+        DatePipe,
+        MatchScoreInputComponent
     ],
     templateUrl: './match-modal.html',
     styleUrl: './match-modal.scss',
@@ -43,26 +43,6 @@ export class MatchModalComponent implements OnInit {
             this.score2 = game.prediction_score_2
             this.modal.open()
         })
-    }
-
-    public incrementScore1(): void {
-        this.score1 = (this.score1 ?? -1) + 1
-    }
-
-    public decrementScore1(): void {
-        if (this.score1 !== null && this.score1 > 0) {
-            this.score1--
-        }
-    }
-
-    public incrementScore2(): void {
-        this.score2 = (this.score2 ?? -1) + 1
-    }
-
-    public decrementScore2(): void {
-        if (this.score2 !== null && this.score2 > 0) {
-            this.score2--
-        }
     }
 
     public submitResult(): void {

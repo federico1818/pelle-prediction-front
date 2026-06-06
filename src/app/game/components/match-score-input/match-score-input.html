@@ -1,0 +1,18 @@
+<div class="score-input-container" [class.right]="side() === 'right'">
+    <input 
+        type="number" 
+        [(ngModel)]="score" 
+        min="0" 
+        class="score-input" 
+        [class.has-value]="score() !== null" 
+    />
+
+    <div class="controls">
+        <button type="button" class="arrow arrow-up" (click)="increment()">
+            <span class="material-symbols-outlined">expand_less</span>
+        </button>
+        <button type="button" class="arrow arrow-down" (click)="decrement()">
+            <span class="material-symbols-outlined">expand_more</span>
+        </button>
+    </div>
+</div>
