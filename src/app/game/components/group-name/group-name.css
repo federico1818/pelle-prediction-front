@@ -1,15 +1,18 @@
 :host {
-    display: block;
-    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 
 .group-title {
     margin: 0;
     font-size: 14px;
     font-weight: 700;
-    color: var(--blue);
+    background-color: var(--light-blue-50);
     text-transform: uppercase;
-    letter-spacing: 0.05em;
-    border-bottom: 2px solid var(--border-color);
-    padding-bottom: 6px;
+    width: 96px;
+    height: 32px;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
