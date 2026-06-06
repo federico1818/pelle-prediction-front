@@ -13,4 +13,11 @@ export class GamesService {
     public all(): Observable<Game[]> {
         return this._http.get<Game[]>(environment.api.url + '/games')
     }
+
+    public predict(gameId: number, score1: number, score2: number): Observable<any> {
+        return this._http.post<any>(environment.api.url + `/games/${gameId}/predict`, {
+            prediction_score_1: score1,
+            prediction_score_2: score2
+        })
+    }
 }
