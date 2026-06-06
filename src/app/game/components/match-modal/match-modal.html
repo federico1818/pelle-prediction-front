@@ -1,6 +1,10 @@
 <app-modal>
     <app-modal-content>
         @if (game) {
+        <div class="match-date-time">
+            {{ game.date_time | date: 'dd/MM/yyyy HH:mm' }}
+        </div>
+
         <div class="match-prediction-grid">
             <!-- Equipo 1 -->
             <app-team-flag [team]="game.team_1" class="team-flag team-1-flag"></app-team-flag>
@@ -31,10 +35,6 @@
             <!-- Equipo 2 -->
             <app-team-flag [team]="game.team_2" class="team-flag team-2-flag"></app-team-flag>
             <span class="team-name team-2-name">{{ game.team_2.label }}</span>
-        </div>
-
-        <div class="match-date-time">
-            {{ game.date_time | date: 'dd/MM/yyyy HH:mm' }}
         </div>
         }
     </app-modal-content>

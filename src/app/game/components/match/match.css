@@ -62,7 +62,7 @@
     border: 1px solid var(--border-color);
     border-radius: 4px;
     font-weight: normal;
-    font-size: 12px;
+    font-size: 11px;
     font-family: var(--font-family-gaming);
     background-color: rgba(255, 255, 255, 0.5);
     grid-row: 2;

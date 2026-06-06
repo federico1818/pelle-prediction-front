@@ -24,7 +24,7 @@ import { DatePipe } from '@angular/common'
         DatePipe
     ],
     templateUrl: './match-modal.html',
-    styleUrl: './match-modal.css',
+    styleUrl: './match-modal.scss',
 })
 export class MatchModalComponent implements OnInit {
     @ViewChild(Modal) modal!: Modal

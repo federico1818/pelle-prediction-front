@@ -1,5 +1,18 @@
+@use '../../../../styles/breakpoints' as b;
+
 :host {
     position: fixed;
+}
+
+:host ::ng-deep dialog {
+    max-height: 320px;
+    grid-template-rows: 40px 1fr 80px;
+}
+
+:host ::ng-deep app-modal-footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .match-prediction-grid {
@@ -9,20 +22,20 @@
     align-items: center;
     justify-items: center;
     justify-content: center;
-    gap: 8px 16px;
+    gap: 8px 4px;
     width: 100%;
     padding: 16px 0;
 }
 
 .team-flag {
     grid-row: 1 / 3;
-    width: 96px;
+    width: 72px;
 }
 
 .team-name {
     grid-row: 3;
     font-weight: bold;
-    font-size: 11px;
+    font-size: 10px;
     color: var(--blue);
     text-transform: uppercase;
     text-align: center;
@@ -40,14 +53,14 @@
 
 /* Input 1 */
 .score-input {
-    width: 40px;
-    height: 40px;
+    width: 24px;
+    height: 24px;
     border: 2px solid var(--border-color);
-    border-radius: 8px;
+    border-radius: 2px;
     background-color: var(--light-blue);
     grid-row: 1 / 3;
     text-align: center;
-    font-size: 18px;
+    font-size: 14px;
     font-weight: bold;
     color: var(--white);
     outline: none;
@@ -128,7 +141,7 @@
 }
 
 .match-date-time {
-    margin-top: 16px;
+    margin: 0 auto 16px;
     font-size: 11px;
     color: var(--blue);
     text-align: center;
