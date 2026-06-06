@@ -16,7 +16,17 @@ export const gameRoutes: Routes = [
             { path: 'list', component: List },
             { path: 'ranking', component: Ranking },
             { path: 'necks', component: Necks },
-            { path: 'matches', component: Matches },
+            {
+                path: 'matches',
+                component: Matches,
+                children: [
+                    { path: '', redirectTo: 'a', pathMatch: 'full' },
+                    {
+                        path: ':group',
+                        loadComponent: () => import('./pages/group-matches/group-matches').then(m => m.GroupMatchesComponent)
+                    }
+                ]
+            },
         ],
     },
 ];

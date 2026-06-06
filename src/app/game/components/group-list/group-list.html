@@ -1,0 +1,7 @@
+<div class="groups-grid">
+    @for (group of groups; track group.name) {
+    <a [routerLink]="[group.name.toLowerCase()]" routerLinkActive="active" class="group-box">
+        {{ group.name }}
+    </a>
+    }
+</div>

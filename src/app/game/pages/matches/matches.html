@@ -1,1 +1,7 @@
-<app-match-list [games]="games()"></app-match-list>
+<div class="matches-layout">
+    <app-group-list [groups]="groups()"></app-group-list>
+
+    <div class="matches-content">
+        <router-outlet></router-outlet>
+    </div>
+</div>

@@ -2,22 +2,22 @@ import { Injectable, inject, signal, WritableSignal, computed } from '@angular/c
 import { HttpClient } from '@angular/common/http'
 import { Observable } from 'rxjs'
 import { tap } from 'rxjs/operators'
-import { Game } from '../models/game'
+import { Game, GroupedGames } from '../models/game'
 import { environment } from '../../../environments/environment'
 
 @Injectable({
     providedIn: 'root',
 })
 export class GamesService {
-    protected _allGames: WritableSignal<Game[]> = signal<Game[]>([])
+    protected _groupedGames: WritableSignal<GroupedGames[]> = signal<GroupedGames[]>([])
     protected _http: HttpClient = inject(HttpClient)
 
-    public readonly games = computed(() => this._allGames())
+    public readonly games = computed(() => this._groupedGames())
 
-    public all(): Observable<Game[]> {
-        return this._http.get<Game[]>(environment.api.url + '/games').pipe(
-            tap((games: Game[]) => {
-                this._allGames.set(games)
+    public all(): Observable<GroupedGames[]> {
+        return this._http.get<GroupedGames[]>(environment.api.url + '/games').pipe(
+            tap((groups: GroupedGames[]) => {
+                this._groupedGames.set(groups)
             })
         )
     }
@@ -29,8 +29,11 @@ export class GamesService {
         }).pipe(
             tap((res) => {
                 const updatedGame = res.game
-                this._allGames.update((games) =>
-                    games.map((g) => (g.id === updatedGame.id ? updatedGame : g))
+                this._groupedGames.update((groups) =>
+                    groups.map((group) => ({
+                        ...group,
+                        matches: group.matches.map((g) => (g.id === updatedGame.id ? updatedGame : g))
+                    }))
                 )
             })
         )

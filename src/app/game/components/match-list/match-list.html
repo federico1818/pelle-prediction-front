@@ -1,5 +1,12 @@
 <div class="match-list-container">
-    @for (game of games; track game.id) {
-    <app-match [game]="game"></app-match>
+    @for (grouped of games; track grouped.group.name) {
+    <div class="group-section">
+        <h3 class="group-title">{{ grouped.group.label }}</h3>
+        <div class="group-matches">
+            @for (game of grouped.matches; track game.id) {
+            <app-match [game]="game"></app-match>
+            }
+        </div>
+    </div>
     }
 </div>

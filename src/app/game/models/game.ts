@@ -15,3 +15,11 @@ export interface Game {
     date_time: string
     ends_at: string | null
 }
+
+export interface GroupedGames {
+    group: {
+        name: string
+        label: string
+    }
+    matches: Game[]
+}
