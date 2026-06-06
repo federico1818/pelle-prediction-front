@@ -38,4 +38,5 @@ app-modal-content {
 
 app-video {
     max-height: 480px;
+    width: 100%;
 }
