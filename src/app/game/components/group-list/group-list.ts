@@ -1,7 +1,7 @@
 import { Component, Input, inject, signal, computed, HostListener, ElementRef } from '@angular/core'
-import { RouterLink, RouterLinkActive, Router, NavigationEnd } from '@angular/router'
-import { filter, map, startWith } from 'rxjs/operators'
-import { toSignal } from '@angular/core/rxjs-interop'
+import { RouterLink, RouterLinkActive } from '@angular/router'
+import { Group } from '../../models/group'
+import { GamesService } from '../../services/games-service'
 
 @Component({
     selector: 'app-group-list',
@@ -9,28 +9,26 @@ import { toSignal } from '@angular/core/rxjs-interop'
     templateUrl: './group-list.html',
     styleUrl: './group-list.css',
 })
-export class GroupListComponent {
-    @Input({ required: true }) groups: { name: string; label: string }[] = []
 
-    private _router = inject(Router)
+export class GroupListComponent {
+    private _groups = signal<Group[]>([])
+
+    @Input({ required: true })
+    set groups(val: Group[]) {
+        this._groups.set(val)
+    }
+
+    get groups(): Group[] {
+        return this._groups()
+    }
+
+    private _gamesService = inject(GamesService)
     private _elementRef = inject(ElementRef)
 
     public isOpen = signal(false)
 
-    public currentUrl = toSignal(
-        this._router.events.pipe(
-            filter(event => event instanceof NavigationEnd),
-            map(event => (event as NavigationEnd).urlAfterRedirects),
-            startWith(this._router.url)
-        ),
-        { initialValue: '' }
-    )
-
     public selectedGroup = computed(() => {
-        const url = this.currentUrl()
-        const parts = url.split('/')
-        const lastPart = parts[parts.length - 1]?.toUpperCase()
-        return this.groups.find(g => g.name === lastPart) || this.groups[0]
+        return this._gamesService.selectedGroupData()?.group
     })
 
     public toggleDropdown() {

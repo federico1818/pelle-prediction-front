@@ -1,4 +1,5 @@
 import { Team } from './team'
+import { Group } from './group'
 
 export interface Game {
     id: number
@@ -17,9 +18,6 @@ export interface Game {
 }
 
 export interface GroupedGames {
-    group: {
-        name: string
-        label: string
-    }
+    group: Group
     matches: Game[]
 }

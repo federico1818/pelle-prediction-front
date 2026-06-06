@@ -1,7 +1,9 @@
 import { Injectable, inject, signal, WritableSignal, computed } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
+import { Router, NavigationEnd } from '@angular/router'
 import { Observable } from 'rxjs'
-import { tap } from 'rxjs/operators'
+import { tap, filter, map, startWith } from 'rxjs/operators'
+import { toSignal } from '@angular/core/rxjs-interop'
 import { Game, GroupedGames } from '../models/game'
 import { environment } from '../../../environments/environment'
 
@@ -11,8 +13,31 @@ import { environment } from '../../../environments/environment'
 export class GamesService {
     protected _groupedGames: WritableSignal<GroupedGames[]> = signal<GroupedGames[]>([])
     protected _http: HttpClient = inject(HttpClient)
+    private _router = inject(Router)
 
     public readonly games = computed(() => this._groupedGames())
+
+    public readonly currentUrl = toSignal(
+        this._router.events.pipe(
+            filter(event => event instanceof NavigationEnd),
+            map(event => (event as NavigationEnd).urlAfterRedirects),
+            startWith(this._router.url)
+        ),
+        { initialValue: '' }
+    )
+
+    protected readonly selectedGroupLetter = computed(() => {
+        const url = this.currentUrl()
+        const parts = url.split('/')
+        const lastPart = parts[parts.length - 1]?.toUpperCase()
+        return lastPart || 'A'
+    })
+
+    public readonly selectedGroupData = computed(() => {
+        const letter = this.selectedGroupLetter()
+        const allGroups = this.games()
+        return allGroups.find(g => g.group.name === letter) || null
+    })
 
     public all(): Observable<GroupedGames[]> {
         return this._http.get<GroupedGames[]>(environment.api.url + '/games').pipe(
