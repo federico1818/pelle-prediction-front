@@ -3,6 +3,7 @@ import { RouterOutlet } from '@angular/router'
 import { Nav } from '../../components/nav/nav'
 import { Menu } from '../../components/menu/menu'
 import { Instructions } from '../../components/instructions/instructions'
+import { MatchModalComponent } from '../../components/match-modal/match-modal'
 import { SessionExpired } from '../../../shared/components/session-expired/session-expired'
 import { ErrorAlert } from '../../../shared/components/error-alert/error-alert'
 
@@ -13,6 +14,7 @@ import { ErrorAlert } from '../../../shared/components/error-alert/error-alert'
         Nav,
         Menu,
         Instructions,
+        MatchModalComponent,
         SessionExpired,
         ErrorAlert
     ],
