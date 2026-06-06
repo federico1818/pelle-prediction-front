@@ -21,6 +21,10 @@
     @media (min-width: b.$breakpoint-lg) {
         grid-template-columns: repeat(4, 1fr);
     }
+
+    @media (min-width: b.$breakpoint-xl) {
+        grid-template-columns: repeat(5, 1fr);
+    }
 }
 
 .carousel-slide {

@@ -1,7 +1,21 @@
-<div class="groups-grid">
-    @for (group of groups; track group.name) {
-    <a [routerLink]="[group.name.toLowerCase()]" routerLinkActive="active" class="group-box">
-        {{ group.name }}
-    </a>
+<div class="custom-select-container">
+    <button type="button" class="select-trigger" (click)="toggleDropdown()">
+        <span class="select-label">{{ selectedGroup()?.label }}</span>
+        <span class="material-symbols-outlined arrow-icon" [class.open]="isOpen()">expand_more</span>
+    </button>
+
+    @if (isOpen()) {
+    <div class="dropdown-menu">
+        @for (group of groups; track group.name) {
+        <a 
+            [routerLink]="[group.name.toLowerCase()]" 
+            routerLinkActive="active" 
+            class="dropdown-item" 
+            (click)="selectGroup()"
+        >
+            {{ group.label }}
+        </a>
+        }
+    </div>
     }
 </div>
