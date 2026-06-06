@@ -2,12 +2,12 @@ import { Component, inject, computed } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { toSignal } from '@angular/core/rxjs-interop'
 import { GamesService } from '../../services/games-service'
-import { MatchListComponent } from '../../components/match-list/match-list'
+import { GroupItemComponent } from '../../components/group-item/group-item'
 import { map } from 'rxjs/operators'
 
 @Component({
     selector: 'app-group-matches',
-    imports: [MatchListComponent],
+    imports: [GroupItemComponent],
     templateUrl: './group-matches.html',
     styleUrl: './group-matches.css',
 })

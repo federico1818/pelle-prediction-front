@@ -1,0 +1,17 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.group-item-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 16px;
+}
+
+.group-item-matches {
+    width: 100%;
+}

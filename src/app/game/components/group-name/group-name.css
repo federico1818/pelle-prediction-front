@@ -1,0 +1,15 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.group-title {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--blue);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 6px;
+}
