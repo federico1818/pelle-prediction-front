@@ -17,7 +17,7 @@ export class ChampionComponent {
     public isSelected = computed(() => this._teamsService.selectedChampion()?.id === this.team?.id)
 
     public select(): void {
-        if (this.team) {
+        if (this.team && this.team.selectable !== false) {
             this._teamsService.select(this.team).subscribe()
         }
     }
