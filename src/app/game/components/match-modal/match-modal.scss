@@ -4,8 +4,8 @@
     position: fixed;
 }
 
-:host ::ng-deep dialog {
-    max-height: 320px;
+:host ::ng-deep dialog[open] {
+    max-height: 336px;
     grid-template-rows: 40px 1fr 80px;
 }
 
