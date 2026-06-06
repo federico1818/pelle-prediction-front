@@ -57,14 +57,20 @@
     height: 24px;
     border: 2px solid var(--border-color);
     border-radius: 2px;
-    background-color: var(--light-blue);
+    background-color: transparent;
     grid-row: 1 / 3;
     text-align: center;
     font-size: 14px;
     font-weight: bold;
-    color: var(--white);
+    color: var(--blue);
     outline: none;
-    border: 0;
+    transition: all 0.2s ease;
+}
+
+.score-input.has-value {
+    background-color: var(--light-blue);
+    color: var(--white);
+    border-color: var(--light-blue);
 }
 
 .score-1-input {

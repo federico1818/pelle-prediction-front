@@ -30,8 +30,8 @@ export class MatchModalComponent implements OnInit {
     @ViewChild(Modal) modal!: Modal
 
     public game: Game | null = null
-    public score1: number = 0
-    public score2: number = 0
+    public score1: number | null = null
+    public score2: number | null = null
 
     private _matchModalService = inject(MatchModalService)
     private _gamesService = inject(GamesService)
@@ -39,39 +39,42 @@ export class MatchModalComponent implements OnInit {
     public ngOnInit(): void {
         this._matchModalService.open$.subscribe((game) => {
             this.game = game
-            this.score1 = game.prediction_score_1 ?? 0
-            this.score2 = game.prediction_score_2 ?? 0
+            this.score1 = game.prediction_score_1
+            this.score2 = game.prediction_score_2
             this.modal.open()
         })
     }
 
     public incrementScore1(): void {
-        this.score1++
+        this.score1 = (this.score1 ?? -1) + 1
     }
 
     public decrementScore1(): void {
-        if (this.score1 > 0) {
+        if (this.score1 !== null && this.score1 > 0) {
             this.score1--
         }
     }
 
     public incrementScore2(): void {
-        this.score2++
+        this.score2 = (this.score2 ?? -1) + 1
     }
 
     public decrementScore2(): void {
-        if (this.score2 > 0) {
+        if (this.score2 !== null && this.score2 > 0) {
             this.score2--
         }
     }
 
     public submitResult(): void {
         if (this.game) {
-            this._gamesService.predict(this.game.id, this.score1, this.score2).subscribe({
+            const finalScore1 = this.score1 ?? 0;
+            const finalScore2 = this.score2 ?? 0;
+
+            this._gamesService.predict(this.game.id, finalScore1, finalScore2).subscribe({
                 next: (res) => {
                     if (this.game) {
-                        this.game.prediction_score_1 = this.score1
-                        this.game.prediction_score_2 = this.score2
+                        this.game.prediction_score_1 = finalScore1
+                        this.game.prediction_score_2 = finalScore2
                     }
                     this.modal.close()
                 },
