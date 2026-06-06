@@ -1,5 +1,5 @@
 <div class="button-container">
-    <button class="button" (click)="onClick.emit()">
+    <button class="button" [disabled]="disabled()" (click)="!disabled() && onClick.emit()">
         <ng-content></ng-content>
     </button>
 </div>

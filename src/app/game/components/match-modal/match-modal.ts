@@ -45,21 +45,29 @@ export class MatchModalComponent implements OnInit {
         })
     }
 
-    public submitResult(): void {
-        if (this.game) {
-            const finalScore1 = this.score1 ?? 0;
-            const finalScore2 = this.score2 ?? 0;
+    public get isButtonDisabled(): boolean {
+        return !this._isValid()
+    }
 
-            this._gamesService.predict(this.game.id, finalScore1, finalScore2).subscribe({
-                next: (res) => {
-                    setTimeout(() => {
-                        this.modal.close()
-                    }, 0)
-                },
-                error: (err) => {
-                    console.error('Error al guardar la predicción', err)
-                }
-            })
+    private _isValid(): boolean {
+        return this.score1 !== null && this.score2 !== null
+    }
+
+    public submitResult(): void {
+        if (!this._isValid()) {
+            return
         }
+
+        const game = this.game!
+        this._gamesService.predict(game.id, this.score1!, this.score2!).subscribe({
+            next: () => {
+                this.modal.close()
+                /* setTimeout(() => {
+                }, 0) */
+            },
+            error: (err) => {
+                console.error('Error al guardar la predicción', err)
+            }
+        })
     }
 }

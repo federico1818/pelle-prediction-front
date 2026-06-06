@@ -23,6 +23,18 @@
     cursor: pointer;
 }
 
-.button:hover {
+.button:hover:not(:disabled) {
     background-color: var(--light-blue);
+}
+
+.button:disabled {
+    background-color: var(--light-blue-50);
+    color: rgba(255, 255, 255, 0.6);
+    cursor: not-allowed;
+}
+
+.button-container:has(button:disabled) {
+    border-color: var(--light-blue-50);
+    opacity: 0.6;
+    cursor: not-allowed;
 }

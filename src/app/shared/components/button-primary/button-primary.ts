@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core'
+import { Component, Output, EventEmitter, input } from '@angular/core'
 
 @Component({
     selector: 'app-button-primary',
@@ -8,5 +8,6 @@ import { Component, Output, EventEmitter } from '@angular/core'
 })
 
 export class ButtonPrimary {
+    public disabled = input<boolean>(false)
     @Output() onClick = new EventEmitter<void>()
 }
