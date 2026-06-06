@@ -72,11 +72,9 @@ export class MatchModalComponent implements OnInit {
 
             this._gamesService.predict(this.game.id, finalScore1, finalScore2).subscribe({
                 next: (res) => {
-                    if (this.game) {
-                        this.game.prediction_score_1 = finalScore1
-                        this.game.prediction_score_2 = finalScore2
-                    }
-                    this.modal.close()
+                    setTimeout(() => {
+                        this.modal.close()
+                    }, 0)
                 },
                 error: (err) => {
                     console.error('Error al guardar la predicción', err)

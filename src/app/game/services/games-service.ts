@@ -27,18 +27,10 @@ export class GamesService {
             prediction_score_1: score1,
             prediction_score_2: score2
         }).pipe(
-            tap(() => {
+            tap((res) => {
+                const updatedGame = res.game
                 this._allGames.update((games) =>
-                    games.map((g) => {
-                        if (g.id === gameId) {
-                            return {
-                                ...g,
-                                prediction_score_1: score1,
-                                prediction_score_2: score2
-                            }
-                        }
-                        return g
-                    })
+                    games.map((g) => (g.id === updatedGame.id ? updatedGame : g))
                 )
             })
         )
