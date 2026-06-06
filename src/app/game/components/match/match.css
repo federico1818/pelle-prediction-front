@@ -65,7 +65,15 @@
     font-size: 11px;
     font-family: var(--font-family-gaming);
     background-color: rgba(255, 255, 255, 0.5);
+    color: var(--blue);
     grid-row: 2;
+    transition: all 0.2s ease;
+}
+
+.prediction-box.predicted {
+    background-color: var(--light-blue);
+    color: var(--white);
+    border-color: var(--light-blue);
 }
 
 .date-time {

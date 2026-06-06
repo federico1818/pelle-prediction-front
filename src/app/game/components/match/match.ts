@@ -21,4 +21,8 @@ export class MatchComponent {
     public openModal(): void {
         this._matchModalService.open(this.game)
     }
+
+    public hasPrediction(): boolean {
+        return this.game.prediction_score_1 !== null && this.game.prediction_score_2 !== null
+    }
 }
