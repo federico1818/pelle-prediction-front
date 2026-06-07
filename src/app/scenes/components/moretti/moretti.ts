@@ -4,6 +4,7 @@ import { Scene } from '../../../shared/models/scene'
 import { ButtonPrimary } from '../../../shared/components/button-primary/button-primary'
 import { SceneService } from '../../services/scene-service'
 import { TeamsService } from '../../../game/services/teams-service'
+import { AnimationService } from '../../../shared/services/animation-service'
 
 @Component({
     selector: 'app-moretti',
@@ -19,6 +20,7 @@ import { TeamsService } from '../../../game/services/teams-service'
 export class Moretti {
     private _sceneService: SceneService = inject(SceneService)
     private _teamsService: TeamsService = inject(TeamsService)
+    private _animationService: AnimationService = inject(AnimationService)
 
     public scene: Scene = {
         title: '',
@@ -32,6 +34,7 @@ export class Moretti {
     }
 
     public confirmPayment(): void {
+        this._animationService.dollars()
         this._sceneService.seen('moretti').subscribe((res: boolean) => {
             if (res) {
                 this._teamsService.setCanEdit(true)
