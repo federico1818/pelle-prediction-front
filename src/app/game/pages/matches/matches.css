@@ -17,4 +17,6 @@
 
 .matches-content {
     width: 100%;
+    max-width: var(--content-width);
+    margin: 0 auto;
 }
