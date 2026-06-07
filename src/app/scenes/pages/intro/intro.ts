@@ -1,4 +1,4 @@
-import { Component, inject, signal, WritableSignal } from '@angular/core'
+import { Component, inject, Signal, signal, viewChild, WritableSignal } from '@angular/core'
 import { toSignal } from '@angular/core/rxjs-interop'
 import { SceneService } from '../../services/scene-service'
 import { SceneComponent } from '../../../shared/components/scene/scene'
@@ -21,7 +21,6 @@ export class Intro {
 
     public play(): void {
         this.visibleStart.set(false)
-        console.log('PLAY')
     }
 
 }

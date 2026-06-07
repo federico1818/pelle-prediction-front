@@ -1,0 +1,14 @@
+.dialogue {
+    display: grid;
+    gap: 16px 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.dialogue.show {
+    opacity: 1;
+}
+
+.dialogue app-video {
+    max-height: 60dvh;
+}
