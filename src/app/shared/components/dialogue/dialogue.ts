@@ -9,7 +9,7 @@ import { Video } from '../video/video'
     templateUrl: './dialogue.html',
     styleUrl: './dialogue.css',
     host: {
-        '(click)': 'onHostClick($event)'
+        '(click)': 'onHostClick()'
     }
 })
 
