@@ -1,14 +1,16 @@
-import { Component, inject, OnInit, signal, WritableSignal } from '@angular/core'
+import { Component, inject, OnInit, Signal, signal, WritableSignal } from '@angular/core'
 import { TeamsService } from '../../services/teams-service'
 import { Team } from '../../models/team'
 import { ChampionListComponent } from '../../components/champion-list/champion-list'
 import { ChampionSelected } from '../../components/champion-selected/champion-selected'
+import { DialogueText } from '../../../shared/components/dialogue-text/dialogue-text'
 
 @Component({
     selector: 'app-champion',
     imports: [
         ChampionListComponent,
-        ChampionSelected
+        ChampionSelected,
+        DialogueText
     ],
     templateUrl: './champion.html',
     styleUrl: './champion.css',
@@ -17,8 +19,11 @@ import { ChampionSelected } from '../../components/champion-selected/champion-se
 export class Champion implements OnInit {
     private _teamsService: TeamsService = inject(TeamsService)
     public teams: WritableSignal<Team[]> = signal<Team[]>([])
+    public canEdit!: Signal<boolean>
+    public dialogueText = '¡Parece que un ser oscuro no te deja seleccionar a tu favorito! ¡Debes negociar con él!'
 
     ngOnInit(): void {
+        this.canEdit = this._teamsService.canEdit
         this._teamsService.all().subscribe((teams: Team[]) => {
             this.teams.set(teams)
         })

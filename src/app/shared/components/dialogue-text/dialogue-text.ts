@@ -1,4 +1,4 @@
-import { Component, InputSignal, OnDestroy, WritableSignal, input, signal, output } from '@angular/core'
+import { Component, InputSignal, OnDestroy, OnInit, WritableSignal, input, signal, output } from '@angular/core'
 import { DialogueCursor } from '../dialogue-cursor/dialogue-cursor'
 
 @Component({
@@ -9,13 +9,20 @@ import { DialogueCursor } from '../dialogue-cursor/dialogue-cursor'
     styleUrl: './dialogue-text.css',
 })
 
-export class DialogueText implements OnDestroy {
+export class DialogueText implements OnInit, OnDestroy {
     public finished = output<void>()
     public text: InputSignal<string> = input.required<string>()
     public mode: InputSignal<'line' | 'arrow'> = input<'line' | 'arrow'>('line')
+    public autoplay: InputSignal<boolean> = input<boolean>(false)
     public printed: WritableSignal<string> = signal<string>('')
     private intervalId: number | null = null
     private speed: number = 60
+
+    public ngOnInit(): void {
+        if (this.autoplay()) {
+            this.play()
+        }
+    }
 
     public play(): void {
         this.clear()
