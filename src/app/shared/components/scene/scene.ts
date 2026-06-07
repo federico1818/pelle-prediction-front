@@ -1,5 +1,5 @@
-import { Component, input, InputSignal, ViewChild, ViewChildren, QueryList, computed, signal, effect, Output, EventEmitter, AfterViewInit } from '@angular/core'
-import { Dialogue } from '../dialogue/dialogue'
+import { Component, input, InputSignal } from '@angular/core'
+import { DialogueText } from '../dialogue-text/dialogue-text'
 import { Video } from '../video/video'
 import { Scene as SceneModel } from '../../models/scene'
 import { CommonModule } from '@angular/common'
@@ -9,7 +9,7 @@ import { CommonModule } from '@angular/common'
     standalone: true,
     imports: [
         CommonModule,
-        Dialogue,
+        DialogueText,
         Video
     ],
     templateUrl: './scene.html',

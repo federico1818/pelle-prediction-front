@@ -1,14 +1,14 @@
 import { Component, signal } from '@angular/core'
 
 @Component({
-    selector: 'app-dialogue',
+    selector: 'app-dialogue-text',
     standalone: true,
     imports: [],
-    templateUrl: './dialogue.html',
-    styleUrl: './dialogue.css',
+    templateUrl: './dialogue-text.html',
+    styleUrl: './dialogue-text.css',
 })
 
-export class Dialogue {
+export class DialogueText {
     public text = signal<string>('')
 
     private speed: number = 60

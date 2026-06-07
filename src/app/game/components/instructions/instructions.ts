@@ -4,7 +4,7 @@ import { ModalTitle } from '../../../shared/components/modal-title/modal-title'
 import { ModalContent } from '../../../shared/components/modal-content/modal-content'
 import { ModalFooter } from '../../../shared/components/modal-footer/modal-footer'
 import { ModalService } from '../../../shared/services/modal-service'
-import { Dialogue } from '../../../shared/components/dialogue/dialogue'
+import { DialogueText } from '../../../shared/components/dialogue-text/dialogue-text'
 import { Video } from '../../../shared/components/video/video'
 
 @Component({
@@ -14,7 +14,7 @@ import { Video } from '../../../shared/components/video/video'
         ModalTitle,
         ModalContent,
         ModalFooter,
-        Dialogue,
+        DialogueText,
         Video
     ],
     templateUrl: './instructions.html',
@@ -24,7 +24,7 @@ import { Video } from '../../../shared/components/video/video'
 export class Instructions implements OnInit {
     @ViewChild(Modal) modal!: Modal
     @ViewChild(Video) video!: Video
-    @ViewChild('dialogueRef') dialogueElement!: Dialogue
+    @ViewChild('dialogueRef') dialogueElement!: DialogueText
 
     protected _modalService: ModalService = inject(ModalService)
 

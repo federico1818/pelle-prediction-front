@@ -1,17 +1,17 @@
 import { AfterViewInit, Component, ViewChild } from '@angular/core'
-import { Dialogue } from '../../../shared/components/dialogue/dialogue'
+import { DialogueText } from '../../../shared/components/dialogue-text/dialogue-text'
 
 @Component({
     selector: 'app-ranking',
     imports: [
-        Dialogue
+        DialogueText
     ],
     templateUrl: './ranking.html',
     styleUrl: './ranking.css',
 })
 
 export class Ranking implements AfterViewInit {
-    @ViewChild('dialogueRef') dialogueElement!: Dialogue
+    @ViewChild('dialogueRef') dialogueElement!: DialogueText
 
     public ngAfterViewInit(): void {
         this.dialogueElement.write('Scaloni está trabajando arduamente en el desarrollo del sistema.')
