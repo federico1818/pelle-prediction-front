@@ -10,7 +10,11 @@
     </button>
     <div class="list">
         @if(expanded()){
-        <app-moretti></app-moretti>
+            @if(canEdit()) {
+                <app-moretti-dollars></app-moretti-dollars>
+            } @else {
+                <app-moretti></app-moretti>
+            }
         }
     </div>
 </div>

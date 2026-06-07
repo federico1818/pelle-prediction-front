@@ -1,7 +1,9 @@
-import { Component } from '@angular/core'
+import { Component, inject } from '@angular/core'
 import { SceneComponent } from '../../../shared/components/scene/scene'
 import { Scene } from '../../../shared/models/scene'
 import { ButtonPrimary } from '../../../shared/components/button-primary/button-primary'
+import { SceneService } from '../../services/scene-service'
+import { TeamsService } from '../../../game/services/teams-service'
 
 @Component({
     selector: 'app-moretti',
@@ -15,6 +17,9 @@ import { ButtonPrimary } from '../../../shared/components/button-primary/button-
 })
 
 export class Moretti {
+    private _sceneService: SceneService = inject(SceneService)
+    private _teamsService: TeamsService = inject(TeamsService)
+
     public scene: Scene = {
         title: '',
         dialogues: [
@@ -27,6 +32,10 @@ export class Moretti {
     }
 
     public confirmPayment(): void {
-        console.log('confirmPayment')
+        this._sceneService.seen('moretti').subscribe((res: boolean) => {
+            if (res) {
+                this._teamsService.setCanEdit(true)
+            }
+        })
     }
 }

@@ -50,4 +50,8 @@ export class TeamsService {
             })
         )
     }
+
+    public setCanEdit(value: boolean): void {
+        this._canEdit.set(value)
+    }
 }

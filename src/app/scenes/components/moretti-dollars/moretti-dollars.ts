@@ -11,7 +11,7 @@ import { DialogueText } from '../../../shared/components/dialogue-text/dialogue-
 
 export class MorettiDollars implements AfterViewInit {
     public dialogueElement: Signal<DialogueText | undefined> = viewChild<DialogueText>('dialogueRef')
-    public dialogueText = 'Tienes tiempo hasta el jueves 11 para editar tu favorito. Por cierto, ¿cómo está el nene?'
+    public dialogueText = 'Tenés tiempo hasta el jueves 11 para seleccionar un favorito. Por cierto, ¿cómo está el nene?'
 
     public ngAfterViewInit(): void {
         setTimeout(() => {
