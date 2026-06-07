@@ -11,9 +11,13 @@ import { DialogueText } from '../dialogue-text/dialogue-text'
 
 export class Dialogue {
     public dialogue: InputSignal<DialogueModel> = input.required<DialogueModel>()
+    public visible: InputSignal<boolean> = input<boolean>(true)
+
     public textElement: Signal<DialogueText | undefined> = viewChild<DialogueText>('textRef')
 
     public play(): void {
-        this.textElement()?.play()
+        if (this.visible()) {
+            this.textElement()?.play()
+        }
     }
 }

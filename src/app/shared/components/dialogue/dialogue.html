@@ -1,1 +1,3 @@
-<app-dialogue-text #textRef [text]="dialogue().text"></app-dialogue-text>
+<div class="dialogue" [hidden]="!visible()">
+    <app-dialogue-text #textRef [text]="dialogue().text"></app-dialogue-text>
+</div>
