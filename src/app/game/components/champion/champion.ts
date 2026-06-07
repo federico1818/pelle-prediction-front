@@ -15,6 +15,7 @@ export class ChampionComponent {
     private _teamsService: TeamsService = inject(TeamsService)
 
     public isSelected = computed(() => this._teamsService.selectedChampion()?.id === this.team?.id)
+    public canEdit = computed(() => this._teamsService.canEdit())
 
     public select(): void {
         if (this.team && this._teamsService.canEdit()) {
