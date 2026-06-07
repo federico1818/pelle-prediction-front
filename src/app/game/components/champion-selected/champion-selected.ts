@@ -1,10 +1,11 @@
 import { Component, inject, OnInit, Signal, signal } from '@angular/core'
 import { TeamsService } from '../../services/teams-service'
 import { Team } from '../../models/team'
+import { Moretti } from '../../../scenes/components/moretti/moretti'
 
 @Component({
     selector: 'app-champion-selected',
-    imports: [],
+    imports: [Moretti],
     templateUrl: './champion-selected.html',
     styleUrl: './champion-selected.css',
     host: {

@@ -48,3 +48,4 @@ src/environments/environment.prod.ts
 # Assets
 src/assets/video
 src/assets/img/flags
+src/assets/img/scenes
