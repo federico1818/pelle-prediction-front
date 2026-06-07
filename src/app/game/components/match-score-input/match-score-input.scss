@@ -1,11 +1,30 @@
 .score-input-container {
     display: flex;
+    flex-direction: column;
     align-items: center;
     gap: 4px;
+}
 
-    &.right {
-        flex-direction: row-reverse;
-    }
+.arrow {
+    background: none;
+    border: none;
+    color: var(--light-blue);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    height: 24px;
+    transition: transform 0.1s ease;
+}
+
+.arrow:active {
+    transform: scale(0.9);
+}
+
+.arrow span {
+    font-size: 24px;
+    user-select: none;
 }
 
 .score-input {
@@ -39,33 +58,4 @@
 .score-input[type=number] {
     -moz-appearance: textfield;
     appearance: textfield;
-}
-
-.controls {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-
-.arrow {
-    background: none;
-    border: none;
-    color: var(--light-blue);
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    height: 24px;
-    transition: transform 0.1s ease;
-}
-
-.arrow:active {
-    transform: scale(0.9);
-}
-
-.arrow span {
-    font-size: 24px;
-    user-select: none;
 }

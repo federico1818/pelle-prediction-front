@@ -11,10 +11,10 @@
             <span class="team-name team-1-name">{{ game.team_1.label }}</span>
 
             <!-- Marcador 1 -->
-            <app-match-score-input [(score)]="score1" side="left" class="score-input-1"></app-match-score-input>
+            <app-match-score-input [(score)]="score1" class="score-input-1"></app-match-score-input>
 
             <!-- Marcador 2 -->
-            <app-match-score-input [(score)]="score2" side="right" class="score-input-2"></app-match-score-input>
+            <app-match-score-input [(score)]="score2" class="score-input-2"></app-match-score-input>
 
             <!-- Equipo 2 -->
             <app-team-flag [team]="game.team_2" class="team-flag team-2-flag"></app-team-flag>

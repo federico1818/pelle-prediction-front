@@ -9,7 +9,6 @@ import { FormsModule } from '@angular/forms'
 })
 export class MatchScoreInputComponent {
     public score = model<number | null>(null)
-    public side = input<'left' | 'right'>('left')
 
     public increment(): void {
         this.score.set((this.score() ?? -1) + 1)
