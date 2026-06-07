@@ -1,6 +1,6 @@
 <h2>{{ scene()?.title }}</h2>
 <div class="dialogues-container">
     @for(dialogue of scene().dialogues; track $index; let i = $index) {
-        <app-dialogue #dialogueRef [dialogue]="dialogue" [visible]="visibleIndex() === i" (next)="onNext()"></app-dialogue>
+        <app-dialogue #dialogueRef [dialogue]="dialogue" [visible]="visibleIndex() === i" [hasNext]="i < scene().dialogues.length - 1" (next)="onNext()"></app-dialogue>
     }
 </div>

@@ -12,6 +12,7 @@ import { DialogueCursor } from '../dialogue-cursor/dialogue-cursor'
 export class DialogueText implements OnDestroy {
     public finished = output<void>()
     public text: InputSignal<string> = input.required<string>()
+    public mode: InputSignal<'line' | 'arrow'> = input<'line' | 'arrow'>('line')
     public printed: WritableSignal<string> = signal<string>('')
     private intervalId: number | null = null
     private speed: number = 60

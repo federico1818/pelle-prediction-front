@@ -1,25 +1,41 @@
 :host {
+    display: inline-block;
+    margin-left: 4px;
+    user-select: none;
+}
+
+:host.mode-line {
     animation: blink 1s infinite;
-    opacity: 1;
     background-color: var(--blue);
     position: relative;
     top: 2px;
     height: 16px;
     width: 3px;
-    display: inline-block;
-    margin-left: 4px;
+}
+
+:host.mode-arrow {
+    animation: bounce 0.8s infinite alternate;
+    color: var(--blue);
+    font-size: 12px;
 }
 
 @keyframes blink {
     0% {
         opacity: 1;
     }
-
     50% {
         opacity: 0;
     }
-
     100% {
         opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(4px);
     }
 }
