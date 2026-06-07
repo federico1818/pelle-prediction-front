@@ -5,4 +5,10 @@
             {{ selectedChampion() ? selectedChampion()!.label : 'Ninguno' }}
         </span>
     </div>
+    <button (click)="toggleExpanded()">
+        <span class="icon">˄</span>
+    </button>
+    <div class="list">
+        <!-- El contenido de dentro se deja en blanco por ahora -->
+    </div>
 </div>
