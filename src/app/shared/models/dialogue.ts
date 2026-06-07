@@ -1,5 +1,6 @@
 export interface Dialogue {
     text: string
-    video: string
+    src: string
+    type?: 'video' | 'image'
     loop?: boolean
 }

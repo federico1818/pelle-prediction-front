@@ -1,5 +1,5 @@
 <div class="dialogue" [class.show]="visible()">
-    <app-video #videoRef [src]="dialogue().video" [loop]="dialogue().loop ?? false" (finished)="onVideoFinished()"></app-video>
+    <app-video #videoRef [src]="dialogue().src" [loop]="dialogue().loop ?? false" (finished)="onVideoFinished()"></app-video>
     <app-dialogue-text #textRef [text]="dialogue().text"
         [mode]="hasNext() && textIsFinished() && videoIsFinished() ? 'arrow' : 'line'" (finished)="onTextFinished()">
     </app-dialogue-text>
