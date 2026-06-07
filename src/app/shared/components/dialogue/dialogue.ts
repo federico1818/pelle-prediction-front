@@ -30,7 +30,7 @@ export class Dialogue {
     public play(): void {
         if (this.visible()) {
             this.textIsFinished.set(false)
-            this.videoIsFinished.set(false)
+            this.videoIsFinished.set(!!this.dialogue().loop)
             this.videoElement()?.play()
             this.textElement()?.play()
         }

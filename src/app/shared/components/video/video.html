@@ -1,1 +1,1 @@
-<video #video [src]="srcVideo" (ended)="onEnded()" muted playsinline></video>
+<video #video [src]="srcVideo" [loop]="loop" autoplay (ended)="onEnded()" muted playsinline></video>

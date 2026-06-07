@@ -10,6 +10,7 @@ import { Component, ElementRef, Input, ViewChild, output } from '@angular/core'
 export class Video {
     @ViewChild('video') video!: ElementRef<HTMLVideoElement>
     @Input() src: string = ''
+    @Input() loop: boolean = false
     public finished = output<void>()
 
     public get srcVideo(): string {

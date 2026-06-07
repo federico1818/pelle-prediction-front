@@ -16,7 +16,8 @@ export class Ranking {
         dialogues: [
             {
                 text: 'Scaloni está trabajando arduamente en el desarrollo del sistema.',
-                video: 'scaloni-rec-animated.mp4'
+                video: 'scaloni-rec-animated.mp4',
+                loop: true
             }
         ]
     }
