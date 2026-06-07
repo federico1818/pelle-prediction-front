@@ -16,10 +16,9 @@ export class Intro implements OnInit {
     private _sceneService: SceneService = inject(SceneService)
     public scene: WritableSignal<SceneModel | null> = signal<SceneModel | null>(null)
 
-    ngOnInit(): void {
+    public ngOnInit(): void {
         this._sceneService.get('intro').subscribe((scene: SceneModel) => {
-            console.log(scene)
-            //this.scene.set(scene)
+            this.scene.set(scene)
         })
     }
 }
