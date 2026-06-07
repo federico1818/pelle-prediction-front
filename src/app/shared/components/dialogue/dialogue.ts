@@ -9,7 +9,8 @@ import { Video } from '../video/video'
     templateUrl: './dialogue.html',
     styleUrl: './dialogue.css',
     host: {
-        '(click)': 'onHostClick()'
+        '(click)': 'onHostClick()',
+        '[class.show]': 'visible()'
     }
 })
 

@@ -31,7 +31,9 @@ export class SceneComponent implements AfterViewInit {
         const nextIndex = this.visibleIndex() + 1
         if (nextIndex < this.scene().dialogues.length) {
             this.visibleIndex.set(nextIndex)
-            this.play()
+            setTimeout(() => {
+                this.play()
+            })
         }
     }
 }

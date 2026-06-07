@@ -14,7 +14,7 @@ export class DialogueText implements OnDestroy {
     public text: InputSignal<string> = input.required<string>()
     public printed: WritableSignal<string> = signal<string>('')
     private intervalId: number | null = null
-    private speed: number = 70
+    private speed: number = 60
 
     public play(): void {
         this.clear()

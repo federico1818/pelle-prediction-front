@@ -1,3 +1,11 @@
 .start {
     position: absolute;
 }
+
+:host ::ng-deep app-video video {
+    height: 100%;
+    max-width: 640px;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
