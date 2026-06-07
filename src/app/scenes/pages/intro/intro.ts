@@ -1,15 +1,17 @@
-import { Component, inject, Signal, signal, viewChild, WritableSignal } from '@angular/core'
+import { Component, inject, signal, WritableSignal } from '@angular/core'
+import { Router } from '@angular/router'
 import { toSignal } from '@angular/core/rxjs-interop'
 import { SceneService } from '../../services/scene-service'
 import { SceneComponent } from '../../../shared/components/scene/scene'
 import { IntroStart } from '../../components/intro-start/intro-start'
-import { Router } from '@angular/router'
+import { ButtonPrimary } from '../../../shared/components/button-primary/button-primary'
 
 @Component({
     selector: 'app-intro',
     imports: [
         SceneComponent,
-        IntroStart
+        IntroStart,
+        ButtonPrimary
     ],
     templateUrl: './intro.html',
     styleUrl: './intro.css',

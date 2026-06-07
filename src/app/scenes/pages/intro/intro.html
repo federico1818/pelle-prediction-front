@@ -4,6 +4,8 @@
 @else if (scene()) {
 <app-scene [scene]="scene()!" (finished)="onSceneFinished()" />
 @if (showPlayButton()) {
-<button (click)="onPlayClick()" class="btn-play">Jugar</button>
+<app-button-primary (click)="onPlayClick()">
+    Jugar
+</app-button-primary>
 }
 }
