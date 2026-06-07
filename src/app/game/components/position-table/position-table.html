@@ -1,0 +1,8 @@
+<div class="table-container">
+    <app-position-header></app-position-header>
+    <div class="table-body">
+        @for (pos of positions; track pos.team.label) {
+        <app-position-item [position]="pos"></app-position-item>
+        }
+    </div>
+</div>

@@ -1,5 +1,6 @@
 import { Team } from './team'
 import { Group } from './group'
+import { Position } from './position'
 
 export interface Game {
     id: number
@@ -20,4 +21,5 @@ export interface Game {
 export interface GroupedGames {
     group: Group
     matches: Game[]
+    positions: Position[]
 }

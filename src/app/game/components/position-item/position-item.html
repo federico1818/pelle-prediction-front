@@ -1,0 +1,13 @@
+<div class="position-row">
+    <div class="col-team">
+        <span class="rank-number">{{ position.rank }}</span>
+        <app-team-flag class="team-flag" [team]="position.team"></app-team-flag>
+        <span class="team-label">{{ position.team.label }}</span>
+    </div>
+    <div class="col-stat">{{ position.pj }}</div>
+    <div class="col-stat">{{ position.g }}</div>
+    <div class="col-stat">{{ position.e }}</div>
+    <div class="col-stat">{{ position.p }}</div>
+    <div class="col-stat">{{ position.dg }}</div>
+    <div class="col-stat col-pts">{{ position.points }}</div>
+</div>

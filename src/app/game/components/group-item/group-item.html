@@ -1,4 +1,7 @@
 <div class="group-item-container">
+    <div class="group-item-positions">
+        <app-position-table [positions]="group.positions"></app-position-table>
+    </div>
     <div class="group-item-matches">
         <app-match-list [games]="group.matches"></app-match-list>
     </div>
