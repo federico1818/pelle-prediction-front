@@ -50,11 +50,6 @@
     right: 4px;
 }
 
-.champion-flag.unselectable {
-    cursor: default;
-    pointer-events: none;
-}
-
 .flag-container {
     background: var(--flag-background);
     border-radius: inherit;

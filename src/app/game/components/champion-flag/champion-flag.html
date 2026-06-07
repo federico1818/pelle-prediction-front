@@ -1,5 +1,5 @@
 @if (team) {
-<div class="champion-flag" [class.selected]="isSelected" [class.unselectable]="!team.selectable">
+<div class="champion-flag" [class.selected]="isSelected">
     <div class="flag-container">
         <img [src]="'assets/img/flags/' + team.image" [alt]="team.label" class="flag-img" />
     </div>

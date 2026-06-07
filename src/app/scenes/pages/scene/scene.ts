@@ -3,7 +3,7 @@ import { ActivatedRoute } from '@angular/router'
 import { switchMap } from 'rxjs/operators'
 import { SceneService } from '../../services/scene-service'
 import { Scene as SceneModel } from '../../../shared/models/scene'
-import { Scene as SceneComponent } from '../../components/scene/scene'
+import { SceneComponent } from '../../../shared/components/scene/scene'
 
 @Component({
     imports: [

@@ -1,7 +1,7 @@
 import { Component, inject, OnInit, signal, WritableSignal } from '@angular/core'
 import { SceneService } from '../../services/scene-service'
 import { Scene as SceneModel } from '../../../shared/models/scene'
-import { Scene as SceneComponent } from '../../components/scene/scene'
+import { SceneComponent } from '../../../shared/components/scene/scene'
 
 @Component({
     selector: 'app-intro',
@@ -18,7 +18,8 @@ export class Intro implements OnInit {
 
     ngOnInit(): void {
         this._sceneService.get('intro').subscribe((scene: SceneModel) => {
-            this.scene.set(scene)
+            console.log(scene)
+            //this.scene.set(scene)
         })
     }
 }
