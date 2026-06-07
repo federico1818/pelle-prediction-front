@@ -17,9 +17,14 @@ export class Callback implements OnInit {
     public ngOnInit(): void {
         this.route.queryParamMap.subscribe(params => {
             const token = params.get('token')
+            const intro = params.get('intro')
             if (token) {
                 this.authService.login(token)
-                this.router.navigate(['/game'])
+                if (intro === 'true') {
+                    this.router.navigate(['/intro'])
+                } else {
+                    this.router.navigate(['/game'])
+                }
             } else {
                 this.router.navigate(['/auth/login'])
             }
