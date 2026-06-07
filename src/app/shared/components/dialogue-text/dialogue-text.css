@@ -39,3 +39,23 @@
         transform: translateY(4px);
     }
 }
+
+@keyframes border-blink {
+
+    0%,
+    100% {
+        border-color: var(--border-color);
+    }
+
+    50% {
+        border-color: var(--blue);
+    }
+}
+
+:host.warning {
+    animation: border-blink 1s infinite;
+}
+
+:host.warning .dialogue-text {
+    animation: border-blink 1s infinite;
+}

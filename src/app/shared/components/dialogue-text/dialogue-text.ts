@@ -7,6 +7,9 @@ import { DialogueCursor } from '../dialogue-cursor/dialogue-cursor'
     imports: [DialogueCursor],
     templateUrl: './dialogue-text.html',
     styleUrl: './dialogue-text.css',
+    host: {
+        '[class]': 'variant()'
+    }
 })
 
 export class DialogueText implements OnInit, OnDestroy {
@@ -14,6 +17,7 @@ export class DialogueText implements OnInit, OnDestroy {
     public text: InputSignal<string> = input.required<string>()
     public mode: InputSignal<'line' | 'arrow'> = input<'line' | 'arrow'>('line')
     public autoplay: InputSignal<boolean> = input<boolean>(false)
+    public variant: InputSignal<'default' | 'warning'> = input<'default' | 'warning'>('default')
     public printed: WritableSignal<string> = signal<string>('')
     private intervalId: number | null = null
     private speed: number = 60
