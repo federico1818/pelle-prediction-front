@@ -1,8 +1,14 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
 .dialogue {
     display: grid;
     gap: 16px 0;
     opacity: 0;
     transition: opacity 0.3s;
+    width: 100%;
 }
 
 .dialogue.show {
@@ -11,4 +17,10 @@
 
 .dialogue app-video {
     max-height: 60dvh;
+}
+
+.dialogue-image {
+    max-height: 30dvh;
+    display: block;
+    margin: 0 auto;
 }

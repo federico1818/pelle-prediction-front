@@ -30,8 +30,12 @@ export class Dialogue {
     public play(): void {
         if (this.visible()) {
             this.textIsFinished.set(false)
-            this.videoIsFinished.set(!!this.dialogue().loop)
-            this.videoElement()?.play()
+            if (this.dialogue().type === 'image') {
+                this.videoIsFinished.set(true)
+            } else {
+                this.videoIsFinished.set(!!this.dialogue().loop)
+                this.videoElement()?.play()
+            }
             this.textElement()?.play()
         }
     }
