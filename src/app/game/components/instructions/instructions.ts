@@ -2,10 +2,9 @@ import { Component, inject, OnInit, ViewChild } from '@angular/core'
 import { Modal } from '../../../shared/components/modal/modal'
 import { ModalTitle } from '../../../shared/components/modal-title/modal-title'
 import { ModalContent } from '../../../shared/components/modal-content/modal-content'
-import { ModalFooter } from '../../../shared/components/modal-footer/modal-footer'
 import { ModalService } from '../../../shared/services/modal-service'
-import { DialogueText } from '../../../shared/components/dialogue-text/dialogue-text'
-import { Video } from '../../../shared/components/video/video'
+import { SceneComponent } from '../../../shared/components/scene/scene'
+import { Scene } from '../../../shared/models/scene'
 
 @Component({
     selector: 'app-instructions',
@@ -13,9 +12,7 @@ import { Video } from '../../../shared/components/video/video'
         Modal,
         ModalTitle,
         ModalContent,
-        ModalFooter,
-        DialogueText,
-        Video
+        SceneComponent
     ],
     templateUrl: './instructions.html',
     styleUrl: './instructions.css',
@@ -23,16 +20,27 @@ import { Video } from '../../../shared/components/video/video'
 
 export class Instructions implements OnInit {
     @ViewChild(Modal) modal!: Modal
-    @ViewChild(Video) video!: Video
-    @ViewChild('dialogueRef') dialogueElement!: DialogueText
+    @ViewChild(SceneComponent) sceneRef!: SceneComponent
 
     protected _modalService: ModalService = inject(ModalService)
+
+    public scene: Scene = {
+        title: '',
+        dialogues: [
+            {
+                text: 'No trates de entenderlo, disfrutalo.',
+                src: 'instructions.mp4',
+                type: 'video'
+            }
+        ]
+    }
 
     public ngOnInit(): void {
         this._modalService.open$.subscribe(() => {
             this.modal.open()
-            //this.dialogueElement.write('No trates de entenderlo, disfrutalo.')
-            this.video.play()
+            setTimeout(() => {
+                this.sceneRef?.play()
+            })
         })
     }
 }

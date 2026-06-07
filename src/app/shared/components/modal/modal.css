@@ -4,9 +4,13 @@ dialog::backdrop {
 
 dialog[open] {
     display: grid;
-    grid-template-rows: 40px 1fr 144px;
+    grid-template-rows: 40px 1fr;
     grid-template-columns: 1fr 40px;
     gap: 16px;
+}
+
+dialog[open]:has(app-modal-footer) {
+    grid-template-rows: 40px 1fr 144px;
 }
 
 dialog {
