@@ -1,3 +1,6 @@
-@if (scene()) {
-<app-scene [scene]="scene()!" />
+@if (visibleStart()) {
+<app-intro-start (started)="play()"></app-intro-start>
+}
+@else if (scene()) {
+<app-scene #sceneRef [scene]="scene()!" />
 }

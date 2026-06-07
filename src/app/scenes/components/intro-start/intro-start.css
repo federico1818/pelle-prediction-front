@@ -1,0 +1,33 @@
+.start {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--blue);
+    font-size: 16px;
+    font-weight: bold;
+    font-family: var(--font-family-dialogue);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    user-select: none;
+}
+
+.text {
+    animation: pulse .8s linear infinite alternate;
+}
+
+@keyframes pulse {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}

@@ -12,8 +12,9 @@ import { DialogueCursor } from '../dialogue-cursor/dialogue-cursor'
 export class DialogueText implements OnDestroy {
     public text: InputSignal<string> = input.required<string>()
     public printed: WritableSignal<string> = signal<string>('')
+    public isComplete: WritableSignal<boolean> = signal<boolean>(false)
     private intervalId: number | null = null
-    private speed: number = 50
+    private speed: number = 70
 
     public play(): void {
         this.clear()
@@ -25,12 +26,14 @@ export class DialogueText implements OnDestroy {
                 index++
             } else {
                 this.stop()
+                this.isComplete.set(true)
             }
         }, this.speed)
     }
 
     private clear(): void {
         this.printed.set('')
+        this.isComplete.set(false)
         this.stop()
     }
 

@@ -1,3 +1,4 @@
 <div class="dialogue" [hidden]="!visible()">
+    <app-video #videoRef [src]="dialogue().video"></app-video>
     <app-dialogue-text #textRef [text]="dialogue().text"></app-dialogue-text>
 </div>
