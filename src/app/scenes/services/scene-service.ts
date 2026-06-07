@@ -15,4 +15,11 @@ export class SceneService {
             `${environment.api.url}/scenes/${id}`
         )
     }
+
+    public seen(id: number | string): Observable<any> {
+        return this._http.post<any>(
+            `${environment.api.url}/scenes/${id}/seen`,
+            {}
+        )
+    }
 }
