@@ -15,7 +15,7 @@ export class MorettiDollars {
         title: '',
         dialogues: [
             {
-                text: 'Tenés tiempo hasta el jueves 11 para seleccionar un favorito. Por cierto, ¿cómo está el nene?',
+                text: '¡Gracias! Tenés tiempo hasta el jueves 11 para seleccionar un favorito. Por cierto, ¿cómo está el nene?',
                 src: 'scenes/moretti-dollars.png',
                 type: 'image'
             }

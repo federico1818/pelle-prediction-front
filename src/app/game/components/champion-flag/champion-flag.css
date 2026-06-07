@@ -53,6 +53,22 @@
     right: 4px;
 }
 
+.champion-flag.disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+    filter: grayscale(40%);
+}
+
+.champion-flag.disabled:hover {
+    animation: shake-no 0.4s ease-in-out;
+}
+
+@keyframes shake-no {
+    0%, 100% { transform: translateX(0); }
+    20%, 60% { transform: translateX(-6px); }
+    40%, 80% { transform: translateX(6px); }
+}
+
 .flag-container {
     background: var(--flag-background);
     border-radius: inherit;
