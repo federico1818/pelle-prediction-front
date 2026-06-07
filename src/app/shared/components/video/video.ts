@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, ViewChild } from '@angular/core'
+import { Component, ElementRef, Input, ViewChild, output } from '@angular/core'
 
 @Component({
     selector: 'app-video',
@@ -10,6 +10,7 @@ import { Component, ElementRef, Input, ViewChild } from '@angular/core'
 export class Video {
     @ViewChild('video') video!: ElementRef<HTMLVideoElement>
     @Input() src: string = ''
+    public finished = output<void>()
 
     public get srcVideo(): string {
         return `/assets/video/${this.src}`
@@ -17,5 +18,9 @@ export class Video {
 
     public play(): void {
         this.video?.nativeElement.play()
+    }
+
+    public onEnded(): void {
+        this.finished.emit()
     }
 }
