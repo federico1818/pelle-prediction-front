@@ -3,5 +3,4 @@ export interface Team {
     label: string
     image: string
     selected?: boolean
-    selectable?: boolean
 }
