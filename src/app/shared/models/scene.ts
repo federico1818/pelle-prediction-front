@@ -1,5 +1,6 @@
+import { Dialogue } from "./dialogue"
+
 export interface Scene {
     title: string
-    video: string
-    dialogue: string
+    dialogues: Dialogue[]
 }

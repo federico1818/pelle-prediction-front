@@ -1,79 +1,43 @@
-import { Component, signal } from '@angular/core'
+import { Component, InputSignal, OnDestroy, WritableSignal, input, signal } from '@angular/core'
+import { DialogueCursor } from '../dialogue-cursor/dialogue-cursor'
 
 @Component({
     selector: 'app-dialogue-text',
     standalone: true,
-    imports: [],
+    imports: [DialogueCursor],
     templateUrl: './dialogue-text.html',
     styleUrl: './dialogue-text.css',
 })
 
-export class DialogueText {
-    public text = signal<string>('')
-
-    private speed: number = 60
+export class DialogueText implements OnDestroy {
+    public text: InputSignal<string> = input.required<string>()
+    public printed: WritableSignal<string> = signal<string>('')
     private intervalId: number | null = null
-    private queue: string[] = []
-    private currentFullText: string = ''
+    private speed: number = 100
 
-    public write(text: string): void {
+    public play(): void {
         this.clear()
-        this.queue = []
-
-        const matches = text.match(/[^.!?]+[.!?]*/g)
-
-        if (matches) {
-            for (let sentence of matches) {
-                sentence = sentence.trim()
-                if (sentence.length > 0) {
-                    this.queue.push(sentence)
-                }
-            }
-        } else {
-            if (text.trim().length > 0) {
-                this.queue.push(text.trim())
-            }
-        }
-
-        this.next()
-    }
-
-    public next(): void {
-        if (this.intervalId) {
-            this.clear()
-            this.text.set(this.currentFullText)
-            return
-        }
-
-        if (this.queue.length > 0) {
-            const nextText = this.queue.shift()!
-            this.currentFullText = nextText
-            this.text.set('')
-            this.typeText(nextText)
-        }
-    }
-
-    private typeText(text: string): void {
-        const textArray = text.split('')
+        const letters: string[] = this.text().split('')
         let index = 0
-
-        this.intervalId = window.setInterval(() => {
-            if (index < textArray.length) {
-                this.text.set(this.text() + textArray[index])
+        this.intervalId = setInterval(() => {
+            if (index < letters.length) {
+                this.printed.set(this.printed() + letters[index])
                 index++
             } else {
                 this.clear()
-                setTimeout(() => {
-                    this.next()
-                }, this.speed * 10)
             }
         }, this.speed)
     }
 
     private clear(): void {
+        this.printed.set('')
         if (this.intervalId) {
             clearInterval(this.intervalId)
             this.intervalId = null
         }
+    }
+
+    public ngOnDestroy(): void {
+        this.clear()
     }
 }

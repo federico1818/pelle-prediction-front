@@ -31,7 +31,7 @@ export class Instructions implements OnInit {
     public ngOnInit(): void {
         this._modalService.open$.subscribe(() => {
             this.modal.open()
-            this.dialogueElement.write('No trates de entenderlo, disfrutalo.')
+            //this.dialogueElement.write('No trates de entenderlo, disfrutalo.')
             this.video.play()
         })
     }

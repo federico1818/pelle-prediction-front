@@ -1,1 +1,4 @@
 <h2>{{ scene()?.title }}</h2>
+@for(dialogue of scene().dialogues; track $index) {
+<app-dialogue [dialogue]="dialogue"></app-dialogue>
+}

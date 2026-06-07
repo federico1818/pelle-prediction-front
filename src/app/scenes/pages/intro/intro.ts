@@ -1,6 +1,6 @@
-import { Component, inject, OnInit, signal, WritableSignal } from '@angular/core'
+import { Component, inject } from '@angular/core'
+import { toSignal } from '@angular/core/rxjs-interop'
 import { SceneService } from '../../services/scene-service'
-import { Scene as SceneModel } from '../../../shared/models/scene'
 import { SceneComponent } from '../../../shared/components/scene/scene'
 
 @Component({
@@ -12,13 +12,7 @@ import { SceneComponent } from '../../../shared/components/scene/scene'
     styleUrl: './intro.css',
 })
 
-export class Intro implements OnInit {
+export class Intro {
     private _sceneService: SceneService = inject(SceneService)
-    public scene: WritableSignal<SceneModel | null> = signal<SceneModel | null>(null)
-
-    public ngOnInit(): void {
-        this._sceneService.get('intro').subscribe((scene: SceneModel) => {
-            this.scene.set(scene)
-        })
-    }
+    public scene = toSignal(this._sceneService.get('intro'))
 }

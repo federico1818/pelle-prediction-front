@@ -14,6 +14,6 @@ export class Ranking implements AfterViewInit {
     @ViewChild('dialogueRef') dialogueElement!: DialogueText
 
     public ngAfterViewInit(): void {
-        this.dialogueElement.write('Scaloni está trabajando arduamente en el desarrollo del sistema.')
+        //this.dialogueElement.write('Scaloni está trabajando arduamente en el desarrollo del sistema.')
     }
 }
