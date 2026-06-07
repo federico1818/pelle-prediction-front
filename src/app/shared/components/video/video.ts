@@ -18,7 +18,10 @@ export class Video {
     }
 
     public play(): void {
-        this.video?.nativeElement.play()
+        if (this.video?.nativeElement) {
+            this.video.nativeElement.currentTime = 0
+            this.video.nativeElement.play()
+        }
     }
 
     public onEnded(): void {
