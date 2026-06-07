@@ -11,7 +11,7 @@ export const gameRoutes: Routes = [
         path: '',
         component: Game,
         children: [
-            { path: '', redirectTo: 'ranking', pathMatch: 'full' },
+            { path: '', redirectTo: 'champion', pathMatch: 'full' },
             { path: 'champion', component: Champion },
             { path: 'list', component: List },
             { path: 'ranking', component: Ranking },
