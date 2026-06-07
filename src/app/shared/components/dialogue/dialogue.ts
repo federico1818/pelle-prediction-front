@@ -8,10 +8,13 @@ import { Video } from '../video/video'
     imports: [DialogueText, Video],
     templateUrl: './dialogue.html',
     styleUrl: './dialogue.css',
+    host: {
+        '(click)': 'onHostClick($event)'
+    }
 })
 
 export class Dialogue {
-    public finished = output<void>()
+    public next = output<void>()
 
     public dialogue: InputSignal<DialogueModel> = input.required<DialogueModel>()
     public visible: InputSignal<boolean> = input<boolean>(true)
@@ -31,17 +34,19 @@ export class Dialogue {
 
     public onTextFinished(): void {
         this._textIsFinished = true
-        this._emitWhenFinished()
     }
 
-    private onVideoFinished(): void {
+    public onVideoFinished(): void {
         this._videoIsFinished = true
+    }
+
+    public onHostClick(): void {
         this._emitWhenFinished()
     }
 
     private _emitWhenFinished(): void {
         if (this._textIsFinished && this._videoIsFinished) {
-            this.finished.emit()
+            this.next.emit()
         }
     }
 }
