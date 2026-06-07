@@ -3,6 +3,10 @@
     grid-template-rows: 85dvh 15dvh;
 }
 
+:host ::ng-deep app-scene h2 {
+    margin-top: 24px;
+}
+
 .start {
     position: absolute;
 }
