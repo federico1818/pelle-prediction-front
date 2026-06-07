@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common'
-import { Component, input, InputSignal } from '@angular/core'
+import { AfterViewInit, Component, input, InputSignal, Signal, viewChildren } from '@angular/core'
 import { Scene as SceneModel } from '../../models/scene'
 import { Dialogue } from '../dialogue/dialogue'
 
@@ -14,7 +14,16 @@ import { Dialogue } from '../dialogue/dialogue'
     styleUrl: './scene.css',
 })
 
-export class SceneComponent {
+export class SceneComponent implements AfterViewInit {
     public scene: InputSignal<SceneModel> = input.required<SceneModel>()
+    public dialogueElements: Signal<readonly Dialogue[]> = viewChildren<Dialogue>('dialogueRef')
+    private index = 0
 
+    public ngAfterViewInit(): void {
+        this.play()
+    }
+
+    public play(): void {
+        this.dialogueElements()[this.index].play()
+    }
 }

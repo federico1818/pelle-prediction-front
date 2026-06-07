@@ -13,7 +13,7 @@ export class DialogueText implements OnDestroy {
     public text: InputSignal<string> = input.required<string>()
     public printed: WritableSignal<string> = signal<string>('')
     private intervalId: number | null = null
-    private speed: number = 100
+    private speed: number = 50
 
     public play(): void {
         this.clear()
@@ -24,13 +24,17 @@ export class DialogueText implements OnDestroy {
                 this.printed.set(this.printed() + letters[index])
                 index++
             } else {
-                this.clear()
+                this.stop()
             }
         }, this.speed)
     }
 
     private clear(): void {
         this.printed.set('')
+        this.stop()
+    }
+
+    private stop(): void {
         if (this.intervalId) {
             clearInterval(this.intervalId)
             this.intervalId = null

@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, input, InputSignal } from '@angular/core'
+import { Component, input, InputSignal, Signal, viewChild } from '@angular/core'
 import { Dialogue as DialogueModel } from '../../models/dialogue'
 import { DialogueText } from '../dialogue-text/dialogue-text'
 
@@ -9,10 +9,11 @@ import { DialogueText } from '../dialogue-text/dialogue-text'
     styleUrl: './dialogue.css',
 })
 
-export class Dialogue implements AfterViewInit {
+export class Dialogue {
     public dialogue: InputSignal<DialogueModel> = input.required<DialogueModel>()
+    public textElement: Signal<DialogueText | undefined> = viewChild<DialogueText>('textRef')
 
-    public ngAfterViewInit(): void {
-        console.log(this.dialogue())
+    public play(): void {
+        this.textElement()?.play()
     }
 }
