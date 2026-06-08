@@ -11,4 +11,5 @@ export class ChampionFlag {
     @Input() team!: Team
     @Input() isSelected: boolean = false
     @Input() disabled: boolean = false
+    @Input() isSelecting: boolean = false
 }

@@ -1,6 +1,6 @@
 @if (team) {
     <div class="champion-container">
         <h3 class="team-title">{{ team.label }}</h3>
-        <app-champion-flag [team]="team" [isSelected]="isSelected()" [disabled]="!canEdit()" (click)="select()"></app-champion-flag>
+        <app-champion-flag [team]="team" [isSelected]="isSelected()" [disabled]="!canEdit()" [isSelecting]="isSelecting" (click)="select()"></app-champion-flag>
     </div>
 }

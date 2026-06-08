@@ -22,11 +22,13 @@
     transform: scale(1.05);
 }
 
-.champion-flag.selected {
+.champion-flag.selected,
+.champion-flag.isSelecting {
     border-color: var(--light-blue);
 }
 
-.champion-flag.selected::before {
+.champion-flag.selected::before,
+.champion-flag.isSelecting::before {
     content: "";
     position: absolute;
     top: 0;
@@ -36,8 +38,8 @@
     background-color: rgba(255, 255, 255, .3);
 }
 
-.champion-flag.selected::after {
-    content: "check";
+.champion-flag.selected::after,
+.champion-flag.isSelecting::after {
     font-family: "Material Symbols Outlined";
     color: var(--white);
     position: absolute;
@@ -51,6 +53,19 @@
     font-size: 16px;
     top: 4px;
     right: 4px;
+}
+
+.champion-flag.selected::after {
+    content: "check";
+}
+
+.champion-flag.isSelecting::after {
+    content: "sync";
+    animation: spin 1.5s linear infinite;
+}
+
+.champion-flag.isSelecting {
+    cursor: wait;
 }
 
 .champion-flag.disabled {
@@ -84,4 +99,10 @@
     object-fit: cover;
     border-radius: 4px;
     box-sizing: border-box;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
 }

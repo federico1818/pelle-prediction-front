@@ -18,14 +18,12 @@ import { DialogueText } from '../../../shared/components/dialogue-text/dialogue-
 
 export class Champion implements OnInit {
     private _teamsService: TeamsService = inject(TeamsService)
-    public teams: WritableSignal<Team[]> = signal<Team[]>([])
+    public teams: Signal<Team[]> = this._teamsService.teams
     public canEdit!: Signal<boolean>
     public dialogueText = '¡Parece que un ser maligno no te deja seleccionar a selección favorita! ¡Debes negociar con él!'
 
     ngOnInit(): void {
         this.canEdit = this._teamsService.canEdit
-        this._teamsService.all().subscribe((teams: Team[]) => {
-            this.teams.set(teams)
-        })
+        this._teamsService.all().subscribe()
     }
 }

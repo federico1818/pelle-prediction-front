@@ -3,4 +3,5 @@ export interface Team {
     label: string
     image: string
     selected?: boolean
+    isSelecting?: boolean
 }

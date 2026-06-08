@@ -1,7 +1,7 @@
 import { Injectable, inject, signal, WritableSignal, computed } from '@angular/core'
 import { HttpClient } from '@angular/common/http'
 import { Observable, of } from 'rxjs'
-import { tap, map } from 'rxjs/operators'
+import { tap, map, finalize } from 'rxjs/operators'
 import { Team } from '../models/team'
 import { environment } from '../../../environments/environment'
 
@@ -35,16 +35,23 @@ export class TeamsService {
     }
 
     public select(team: Team): Observable<any> {
+        this._teams.update((teams) =>
+            teams.map((t) => (t.id === team.id ? { ...t, isSelecting: true } : t))
+        )
         return this._http.post<any>(
             environment.api.url + '/champion',
             { team_id: team.id }
         ).pipe(
             tap(() => {
-                this._selectedChampion.set(team)
+                const updatedTeam = { ...team, selected: true }
+                this._selectedChampion.set(updatedTeam)
+            }),
+            finalize(() => {
                 this._teams.update((teams) =>
                     teams.map((t) => ({
                         ...t,
                         selected: t.id === team.id,
+                        isSelecting: false,
                     }))
                 )
             })
