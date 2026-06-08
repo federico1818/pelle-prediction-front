@@ -1,6 +1,5 @@
 import { Component, inject, OnInit, ViewChild } from '@angular/core'
 import { Modal } from '../../../shared/components/modal/modal'
-import { ModalTitle } from '../../../shared/components/modal-title/modal-title'
 import { ModalContent } from '../../../shared/components/modal-content/modal-content'
 import { ModalFooter } from '../../../shared/components/modal-footer/modal-footer'
 import { MatchModalService } from '../../services/match-modal-service'
@@ -8,19 +7,16 @@ import { Game } from '../../models/game'
 import { ButtonPrimary } from '../../../shared/components/button-primary/button-primary'
 import { TeamFlagComponent } from '../team-flag/team-flag'
 import { GamesService } from '../../services/games-service'
-import { DatePipe } from '@angular/common'
 import { MatchScoreInputComponent } from '../match-score-input/match-score-input'
 
 @Component({
     selector: 'app-match-modal',
     imports: [
         Modal,
-        ModalTitle,
         ModalContent,
         ModalFooter,
         ButtonPrimary,
         TeamFlagComponent,
-        DatePipe,
         MatchScoreInputComponent
     ],
     templateUrl: './match-modal.html',

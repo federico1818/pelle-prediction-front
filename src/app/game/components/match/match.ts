@@ -1,12 +1,11 @@
 import { Component, Input, inject } from '@angular/core'
 import { Game } from '../../models/game'
-import { DatePipe } from '@angular/common'
 import { TeamFlagComponent } from '../team-flag/team-flag'
 import { MatchModalService } from '../../services/match-modal-service'
 
 @Component({
     selector: 'app-match',
-    imports: [DatePipe, TeamFlagComponent],
+    imports: [TeamFlagComponent],
     templateUrl: './match.html',
     styleUrl: './match.css',
     host: {
