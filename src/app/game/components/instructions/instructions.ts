@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, ViewChild } from '@angular/core'
+import { Component, inject, ViewChild, AfterViewInit } from '@angular/core'
 import { Modal } from '../../../shared/components/modal/modal'
 import { ModalTitle } from '../../../shared/components/modal-title/modal-title'
 import { ModalContent } from '../../../shared/components/modal-content/modal-content'
@@ -18,7 +18,7 @@ import { Scene } from '../../../shared/models/scene'
     styleUrl: './instructions.css',
 })
 
-export class Instructions implements OnInit {
+export class Instructions implements AfterViewInit {
     @ViewChild(Modal) modal!: Modal
     @ViewChild(SceneComponent) sceneRef!: SceneComponent
 
@@ -35,7 +35,7 @@ export class Instructions implements OnInit {
         ]
     }
 
-    public ngOnInit(): void {
+    public ngAfterViewInit(): void {
         this._modalService.open$.subscribe(() => {
             this.modal.open()
             setTimeout(() => {
