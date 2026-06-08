@@ -20,7 +20,7 @@ export class Champion implements OnInit {
     private _teamsService: TeamsService = inject(TeamsService)
     public teams: Signal<Team[]> = this._teamsService.teams
     public canEdit!: Signal<boolean>
-    public dialogueText = '¡Parece que un ser maligno no te deja seleccionar a selección favorita! ¡Debes negociar con él!'
+    public dialogueText = '¡Parece que un ser maligno no te deja seleccionar a tu selección favorita! ¡Debes negociar con él!'
 
     ngOnInit(): void {
         this.canEdit = this._teamsService.canEdit
