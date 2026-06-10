@@ -1,0 +1,51 @@
+:host {
+    display: block;
+    width: 100%;
+}
+
+.dialogue {
+    display: grid;
+    gap: 16px 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+    width: 100%;
+}
+
+.dialogue.show {
+    opacity: 1;
+}
+
+.dialogue app-video {
+    max-height: 60dvh;
+}
+
+.dialogue-image {
+    max-height: 25dvh;
+    display: block;
+    margin: 0 auto;
+}
+
+.dialogue.rpg {
+    grid-template-columns: 160px 1fr;
+    max-width: var(--dialogue-text-max-width);
+    margin-inline: auto;
+
+    & .dialogue-image {
+        border-radius: 0;
+        grid-column: 1;
+        grid-row: 1;
+        z-index: 1;
+        width: 100%;
+        position: relative;
+        left: 8px;
+    }
+
+    & app-dialogue-text {
+        grid-column: 1 / 3;
+        grid-row: 1;
+
+        ::ng-deep .dialogue-text {
+            padding-left: 160px;
+        }
+    }
+}

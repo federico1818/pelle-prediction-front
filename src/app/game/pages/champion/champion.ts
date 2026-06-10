@@ -3,14 +3,15 @@ import { TeamsService } from '../../services/teams-service'
 import { Team } from '../../models/team'
 import { ChampionListComponent } from '../../components/champion-list/champion-list'
 import { ChampionSelected } from '../../components/champion-selected/champion-selected'
-import { DialogueText } from '../../../shared/components/dialogue-text/dialogue-text'
+import { Scene } from '../../../shared/models/scene'
+import { SceneComponent } from '../../../shared/components/scene/scene'
 
 @Component({
     selector: 'app-champion',
     imports: [
         ChampionListComponent,
         ChampionSelected,
-        DialogueText
+        SceneComponent
     ],
     templateUrl: './champion.html',
     styleUrl: './champion.css',
@@ -20,7 +21,16 @@ export class Champion implements OnInit {
     private _teamsService: TeamsService = inject(TeamsService)
     public teams: Signal<Team[]> = this._teamsService.teams
     public canEdit!: Signal<boolean>
-    public dialogueText = '¡Parece que un ser maligno no te deja seleccionar a tu selección favorita! ¡Debes negociar con él!'
+    public scene: Scene = {
+        title: '',
+        dialogues: [
+            {
+                text: 'Tenés tiempo hasta el jueves 11 para seleccionar un favorito',
+                src: 'scenes/moretti-dollars.png',
+                type: 'rpg'
+            }
+        ]
+    }
 
     ngOnInit(): void {
         this.canEdit = this._teamsService.canEdit

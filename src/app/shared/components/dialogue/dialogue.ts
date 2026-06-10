@@ -7,7 +7,7 @@ import { Video } from '../video/video'
     selector: 'app-dialogue',
     imports: [DialogueText, Video],
     templateUrl: './dialogue.html',
-    styleUrl: './dialogue.css',
+    styleUrl: './dialogue.scss',
     host: {
         '(click)': 'onHostClick()',
         '[class.show]': 'visible()'
