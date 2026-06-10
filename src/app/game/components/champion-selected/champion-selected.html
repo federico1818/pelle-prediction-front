@@ -1,20 +1,4 @@
-<div class="container">
-    <div class="header">
-        <h2>Tu favorito</h2>
-        <span class="selected-team-name">
-            {{ selectedChampion() ? selectedChampion()!.label : 'Ninguno' }}
-        </span>
-    </div>
-    <button (click)="toggleExpanded()">
-        <span class="icon">˄</span>
-    </button>
-    <div class="list">
-        @if(expanded()){
-            @if(canEdit()) {
-                <app-moretti-dollars></app-moretti-dollars>
-            } @else {
-                <app-moretti></app-moretti>
-            }
-        }
-    </div>
+<h2>Tu favorito</h2>
+<div class="selected-team-name">
+    {{ selectedChampion() ? selectedChampion()!.label : 'Ninguno' }}
 </div>
