@@ -2,10 +2,11 @@ import { Component, input, InputSignal, output, Signal, viewChild, signal, Writa
 import { Dialogue as DialogueModel } from '../../models/dialogue'
 import { DialogueText } from '../dialogue-text/dialogue-text'
 import { Video } from '../video/video'
+import { DialogueCharacter } from '../dialogue-character/dialogue-character'
 
 @Component({
     selector: 'app-dialogue',
-    imports: [DialogueText, Video],
+    imports: [DialogueText, Video, DialogueCharacter],
     templateUrl: './dialogue.html',
     styleUrl: './dialogue.scss',
     host: {

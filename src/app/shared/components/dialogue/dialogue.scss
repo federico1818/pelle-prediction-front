@@ -48,6 +48,19 @@
 
         ::ng-deep .dialogue-text {
             padding-left: 160px;
+            padding-top: 24px;
         }
+    }
+
+    & app-dialogue-character {
+        grid-row: 1;
+        grid-column: 2;
+        z-index: 1;
+        justify-self: end;
+        position: relative;
+        align-self: start;
+        position: relative;
+        right: 16px;
+        top: -8px;
     }
 }

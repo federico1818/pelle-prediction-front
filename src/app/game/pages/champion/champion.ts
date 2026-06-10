@@ -27,7 +27,8 @@ export class Champion implements OnInit {
             {
                 text: 'Tenés tiempo hasta el jueves 11 para seleccionar un favorito',
                 src: 'scenes/moretti.png',
-                type: 'rpg'
+                type: 'rpg',
+                character: 'Moretti'
             }
         ]
     }

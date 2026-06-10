@@ -1,4 +1,7 @@
 <div class="dialogue" [class.show]="visible()" [class]="dialogue().type">
+    @if(dialogue().type === 'rpg' && dialogue().character) {
+    <app-dialogue-character [name]="dialogue().character!"></app-dialogue-character>
+    }
     @if (dialogue().type === 'image' || dialogue().type === 'rpg') {
     <img [src]="'/assets/img/' + dialogue().src" class="dialogue-image" />
     } @else {
