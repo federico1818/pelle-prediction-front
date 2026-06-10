@@ -26,7 +26,7 @@ export class Champion implements OnInit {
         dialogues: [
             {
                 text: 'Tenés tiempo hasta el jueves 11 para seleccionar un favorito',
-                src: 'scenes/moretti-dollars.png',
+                src: 'scenes/moretti.png',
                 type: 'rpg'
             }
         ]
