@@ -1,0 +1,28 @@
+<app-modal>
+    <app-modal-content>
+        @if (game) {
+        <div class="match-date-time">
+            {{ game.date_time_formatted }}
+        </div>
+
+        <div class="match-prediction-grid">
+            <!-- Equipo 1 -->
+            <app-team-flag [team]="game.team_1" class="team-flag team-1-flag"></app-team-flag>
+            <span class="team-name team-1-name">{{ game.team_1.label }}</span>
+
+            <!-- Marcador 1 -->
+            <app-match-score-input [(score)]="score1" class="score-input-1"></app-match-score-input>
+
+            <!-- Marcador 2 -->
+            <app-match-score-input [(score)]="score2" class="score-input-2"></app-match-score-input>
+
+            <!-- Equipo 2 -->
+            <app-team-flag [team]="game.team_2" class="team-flag team-2-flag"></app-team-flag>
+            <span class="team-name team-2-name">{{ game.team_2.label }}</span>
+        </div>
+        }
+    </app-modal-content>
+    <app-modal-footer>
+        <app-button-primary [disabled]="isButtonDisabled" (onClick)="submitResult()">Guardar</app-button-primary>
+    </app-modal-footer>
+</app-modal>

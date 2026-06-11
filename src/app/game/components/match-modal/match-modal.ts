@@ -10,7 +10,7 @@ import { GamesService } from '../../services/games-service'
 import { MatchScoreInputComponent } from '../match-score-input/match-score-input'
 
 @Component({
-    selector: 'app-match-modal-edit',
+    selector: 'app-match-modal',
     imports: [
         Modal,
         ModalContent,
@@ -19,8 +19,8 @@ import { MatchScoreInputComponent } from '../match-score-input/match-score-input
         TeamFlagComponent,
         MatchScoreInputComponent
     ],
-    templateUrl: './match-modal-edit.html',
-    styleUrl: './match-modal-edit.scss',
+    templateUrl: './match-modal.html',
+    styleUrl: './match-modal.scss',
 })
 export class MatchModalComponent implements OnInit {
     public modal = viewChild(Modal)
