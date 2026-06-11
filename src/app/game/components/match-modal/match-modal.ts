@@ -4,7 +4,6 @@ import { ModalContent } from '../../../shared/components/modal-content/modal-con
 import { ModalFooter } from '../../../shared/components/modal-footer/modal-footer'
 import { MatchModalService } from '../../services/match-modal-service'
 import { Game } from '../../models/game'
-import { ButtonPrimary } from '../../../shared/components/button-primary/button-primary'
 import { TeamFlagComponent } from '../team-flag/team-flag'
 import { GamesService } from '../../services/games-service'
 import { MatchScoreComponent } from '../match-score/match-score'
@@ -18,7 +17,6 @@ import { Prediction } from '../../models/prediction'
         Modal,
         ModalContent,
         ModalFooter,
-        ButtonPrimary,
         TeamFlagComponent,
         MatchScoreComponent,
         Loading,
@@ -32,8 +30,6 @@ export class MatchModalComponent implements OnInit {
     public modal = viewChild(Modal)
 
     public game: Game | null = null
-    public score1: number | null = null
-    public score2: number | null = null
     public predictions = signal<Prediction[]>([])
     public isLoading = signal(false)
 
@@ -43,8 +39,6 @@ export class MatchModalComponent implements OnInit {
     public ngOnInit(): void {
         this._matchModalService.open$.subscribe((game) => {
             this.game = game
-            this.score1 = game.prediction_score_1
-            this.score2 = game.prediction_score_2
             this.predictions.set([])
             this.isLoading.set(true)
             this.modal()?.open()
@@ -59,30 +53,6 @@ export class MatchModalComponent implements OnInit {
                     this.isLoading.set(false)
                 }
             })
-        })
-    }
-
-    public get isButtonDisabled(): boolean {
-        return !this._isValid()
-    }
-
-    private _isValid(): boolean {
-        return this.score1 !== null && this.score2 !== null
-    }
-
-    public submitResult(): void {
-        if (!this._isValid()) {
-            return
-        }
-
-        const game = this.game!
-        this._gamesService.predict(game.id, this.score1!, this.score2!).subscribe({
-            next: () => {
-                this.modal()?.close()
-            },
-            error: (err) => {
-                console.error('Error al guardar la predicción', err)
-            }
         })
     }
 }
