@@ -1,0 +1,68 @@
+:host {
+    width: 100%;
+}
+
+.prediction-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 12px 16px;
+}
+
+.user-info {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.nickname {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--blue);
+}
+
+.prediction-score {
+    font-weight: bold;
+    font-size: 16px;
+    color: var(--blue);
+    margin: 0 24px;
+}
+
+.prediction-points {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 64px;
+    height: 32px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: bold;
+    color: var(--white);
+    padding: 0 12px;
+    box-sizing: border-box;
+}
+
+/* Clases de puntos */
+.points-exact {
+    background-color: #2e7d32;
+    box-shadow: 0 2px 6px rgba(46, 125, 50, 0.3);
+}
+
+.points-trend {
+    background-color: #ef6c00;
+    box-shadow: 0 2px 6px rgba(239, 108, 0, 0.3);
+}
+
+.points-none {
+    background-color: #757575;
+    box-shadow: 0 2px 6px rgba(117, 117, 117, 0.3);
+}
+
+.points-null {
+    background-color: transparent;
+    color: var(--light-blue);
+    border: 1px dashed var(--border-color);
+}

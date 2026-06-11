@@ -23,6 +23,12 @@
         }
     </app-modal-content>
     <app-modal-footer>
+        @if(game) {
+        @if (isLoading()) {
         <app-loading></app-loading>
+        } @else {
+        <app-match-prediction-list [predictions]="predictions()"></app-match-prediction-list>
+        }
+        }
     </app-modal-footer>
 </app-modal>

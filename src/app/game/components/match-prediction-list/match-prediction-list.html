@@ -1,0 +1,5 @@
+<div class="prediction-list">
+    @for (prediction of predictions(); track prediction.nickname) {
+        <app-match-prediction-item [prediction]="prediction"></app-match-prediction-item>
+    }
+</div>

@@ -1,0 +1,11 @@
+:host {
+    width: 100%;
+    max-width: var(--content-width);
+    margin-inline: auto;
+}
+
+.prediction-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}

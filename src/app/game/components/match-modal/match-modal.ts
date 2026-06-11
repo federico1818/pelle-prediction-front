@@ -1,4 +1,4 @@
-import { Component, inject, OnInit, viewChild } from '@angular/core'
+import { Component, inject, OnInit, viewChild, signal } from '@angular/core'
 import { Modal } from '../../../shared/components/modal/modal'
 import { ModalContent } from '../../../shared/components/modal-content/modal-content'
 import { ModalFooter } from '../../../shared/components/modal-footer/modal-footer'
@@ -9,6 +9,8 @@ import { TeamFlagComponent } from '../team-flag/team-flag'
 import { GamesService } from '../../services/games-service'
 import { MatchScoreComponent } from '../match-score/match-score'
 import { Loading } from '../../../shared/components/loading/loading'
+import { MatchPredictionList } from '../match-prediction-list/match-prediction-list'
+import { Prediction } from '../../models/prediction'
 
 @Component({
     selector: 'app-match-modal',
@@ -20,6 +22,7 @@ import { Loading } from '../../../shared/components/loading/loading'
         TeamFlagComponent,
         MatchScoreComponent,
         Loading,
+        MatchPredictionList,
     ],
     templateUrl: './match-modal.html',
     styleUrl: './match-modal.scss',
@@ -31,6 +34,8 @@ export class MatchModalComponent implements OnInit {
     public game: Game | null = null
     public score1: number | null = null
     public score2: number | null = null
+    public predictions = signal<Prediction[]>([])
+    public isLoading = signal(false)
 
     private _matchModalService = inject(MatchModalService)
     private _gamesService = inject(GamesService)
@@ -40,14 +45,18 @@ export class MatchModalComponent implements OnInit {
             this.game = game
             this.score1 = game.prediction_score_1
             this.score2 = game.prediction_score_2
+            this.predictions.set([])
+            this.isLoading.set(true)
             this.modal()?.open()
 
             this._gamesService.predictions(game.id).subscribe({
                 next: (res) => {
-                    console.log('Predicciones del partido:', res)
+                    this.predictions.set(res)
+                    this.isLoading.set(false)
                 },
                 error: (err) => {
                     console.error('Error al obtener predicciones:', err)
+                    this.isLoading.set(false)
                 }
             })
         })
