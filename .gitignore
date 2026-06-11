@@ -55,3 +55,4 @@ firebase-key-pp.json
 
 # Firebase
 .firebase/
+firebase-debug.log
