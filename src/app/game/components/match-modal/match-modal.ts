@@ -7,7 +7,7 @@ import { Game } from '../../models/game'
 import { ButtonPrimary } from '../../../shared/components/button-primary/button-primary'
 import { TeamFlagComponent } from '../team-flag/team-flag'
 import { GamesService } from '../../services/games-service'
-import { MatchScoreInputComponent } from '../match-score-input/match-score-input'
+import { MatchScoreComponent } from '../match-score/match-score'
 
 @Component({
     selector: 'app-match-modal',
@@ -17,7 +17,7 @@ import { MatchScoreInputComponent } from '../match-score-input/match-score-input
         ModalFooter,
         ButtonPrimary,
         TeamFlagComponent,
-        MatchScoreInputComponent
+        MatchScoreComponent
     ],
     templateUrl: './match-modal.html',
     styleUrl: './match-modal.scss',
