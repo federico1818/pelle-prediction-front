@@ -14,7 +14,7 @@ export interface Game {
     group: string | null
     prediction_score_1: number | null
     prediction_score_2: number | null
-    date_time: string
+    date_time_formatted: string
     ends_at: string | null
 }
 
