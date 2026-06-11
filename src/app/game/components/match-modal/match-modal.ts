@@ -8,6 +8,7 @@ import { ButtonPrimary } from '../../../shared/components/button-primary/button-
 import { TeamFlagComponent } from '../team-flag/team-flag'
 import { GamesService } from '../../services/games-service'
 import { MatchScoreComponent } from '../match-score/match-score'
+import { Loading } from '../../../shared/components/loading/loading'
 
 @Component({
     selector: 'app-match-modal',
@@ -17,11 +18,13 @@ import { MatchScoreComponent } from '../match-score/match-score'
         ModalFooter,
         ButtonPrimary,
         TeamFlagComponent,
-        MatchScoreComponent
+        MatchScoreComponent,
+        Loading,
     ],
     templateUrl: './match-modal.html',
     styleUrl: './match-modal.scss',
 })
+
 export class MatchModalComponent implements OnInit {
     public modal = viewChild(Modal)
 
@@ -38,6 +41,15 @@ export class MatchModalComponent implements OnInit {
             this.score1 = game.prediction_score_1
             this.score2 = game.prediction_score_2
             this.modal()?.open()
+
+            this._gamesService.predictions(game.id).subscribe({
+                next: (res) => {
+                    console.log('Predicciones del partido:', res)
+                },
+                error: (err) => {
+                    console.error('Error al obtener predicciones:', err)
+                }
+            })
         })
     }
 

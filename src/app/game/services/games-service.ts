@@ -63,4 +63,8 @@ export class GamesService {
             })
         )
     }
+
+    public predictions(gameId: number): Observable<any> {
+        return this._http.get<any>(environment.api.url + `/games/${gameId}/predictions`)
+    }
 }

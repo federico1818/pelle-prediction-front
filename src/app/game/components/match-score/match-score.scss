@@ -1,11 +1,7 @@
-.score-input-container {
+.score {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 4px;
-}
-
-.score-input {
     width: 32px;
     height: 32px;
     border: 2px solid var(--border-color);
@@ -16,11 +12,9 @@
     font-family: var(--font-family-gaming);
     font-weight: bold;
     color: var(--blue);
-    outline: none;
-    transition: all 0.2s ease;
 }
 
-.score-input.has-value {
+.score.has-value {
     background-color: var(--light-blue);
     color: var(--white);
     border-color: var(--light-blue);
