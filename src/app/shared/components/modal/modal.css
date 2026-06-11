@@ -31,6 +31,7 @@ dialog::before {
     inset: 0;
     background-image: var(--background-image);
     background-size: var(--background-size);
+    background-repeat: repeat;
     z-index: -1;
 }
 
