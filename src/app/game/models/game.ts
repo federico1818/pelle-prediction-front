@@ -17,6 +17,7 @@ export interface Game {
     date_time_formatted: string
     date_time: string
     ends_at: string | null
+    can_edit: boolean
 }
 
 export interface GroupedGames {
