@@ -2,7 +2,7 @@ import { Component, inject, OnInit, viewChild } from '@angular/core'
 import { Modal } from '../../../shared/components/modal/modal'
 import { ModalContent } from '../../../shared/components/modal-content/modal-content'
 import { ModalFooter } from '../../../shared/components/modal-footer/modal-footer'
-import { MatchModalService } from '../../services/match-modal-service'
+import { MatchModalEditService } from '../../services/match-modal-edit-service'
 import { Game } from '../../models/game'
 import { ButtonPrimary } from '../../../shared/components/button-primary/button-primary'
 import { TeamFlagComponent } from '../team-flag/team-flag'
@@ -22,14 +22,15 @@ import { MatchScoreInputComponent } from '../match-score-input/match-score-input
     templateUrl: './match-modal-edit.html',
     styleUrl: './match-modal-edit.scss',
 })
-export class MatchModalComponent implements OnInit {
+
+export class MatchModalEditComponent implements OnInit {
     public modal = viewChild(Modal)
 
     public game: Game | null = null
     public score1: number | null = null
     public score2: number | null = null
 
-    private _matchModalService = inject(MatchModalService)
+    private _matchModalService = inject(MatchModalEditService)
     private _gamesService = inject(GamesService)
 
     public ngOnInit(): void {
