@@ -1,40 +1,6 @@
 nav {
     color: var(--white);
-    font-weight: normal;
-    font-size: var(--nav-font-size);
-    font-weight: bold;
     padding: 16px 0;
     display: flex;
     justify-content: center;
-}
-
-ul {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, var(--nav-item-width)));
-    background: var(--nav-background-color);
-    border-radius: var(--nav-border-radius);
-    border: 1px solid var(--border-color);
-    color: var(--nav-color);
-    position: relative;
-    padding: 4px 4px;
-    z-index: 0;
-}
-
-li {
-    border-radius: var(--nav-border-radius);
-}
-
-a {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: var(--nav-item-height);
-    position: relative;
-    z-index: 1;
-    border-radius: inherit;
-}
-
-a.active {
-    color: var(--nav-active-color);
-    background-color: var(--nav-active-background-color);
 }

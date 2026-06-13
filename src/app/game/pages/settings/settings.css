@@ -1,0 +1,6 @@
+.segmented-control {
+    max-width: 128px;
+    grid-template-columns: 1fr;
+    margin-inline: auto;
+    margin-top: 16px;
+}

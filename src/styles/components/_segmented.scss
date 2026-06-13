@@ -1,0 +1,33 @@
+.segmented-control {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, var(--nav-item-width)));
+    background: var(--nav-background-color);
+    border-radius: var(--nav-border-radius);
+    border: 1px solid var(--border-color);
+    color: var(--nav-color);
+    font-size: var(--nav-font-size);
+    font-weight: bold;
+    position: relative;
+    padding: 4px 4px;
+    z-index: 0;
+}
+
+.segmented-item {
+    border-radius: var(--nav-border-radius);
+}
+
+.segmented-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: var(--nav-item-height);
+    position: relative;
+    z-index: 1;
+    border-radius: inherit;
+    font-weight: bold;
+}
+
+.segmented-content.active {
+    color: var(--nav-active-color);
+    background-color: var(--nav-active-background-color);
+}
