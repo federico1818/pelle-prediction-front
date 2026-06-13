@@ -3,6 +3,8 @@ import { Champion } from './pages/champion/champion'
 import { Ranking } from './pages/ranking/ranking'
 import { Matches } from './pages/matches/matches'
 import { Game } from './pages/game/game';
+import { Home } from './pages/home/home';
+import { Fixture } from './pages/fixture/fixture';
 
 export const gameRoutes: Routes = [
     {
@@ -12,11 +14,14 @@ export const gameRoutes: Routes = [
             { path: '', redirectTo: 'champion', pathMatch: 'full' },
             { path: 'champion', component: Champion },
             { path: 'ranking', component: Ranking },
+            { path: 'home', component: Home },
             {
                 path: 'matches',
                 component: Matches,
                 children: [
                     { path: '', redirectTo: 'fixture', pathMatch: 'full' },
+                    { path: 'fixture', component: Fixture },
+                    { path: 'fixture/:month/:day', component: Fixture },
                     {
                         path: 'group',
                         loadComponent: () => import(
@@ -31,18 +36,6 @@ export const gameRoutes: Routes = [
                                 ).then(m => m.GroupMatchesComponent)
                             }
                         ]
-                    },
-                    {
-                        path: 'fixture',
-                        loadComponent: () => import(
-                            './pages/fixture/fixture'
-                        ).then(m => m.Fixture)
-                    },
-                    {
-                        path: 'fixture/:month/:day',
-                        loadComponent: () => import(
-                            './pages/fixture/fixture'
-                        ).then(m => m.Fixture)
                     }
                 ]
             },
