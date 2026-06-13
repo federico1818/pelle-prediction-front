@@ -1,0 +1,10 @@
+:host {
+    color: var(--blue);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    min-width: 160px;
+    text-align: center;
+    user-select: none;
+    display: inline-block;
+}

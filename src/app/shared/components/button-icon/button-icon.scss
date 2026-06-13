@@ -1,0 +1,44 @@
+.button-icon-container {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    height: 24px;
+    width: 24px;
+    padding: 2px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+}
+
+.button-icon-container.md {
+    height: 32px;
+    width: 32px;
+
+    & .material-symbols-outlined {
+        font-size: 18px;
+    }
+}
+
+.button-icon-container.outline {
+    background-color: var(--white);
+    color: var(--light-blue);
+
+    & .button {
+        background-color: inherit;
+        color: inherit;
+    }
+}
+
+.button-icon-container.outline:hover {
+    background-color: var(--light-blue);
+    color: var(--white);
+}
+
+.button-icon {
+    width: 100%;
+    height: 100%;
+    padding: 0;
+}
+
+.material-symbols-outlined {
+    font-size: 16px;
+}

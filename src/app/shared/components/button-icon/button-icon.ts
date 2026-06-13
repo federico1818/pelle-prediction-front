@@ -1,12 +1,15 @@
-import { Component, EventEmitter, Output } from '@angular/core'
+import { Component, input, output } from '@angular/core'
+import { NgClass } from '@angular/common'
 
 @Component({
     selector: 'app-button-icon',
-    imports: [],
+    imports: [NgClass],
     templateUrl: './button-icon.html',
-    styleUrl: './button-icon.css'
+    styleUrl: './button-icon.scss'
 })
 
 export class ButtonIcon {
-    @Output() onClick = new EventEmitter<void>()
+    variant = input<'default' | 'outline'>('default')
+    size = input<'sm' | 'md' | 'lg'>('sm')
+    onClick = output<void>()
 }

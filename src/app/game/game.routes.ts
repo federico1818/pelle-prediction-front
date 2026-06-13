@@ -37,6 +37,12 @@ export const gameRoutes: Routes = [
                         loadComponent: () => import(
                             './pages/fixture/fixture'
                         ).then(m => m.Fixture)
+                    },
+                    {
+                        path: 'fixture/:month/:day',
+                        loadComponent: () => import(
+                            './pages/fixture/fixture'
+                        ).then(m => m.Fixture)
                     }
                 ]
             },

@@ -1,4 +1,4 @@
-<div class="button-icon-container">
+<div class="button-icon-container" [ngClass]="[variant(), size()]">
     <button class="button button-icon" (click)="onClick.emit()">
         <span class="material-symbols-outlined">
             <ng-content></ng-content>
