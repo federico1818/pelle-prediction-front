@@ -1,13 +1,15 @@
-<div class="prediction-item">
-    <div class="user-info">
-        <span class="nickname">{{ prediction().nickname }}</span>
-    </div>
+<div class="nickname">
+    {{ prediction().nickname }}
+</div>
 
-    <div class="prediction-score">
-        {{ prediction().score_1 }} - {{ prediction().score_2 }}
-    </div>
+<div class="score">
+    {{ prediction().score_1 }} - {{ prediction().score_2 }}
+</div>
 
-    <div class="prediction-points" [ngClass]="getPointsClass(prediction().points)">
-        {{ prediction().points !== null ? prediction().points + (prediction().points === 1 ? ' pt' : ' pts') : '-' }}
-    </div>
+<div class="points" [ngClass]="prediction().points?.label || 'points-null'">
+    @if (prediction().points; as points) {
+    {{ points.value }} {{ 'pts' }}
+    } @else {
+    -
+    }
 </div>
