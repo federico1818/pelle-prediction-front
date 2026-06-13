@@ -8,9 +8,9 @@ import { ButtonIcon } from '../../../shared/components/button-icon/button-icon'
     templateUrl: './fixture-nav-next.html',
     styleUrl: './fixture-nav-next.css',
 })
-
 export class FixtureNavNext {
     private _fixtureService = inject(FixtureService)
+    public isNextDisabled = this._fixtureService.isNextDisabled
 
     public goNext(): void {
         this._fixtureService.goNext()

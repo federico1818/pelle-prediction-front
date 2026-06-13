@@ -11,6 +11,7 @@ import { ButtonIcon } from '../../../shared/components/button-icon/button-icon'
 
 export class FixtureNavBack {
     private _fixtureService = inject(FixtureService)
+    public isBackDisabled = this._fixtureService.isBackDisabled
 
     public goPrevious(): void {
         this._fixtureService.goPrevious()

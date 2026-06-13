@@ -1,4 +1,4 @@
-import { Injectable, inject, signal } from '@angular/core'
+import { Injectable, inject, signal, computed } from '@angular/core'
 import { Router } from '@angular/router'
 
 @Injectable({
@@ -9,6 +9,24 @@ export class FixtureService {
 
     public currentMonth = signal<number>(1)
     public currentDay = signal<number>(1)
+
+    public isBackDisabled = computed(() => {
+        const month = this.currentMonth()
+        const day = this.currentDay()
+
+        if (month < 6) return true
+        if (month === 6 && day <= 11) return true
+        return false
+    })
+
+    public isNextDisabled = computed(() => {
+        const month = this.currentMonth()
+        const day = this.currentDay()
+
+        if (month > 6) return true
+        if (month === 6 && day >= 27) return true
+        return false
+    })
 
     public getNextDate(month: number, day: number): { month: number; day: number } {
         const year = new Date().getFullYear()
@@ -36,11 +54,13 @@ export class FixtureService {
     }
 
     public goPrevious(): void {
+        if (this.isBackDisabled()) return
         const prev = this.getPreviousDate(this.currentMonth(), this.currentDay())
         this._router.navigate(['/game/matches/fixture', prev.month, prev.day])
     }
 
     public goNext(): void {
+        if (this.isNextDisabled()) return
         const next = this.getNextDate(this.currentMonth(), this.currentDay())
         this._router.navigate(['/game/matches/fixture', next.month, next.day])
     }
