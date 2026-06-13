@@ -1,11 +1,13 @@
 import { Component } from '@angular/core'
 import { SceneComponent } from '../../../shared/components/scene/scene'
 import { Scene } from '../../../shared/models/scene'
+import { ToyWithBall } from '../../components/toy-with-ball/toy-with-ball'
 
 @Component({
     selector: 'app-ranking',
     imports: [
-        SceneComponent
+        SceneComponent,
+        ToyWithBall
     ],
     templateUrl: './ranking.html',
     styleUrl: './ranking.css',

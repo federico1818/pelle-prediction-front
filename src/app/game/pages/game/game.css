@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: 1fr 64px;
     grid-template-rows: 1fr 64px;
-    padding: 0 8px;
+    padding: 8px;
     height: 100dvh;
     overflow: hidden;
 }

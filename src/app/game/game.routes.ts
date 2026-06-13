@@ -16,6 +16,12 @@ export const gameRoutes: Routes = [
             { path: 'ranking', component: Ranking },
             { path: 'home', component: Home },
             {
+                path: 'settings',
+                loadComponent: () => import(
+                    './pages/settings/settings'
+                ).then(m => m.Settings)
+            },
+            {
                 path: 'matches',
                 component: Matches,
                 children: [
