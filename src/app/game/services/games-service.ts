@@ -39,6 +39,15 @@ export class GamesService {
         return allGroups.find(g => g.group.name === letter) || null
     })
 
+    public getByDate(month: number, day: number): Game[] {
+        return this.games()
+            .flatMap(g => g.matches)
+            .filter(game => {
+                const date = new Date(game.date_time)
+                return (date.getMonth() + 1) === month && date.getDate() === day
+            })
+    }
+
     public all(): Observable<GroupedGames[]> {
         return this._http.get<GroupedGames[]>(environment.api.url + '/games').pipe(
             tap((groups: GroupedGames[]) => {
