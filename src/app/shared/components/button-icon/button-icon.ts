@@ -11,5 +11,6 @@ import { NgClass } from '@angular/common'
 export class ButtonIcon {
     variant = input<'default' | 'outline'>('default')
     size = input<'sm' | 'md' | 'lg'>('sm')
+    disabled = input<boolean>(false)
     onClick = output<void>()
 }

@@ -1,5 +1,5 @@
-<div class="button-icon-container" [ngClass]="[variant(), size()]">
-    <button class="button button-icon" (click)="onClick.emit()">
+<div class="button-icon-container" [ngClass]="[variant(), size(), disabled() ? 'disabled' : '']">
+    <button class="button button-icon" [disabled]="disabled()" (click)="!disabled() && onClick.emit()">
         <span class="material-symbols-outlined">
             <ng-content></ng-content>
         </span>
