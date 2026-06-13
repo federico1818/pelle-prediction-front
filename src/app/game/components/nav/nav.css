@@ -15,7 +15,6 @@ nav {
     display: grid;
     grid-template-columns: 1fr 80px 1fr;
     height: 100%;
-    border: 1px solid var(--border-color);
     border-radius: 8px;
     max-width: var(--content-width);
     margin-inline: auto;
@@ -47,14 +46,26 @@ a.active span {
     position: relative;
 }
 
-.home a {
+.home-container {
+    position: absolute;
+    display: flex;
+    justify-content: center;
     height: 80px;
-    box-shadow: 0 0 2px var(--border-color);
+    width: 80px;
     border-radius: 50%;
     bottom: 24px;
-    position: absolute;
-    padding: 16px;
     background-color: var(--menu-base-background-color);
+}
+
+.home a {
+    padding: 16px;
+    background-color: var(--menu-background-color);
+    border-radius: 50%;
+    border: 8px solid var(--menu-base-background-color);
+}
+
+.home a.active {
+    background-color: var(--nav-active-background-color);
 }
 
 .home img {
