@@ -6,7 +6,7 @@
 .custom-select-container {
     position: relative;
     width: 160px;
-    margin: 0 auto 24px auto;
+    margin: 0 auto;
 }
 
 .select-trigger {
