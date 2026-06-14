@@ -11,8 +11,19 @@
     position: absolute;
     left: 0;
     bottom: 0;
+    filter: drop-shadow(-8px -4px 8px var(--toy-shadow-color));
 }
 
 .first {
     left: 160px;
+}
+
+.second {
+    left: -46px;
+    bottom: -42px;
+}
+
+.third {
+    left: 104px;
+    bottom: -72px;
 }

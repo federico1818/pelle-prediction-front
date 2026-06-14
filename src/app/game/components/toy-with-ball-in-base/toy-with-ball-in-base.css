@@ -10,10 +10,23 @@
     bottom: 0;
     width: 100%;
     left: 0;
+    filter: drop-shadow(-8px -4px 8px var(--toy-shadow-color));
 }
 
 .toy {
     position: relative;
+}
+
+.toy.maxi {
+    left: 10px;
+}
+
+.toy.kei {
+    left: 10px;
+}
+
+.toy.mero {
+    left: 6px;
 }
 
 .points {
