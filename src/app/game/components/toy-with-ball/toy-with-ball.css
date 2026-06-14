@@ -1,0 +1,50 @@
+:host {
+    position: relative;
+    display: inline-block;
+    height: 200px;
+}
+
+img {
+    height: 100%;
+}
+
+.rank {
+    position: absolute;
+    font-weight: bold;
+    color: var(--blue);
+}
+
+.rank.aboy {
+    bottom: 52px;
+    right: 45px;
+}
+
+.rank.kei {
+    bottom: 70px;
+    right: 31px;
+}
+
+.rank.diego {
+    bottom: 72px;
+    right: 32px;
+}
+
+.rank.marco {
+    bottom: 64px;
+    right: 39px;
+}
+
+.rank.maxi {
+    bottom: 69px;
+    right: 37px;
+}
+
+.rank.mero {
+    bottom: 63px;
+    right: 42px;
+}
+
+.rank.charly {
+    bottom: 72px;
+    left: 32px;
+}

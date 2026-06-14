@@ -1,4 +1,17 @@
-<app-scene [scene]="rankingScene"></app-scene>
-<app-toy-with-ball></app-toy-with-ball>
-<app-toy-with-ball></app-toy-with-ball>
-<app-toy-with-ball></app-toy-with-ball>
+<!-- <app-scene [scene]="rankingScene"></app-scene> -->
+
+@if (list().length > 0) {
+    <app-podium 
+        [first]="list()[0] || null" 
+        [second]="list()[1] || null" 
+        [third]="list()[2] || null">
+    </app-podium>
+}
+
+@for (user of list().slice(3); track user.nickname; let index = $index) {
+    <app-toy-with-ball-in-base 
+        [nickname]="user.nickname" 
+        [rank]="index + 4" 
+        [points]="user.points">
+    </app-toy-with-ball-in-base>
+}

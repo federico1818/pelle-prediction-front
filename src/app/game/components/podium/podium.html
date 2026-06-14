@@ -1,0 +1,10 @@
+<img src="/assets/img/podium.png" alt="podium" class="podium">
+@if (first()) {
+<app-toy-with-ball class="first" [nickname]="first()!.nickname" [rank]="1"></app-toy-with-ball>
+}
+@if (second()) {
+<app-toy-with-ball class="second" [nickname]="second()!.nickname" [rank]="2"></app-toy-with-ball>
+}
+@if (third()) {
+<app-toy-with-ball class="third" [nickname]="third()!.nickname" [rank]="3"></app-toy-with-ball>
+}

@@ -49,6 +49,7 @@ src/environments/environment.prod.ts
 src/assets/video
 src/assets/img/flags
 src/assets/img/scenes
+src/assets/img/toys
 
 # Keys
 firebase-key-pp.json
