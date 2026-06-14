@@ -36,5 +36,5 @@
     margin: 4px auto 0;
     height: 2px;
     width: 48px;
-    background-color: var(--player-name-border-color);
+    background-color: var(--team-name-border-color);
 }

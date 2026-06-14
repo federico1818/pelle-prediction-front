@@ -19,14 +19,10 @@
     --flag-background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8)), url('/assets/img/player-background.png');
     --flag-border-color: var(--white);
     --match-background-color: var(--white);
-    --player-background: var(--flag-background);
-    --player-border-color: var(--white);
-    --player-name-color: var(--white);
-    --player-name-border-color: var(--sun-yellow);
-    --player-position-color: var(--sun-yellow);
-    --player-search-border-color: var(--border-color);
+    --team-name-border-color: var(--sun-yellow);
     --alert-title-color: var(--blue);
     --alert-message-color: var(--blue);
     --card-background: var(--flag-background);
     --scene-title-color: var(--light-blue);
+    --toy-shadow-color: rgba(0, 0, 0, .5);
 }
