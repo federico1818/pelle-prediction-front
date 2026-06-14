@@ -14,16 +14,43 @@
     filter: drop-shadow(-8px -4px 8px var(--toy-shadow-color));
 }
 
-.first {
+.toy {
+    position: absolute;
+}
+
+.toy.first {
     left: 160px;
+    bottom: 144px;
 }
 
-.second {
-    left: -46px;
-    bottom: -42px;
+.toy.second {
+    left: 24px;
+    bottom: 98px;
 }
 
-.third {
-    left: 104px;
-    bottom: -72px;
+.toy.third {
+    right: 18px;
+    bottom: 67px;
+}
+
+.points {
+    position: absolute;
+    font-family: var(--font-family-gaming);
+    color: var(--blue);
+    font-size: 24px;
+}
+
+.points.first {
+    left: 170px;
+    bottom: 50px;
+}
+
+.points.second {
+    left: 67px;
+    bottom: 28px;
+}
+
+.points.third {
+    right: 58px;
+    bottom: 16px;
 }
