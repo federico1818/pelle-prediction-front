@@ -1,7 +1,7 @@
 :host {
-    max-width: 480px;
     margin-inline: auto;
     display: grid;
+    align-content: start;
     gap: 24px 0;
     width: 100%;
     overflow-y: scroll;

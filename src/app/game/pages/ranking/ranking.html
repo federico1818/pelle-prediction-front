@@ -4,12 +4,23 @@
     </div>
 </div>
 
-@if (list().length > 0) {
-<app-podium [first]="list()[0] || null" [second]="list()[1] || null" [third]="list()[2] || null">
-</app-podium>
-}
+@if (isLoading()) {
+    <app-loading></app-loading>
+} @else {
+    @if (list().length > 0) {
+        <app-podium 
+            [first]="list()[0] || null" 
+            [second]="list()[1] || null" 
+            [third]="list()[2] || null">
+        </app-podium>
+    }
 
-@for (user of list().slice(3); track user.nickname; let index = $index) {
-<app-toy-with-ball-in-base class="toy" [nickname]="user.nickname" [rank]="index + 4" [points]="user.points">
-</app-toy-with-ball-in-base>
+    @for (user of list().slice(3); track user.nickname; let index = $index) {
+        <app-toy-with-ball-in-base 
+            class="toy" 
+            [nickname]="user.nickname" 
+            [rank]="index + 4" 
+            [points]="user.points">
+        </app-toy-with-ball-in-base>
+    }
 }

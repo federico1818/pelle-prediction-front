@@ -46,6 +46,9 @@ export class GamesService {
                 const date = new Date(game.date_time)
                 return (date.getMonth() + 1) === month && date.getDate() === day
             })
+            .sort((a, b) => {
+                return new Date(a.date_time).getTime() - new Date(b.date_time).getTime()
+            })
     }
 
     public all(): Observable<GroupedGames[]> {
@@ -86,6 +89,9 @@ export class GamesService {
                 return date.getFullYear() === today.getFullYear() &&
                        date.getMonth() === today.getMonth() &&
                        date.getDate() === today.getDate()
+            })
+            .sort((a, b) => {
+                return new Date(a.date_time).getTime() - new Date(b.date_time).getTime()
             })
     }
 }
