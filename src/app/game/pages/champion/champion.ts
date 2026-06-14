@@ -1,17 +1,14 @@
-import { Component, inject, OnInit, Signal, signal, WritableSignal } from '@angular/core'
+import { Component, inject, OnInit, Signal } from '@angular/core'
 import { TeamsService } from '../../services/teams-service'
 import { Team } from '../../models/team'
 import { ChampionListComponent } from '../../components/champion-list/champion-list'
 import { ChampionSelected } from '../../components/champion-selected/champion-selected'
-import { Scene } from '../../../shared/models/scene'
-import { SceneComponent } from '../../../shared/components/scene/scene'
 
 @Component({
     selector: 'app-champion',
     imports: [
         ChampionListComponent,
         ChampionSelected,
-        SceneComponent
     ],
     templateUrl: './champion.html',
     styleUrl: './champion.css',

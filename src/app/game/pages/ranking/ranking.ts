@@ -1,7 +1,4 @@
 import { Component, inject, signal, OnInit } from '@angular/core'
-import { SceneComponent } from '../../../shared/components/scene/scene'
-import { Scene } from '../../../shared/models/scene'
-import { ToyWithBall } from '../../components/toy-with-ball/toy-with-ball'
 import { Podium } from '../../components/podium/podium'
 import { ToyWithBallInBase } from '../../components/toy-with-ball-in-base/toy-with-ball-in-base'
 import { RankingService } from '../../services/ranking-service'
@@ -10,8 +7,6 @@ import { Ranking as RankingModel } from '../../models/ranking'
 @Component({
     selector: 'app-ranking',
     imports: [
-        SceneComponent,
-        ToyWithBall,
         ToyWithBallInBase,
         Podium
     ],

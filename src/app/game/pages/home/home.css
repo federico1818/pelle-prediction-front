@@ -3,6 +3,8 @@
     max-width: var(--content-width);
     margin-inline: auto;
     width: 100%;
+    overflow-y: auto;
+    padding-bottom: 56px;
 }
 
 app-scene {
