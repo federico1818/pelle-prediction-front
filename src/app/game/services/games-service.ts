@@ -76,4 +76,16 @@ export class GamesService {
     public predictions(gameId: number): Observable<any> {
         return this._http.get<any>(environment.api.url + `/games/${gameId}/predictions`)
     }
+
+    public today(): Game[] {
+        const today = new Date()
+        return this.games()
+            .flatMap(g => g.matches)
+            .filter(game => {
+                const date = new Date(game.date_time)
+                return date.getFullYear() === today.getFullYear() &&
+                       date.getMonth() === today.getMonth() &&
+                       date.getDate() === today.getDate()
+            })
+    }
 }

@@ -1,3 +1,10 @@
 :host {
     padding-top: 24px;
+    max-width: var(--content-width);
+    margin-inline: auto;
+    width: 100%;
+}
+
+app-scene {
+    margin-bottom: 24px;
 }
