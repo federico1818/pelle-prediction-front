@@ -23,7 +23,7 @@ export class Callback implements OnInit {
                 if (intro === 'true') {
                     this.router.navigate(['/intro'])
                 } else {
-                    this.router.navigate(['/game'])
+                    this.router.navigate(['/game/home'])
                 }
             } else {
                 this.router.navigate(['/auth/login'])
