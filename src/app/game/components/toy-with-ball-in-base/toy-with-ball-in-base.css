@@ -29,6 +29,10 @@
     left: 6px;
 }
 
+.toy.diego {
+    left: 14px;
+}
+
 .points {
     position: absolute;
     bottom: 6px;
