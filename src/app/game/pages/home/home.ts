@@ -1,33 +1,28 @@
-import { Component, inject, computed, OnInit } from '@angular/core'
-import { Scene } from '../../../shared/models/scene'
-import { SceneComponent } from '../../../shared/components/scene/scene'
-import { GamesService } from '../../services/games-service'
-import { MatchListComponent } from '../../components/match-list/match-list'
+import { Component, OnInit, OnDestroy, inject } from '@angular/core'
+import { News } from '../../components/news/news'
+import { ConfettiService } from '../../../shared/services/confetti-service'
 
 @Component({
     selector: 'app-home',
-    imports: [SceneComponent, MatchListComponent],
+    imports: [News],
     templateUrl: './home.html',
     styleUrl: './home.css',
 })
 
-export class Home implements OnInit {
-    private _gamesService = inject(GamesService)
-
-    public todayGames = computed(() => this._gamesService.today())
-
-    public scene: Scene = {
-        title: '',
-        dialogues: [
-            {
-                text: '¡Que no se te escape la tortuga! Completá tus pronósticos para hoy.',
-                src: 'scenes/maradona.png',
-                type: 'rpg'
-            }
-        ]
-    }
+export class Home implements OnInit, OnDestroy {
+    private _confettiService = inject(ConfettiService)
+    private _intervalId: any
 
     public ngOnInit(): void {
-        this._gamesService.all().subscribe()
+        this._confettiService.shoot()
+        this._intervalId = setInterval(() => {
+            this._confettiService.shoot()
+        }, 2000)
+    }
+
+    public ngOnDestroy(): void {
+        if (this._intervalId) {
+            clearInterval(this._intervalId)
+        }
     }
 }
