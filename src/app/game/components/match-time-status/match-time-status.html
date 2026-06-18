@@ -1,1 +1,5 @@
-{{ countdown() }}
+@if (isPlaying()) {
+    <app-match-time-live></app-match-time-live>
+} @else {
+    <span [class.finished]="isFinished()">{{ countdown() }}</span>
+}

@@ -8,5 +8,6 @@
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 16px;
     width: 100%;
-    box-sizing: border-box;
+    max-width: var(--content-width);
+    margin-inline: auto;
 }

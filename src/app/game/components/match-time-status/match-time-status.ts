@@ -1,50 +1,54 @@
-import { Component, input, OnInit, OnDestroy, signal } from '@angular/core'
+import { Component, input, OnInit, OnDestroy, signal, computed } from '@angular/core'
 import { Game, isGamePlaying, isGameFinished, getGameTimeRemainingString } from '../../models/game'
+import { MatchTimeLive } from '../match-time-live/match-time-live'
 
 @Component({
     selector: 'app-match-time-status',
-    imports: [],
+    imports: [MatchTimeLive],
     templateUrl: './match-time-status.html',
     styleUrl: './match-time-status.css',
 })
+
 export class MatchTimeStatusComponent implements OnInit, OnDestroy {
     public game = input.required<Game>()
 
-    public countdown = signal<string>('')
+    private _now = signal<Date>(new Date())
     private _intervalId: any
 
+    public isPlaying = computed(() => {
+        return isGamePlaying(this.game(), this._now())
+    })
+
+    public isFinished = computed(() => {
+        return isGameFinished(this.game(), this._now())
+    })
+
+    public countdown = computed(() => {
+        if (this.isFinished()) {
+            return 'Finalizado'
+        }
+        return getGameTimeRemainingString(this.game(), this._now())
+    })
+
     public ngOnInit(): void {
-        this.updateCountdown()
-        if (!isGamePlaying(this.game()) && !isGameFinished(this.game())) {
+        if (!this.isFinished()) {
             this._intervalId = setInterval(() => {
-                this.updateCountdown()
+                this._now.set(new Date())
+                if (this.isFinished()) {
+                    this.clearInterval()
+                }
             }, 1000)
         }
     }
 
-    private updateCountdown(): void {
-        if (isGamePlaying(this.game())) {
-            this.countdown.set('En juego')
-            if (this._intervalId) {
-                clearInterval(this._intervalId)
-                this._intervalId = null
-            }
-            return
+    private clearInterval(): void {
+        if (this._intervalId) {
+            clearInterval(this._intervalId)
+            this._intervalId = null
         }
-        if (isGameFinished(this.game())) {
-            this.countdown.set('Finalizado')
-            if (this._intervalId) {
-                clearInterval(this._intervalId)
-                this._intervalId = null
-            }
-            return
-        }
-        this.countdown.set(getGameTimeRemainingString(this.game()))
     }
 
     public ngOnDestroy(): void {
-        if (this._intervalId) {
-            clearInterval(this._intervalId)
-        }
+        this.clearInterval()
     }
 }

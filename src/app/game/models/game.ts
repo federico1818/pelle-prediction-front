@@ -26,28 +26,24 @@ export interface GroupedGames {
     positions: Position[]
 }
 
-export function isGamePlaying(game: Game): boolean {
-    const now = new Date()
+export function isGamePlaying(game: Game, now = new Date()): boolean {
     const startDate = new Date(game.date_time)
     const endDate = new Date(startDate.getTime() + (2 * 60 * 60 * 1000))
     return now >= startDate && now < endDate
 }
 
-export function isGameUpcomingOrPlaying(game: Game): boolean {
-    const now = new Date()
+export function isGameUpcomingOrPlaying(game: Game, now = new Date()): boolean {
     const date = new Date(game.date_time)
     return date.getTime() + (2 * 60 * 60 * 1000) > now.getTime()
 }
 
-export function isGameFinished(game: Game): boolean {
-    const now = new Date()
+export function isGameFinished(game: Game, now = new Date()): boolean {
     const startDate = new Date(game.date_time)
     const endDate = new Date(startDate.getTime() + (2 * 60 * 60 * 1000))
     return now >= endDate
 }
 
-export function getGameTimeRemainingString(game: Game): string {
-    const now = new Date()
+export function getGameTimeRemainingString(game: Game, now = new Date()): string {
     const startDate = new Date(game.date_time)
     const diffMs = startDate.getTime() - now.getTime()
 

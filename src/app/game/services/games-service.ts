@@ -84,12 +84,12 @@ export class GamesService {
         const allMatches = this.games().flatMap(g => g.matches)
 
         const finished = allMatches
-            .filter(isGameFinished)
+            .filter(game => isGameFinished(game))
             .sort((a, b) => new Date(b.date_time).getTime() - new Date(a.date_time).getTime())
             .slice(0, 1)
 
         const upcomingAndPlaying = allMatches
-            .filter(isGameUpcomingOrPlaying)
+            .filter(game => isGameUpcomingOrPlaying(game))
             .sort((a, b) => new Date(a.date_time).getTime() - new Date(b.date_time).getTime())
             .slice(0, 2)
 
