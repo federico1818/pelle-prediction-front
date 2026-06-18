@@ -20,4 +20,5 @@ app-match-time-status {
     grid-column: 4 / -1;
     font-size: 10px;
     font-style: italic;
+    justify-self: end;
 }
