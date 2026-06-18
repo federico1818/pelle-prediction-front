@@ -1,0 +1,77 @@
+.match {
+    display: grid;
+    grid-template-columns: 32px 1fr 24px 24px 1fr 32px;
+    align-items: center;
+    gap: 4px 8px;
+    color: var(--blue);
+    padding: 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    position: relative;
+    box-sizing: border-box;
+    background-color: var(--match-background-color);
+    cursor: pointer;
+    width: 100%;
+    max-width: 480px;
+
+    &:hover {
+        border-color: var(--light-blue);
+    }
+}
+
+.match-prediction-box {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    font-weight: normal;
+    font-size: 11px;
+    font-family: var(--font-family-gaming);
+    background-color: rgba(255, 255, 255, 0.5);
+    color: var(--blue);
+    grid-row: 2;
+    transition: all 0.2s ease;
+
+    &.predicted {
+        background-color: var(--light-blue);
+        color: var(--white);
+        border-color: var(--light-blue);
+    }
+}
+
+.match-team-name {
+    font-weight: bold;
+    font-size: 11px;
+    grid-row: 2;
+    text-transform: uppercase;
+
+    &.name-1 {
+        text-align: left;
+    }
+
+    &.name-2 {
+        text-align: right;
+    }
+}
+
+.match-score {
+    font-weight: bold;
+    font-size: 11px;
+    text-align: center;
+    color: var(--blue);
+
+    &.score-1 {
+        grid-column: 3;
+    }
+
+    &.score-2 {
+        grid-column: 4;
+    }
+}
+
+.match-team-flag {
+    grid-row: 2;
+}

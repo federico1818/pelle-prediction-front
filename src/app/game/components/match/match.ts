@@ -10,6 +10,7 @@ import { MatchModalEditService } from '../../services/match-modal-edit-service'
     templateUrl: './match.html',
     styleUrl: './match.css',
     host: {
+        'class': 'match',
         '(click)': 'openModal()',
     },
 })
