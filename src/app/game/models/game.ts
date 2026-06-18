@@ -25,3 +25,17 @@ export interface GroupedGames {
     matches: Game[]
     positions: Position[]
 }
+
+export function isGamePlaying(game: Game): boolean {
+    const now = new Date()
+    const startDate = new Date(game.date_time)
+    const endDate = new Date(startDate.getTime() + (2 * 60 * 60 * 1000))
+    return now >= startDate && now < endDate
+}
+
+export function isGameUpcomingOrPlaying(game: Game): boolean {
+    const now = new Date()
+    const date = new Date(game.date_time)
+    return date.getTime() + (2 * 60 * 60 * 1000) > now.getTime()
+}
+

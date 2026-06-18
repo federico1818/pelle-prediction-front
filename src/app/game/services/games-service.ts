@@ -4,7 +4,7 @@ import { Router, NavigationEnd } from '@angular/router'
 import { Observable } from 'rxjs'
 import { tap, filter, map, startWith } from 'rxjs/operators'
 import { toSignal } from '@angular/core/rxjs-interop'
-import { Game, GroupedGames } from '../models/game'
+import { Game, GroupedGames, isGameUpcomingOrPlaying } from '../models/game'
 import { environment } from '../../../environments/environment'
 
 @Injectable({
@@ -80,18 +80,13 @@ export class GamesService {
         return this._http.get<any>(environment.api.url + `/games/${gameId}/predictions`)
     }
 
-    public today(): Game[] {
-        const today = new Date()
+    public readonly upcoming = computed(() => {
         return this.games()
             .flatMap(g => g.matches)
-            .filter(game => {
-                const date = new Date(game.date_time)
-                return date.getFullYear() === today.getFullYear() &&
-                       date.getMonth() === today.getMonth() &&
-                       date.getDate() === today.getDate()
-            })
+            .filter(isGameUpcomingOrPlaying)
             .sort((a, b) => {
                 return new Date(a.date_time).getTime() - new Date(b.date_time).getTime()
             })
-    }
+            .slice(0, 2)
+    })
 }
