@@ -1,12 +1,12 @@
 import { Component, inject, OnInit } from '@angular/core'
 import { GamesService } from '../../services/games-service'
-import { MatchListComponent } from '../match-list/match-list'
+import { MatchWithStatusComponent } from '../match-with-status/match-with-status'
 import { Scene } from '../../../shared/models/scene'
 import { SceneComponent } from '../../../shared/components/scene/scene'
 
 @Component({
     selector: 'app-match-list-upcoming',
-    imports: [MatchListComponent, SceneComponent],
+    imports: [MatchWithStatusComponent, SceneComponent],
     templateUrl: './match-list-upcoming.html',
     styleUrl: './match-list-upcoming.css',
 })

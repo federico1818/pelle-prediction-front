@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core'
+import { Component, input } from '@angular/core'
 import { Game } from '../../models/game'
 import { MatchComponent } from '../match/match'
 
@@ -10,5 +10,5 @@ import { MatchComponent } from '../match/match'
 })
 
 export class MatchListComponent {
-    @Input({ required: true }) games: Game[] = []
+    public games = input.required<Game[]>()
 }

@@ -39,3 +39,29 @@ export function isGameUpcomingOrPlaying(game: Game): boolean {
     return date.getTime() + (2 * 60 * 60 * 1000) > now.getTime()
 }
 
+export function isGameFinished(game: Game): boolean {
+    const now = new Date()
+    const startDate = new Date(game.date_time)
+    const endDate = new Date(startDate.getTime() + (2 * 60 * 60 * 1000))
+    return now >= endDate
+}
+
+export function getGameTimeRemainingString(game: Game): string {
+    const now = new Date()
+    const startDate = new Date(game.date_time)
+    const diffMs = startDate.getTime() - now.getTime()
+
+    if (diffMs <= 0) {
+        return '00:00:00'
+    }
+
+    const diffHrs = Math.floor(diffMs / (1000 * 60 * 60))
+    const diffMins = Math.floor((diffMs % (1000 * 60 * 60)) / (1000 * 60))
+    const diffSecs = Math.floor((diffMs % (1000 * 60)) / 1000)
+
+    const pad = (n: number) => n.toString().padStart(2, '0')
+    return ` Comienza en ${pad(diffHrs)}:${pad(diffMins)}:${pad(diffSecs)}`
+}
+
+
+
