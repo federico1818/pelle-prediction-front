@@ -11,12 +11,13 @@
     --white: #ffffff;
     --app-background: url('/assets/img/background.png');
     --border-color: var(--light-blue-50);
-    --nav-color: var(--blue);
+    --button-color: #FFF;
+    --button-background-color: #000;
+    --nav-color: var(--white);
     --nav-background-color: var(--white);
-    --nav-active-color: var(--white);
-    --nav-active-background-color: var(--light-blue);
-    --menu-background-color: var(--light-blue-30);
-    --menu-base-background-color: var(--white);
+    --nav-active-color: #000;
+    --nav-active-background-color: var(--cyan);
+    --menu-background-color: #000;
     --flag-background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8)), url('/assets/img/player-background.png');
     --flag-border-color: var(--white);
     --match-color: var(--white);
