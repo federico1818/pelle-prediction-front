@@ -1,10 +1,15 @@
 import { Routes } from '@angular/router'
 import { authGuard } from './auth/auth-guard'
+import { inject } from '@angular/core'
+import { AuthService } from './shared/services/auth-service'
 
 export const routes: Routes = [
     {
         path: '',
-        redirectTo: 'auth/login',
+        redirectTo: () => {
+            const authService = inject(AuthService)
+            return authService.isAuthenticated() ? 'game' : 'auth/login'
+        },
         pathMatch: 'full',
     },
     {
