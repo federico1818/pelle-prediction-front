@@ -16,10 +16,9 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 12px;
-    border: 1px solid var(--border-color);
-    border-radius: 6px;
-    background-color: var(--match-background-color, #ffffff);
-    color: var(--blue);
+    border-radius: 4px;
+    background-color: var(--select-background-color);
+    color: var(--select-color);
     font-size: 13px;
     font-weight: 700;
     font-family: inherit;
@@ -36,7 +35,6 @@
 
 .arrow-icon {
     font-size: 18px;
-    color: var(--blue);
     transition: transform 0.2s ease;
 }
 
@@ -51,8 +49,8 @@
     width: 100%;
     max-height: 240px;
     overflow-y: auto;
-    background-color: #ffffff;
-    border: 1px solid var(--border-color);
+    background-color: var(--select-background-color);
+    border: 1px solid var(--select-border-color);
     border-radius: 6px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
     z-index: 100;
@@ -97,6 +95,6 @@
 }
 
 .dropdown-item.active {
-    background-color: var(--light-blue);
-    color: var(--white);
+    background-color: var(--select-item-selected-background-color);
+    color: var(--select-item-selected-color);
 }

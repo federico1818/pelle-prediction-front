@@ -25,5 +25,5 @@
 
 .col-pts {
     font-weight: 700;
-    color: var(--blue, #2d3748);
+    color: var(--table-highlight-color);
 }

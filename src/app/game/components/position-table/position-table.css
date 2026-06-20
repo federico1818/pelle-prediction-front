@@ -4,13 +4,12 @@
 }
 
 .table-container {
-    background-color: var(--white);
-    border: 1px solid var(--border-color);
+    background-color: var(--table-background-color);
     border-radius: 4px;
     overflow: hidden;
     margin-bottom: 24px;
     font-size: 11px;
-    color: var(--gray-600);
+    color: var(--table-color);
 }
 
 .table-body {

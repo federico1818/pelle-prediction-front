@@ -1,10 +1,9 @@
 .segmented-control {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, var(--nav-item-width)));
-    background: var(--nav-background-color);
+    background: var(--segmented-background-color);
     border-radius: var(--nav-border-radius);
-    border: 1px solid var(--border-color);
-    color: var(--nav-color);
+    color: var(--segmented-color);
     font-size: var(--nav-font-size);
     font-weight: bold;
     position: relative;
