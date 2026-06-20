@@ -1,21 +1,45 @@
 .match {
+    background-color: var(--match-background-color);
+    color: var(--match-color);
+    border-radius: 16px;
+    cursor: pointer;
+    width: 100%;
+    max-width: var(--content-width);
+}
+
+.match-container {
     display: grid;
     grid-template-columns: 32px 1fr 24px 24px 1fr 32px;
     align-items: center;
     gap: 4px 8px;
-    color: var(--blue);
-    padding: 16px;
-    border: 1px solid var(--border-color);
-    border-radius: 4px;
     position: relative;
-    box-sizing: border-box;
-    background-color: var(--match-background-color);
-    cursor: pointer;
-    width: 100%;
-    max-width: 480px;
+    isolation: isolate;
+    border-radius: inherit;
+    height: 48px;
+    padding: 0 16px;
 
-    &:hover {
-        border-color: var(--light-blue);
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 2px;
+        background-color: var(--match-content-background-color);
+        z-index: -1;
+        border-radius: inherit;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background-image: url('/assets/img/match-border.svg');
+        opacity: .2;
+        transition: opacity 0.3s ease-in-out;
+        z-index: -2;
+    }
+
+    .match:hover &::after {
+        opacity: 1;
     }
 }
 
@@ -25,27 +49,21 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    border: 1px solid var(--border-color);
     border-radius: 4px;
     font-weight: normal;
     font-size: 11px;
     font-family: var(--font-family-gaming);
-    background-color: rgba(255, 255, 255, 0.5);
-    color: var(--blue);
-    grid-row: 2;
-    transition: all 0.2s ease;
+    background-color: var(--match-prediction-background-color);
+    color: var(--match-prediction-color);
 
     &.predicted {
-        background-color: var(--light-blue);
-        color: var(--white);
-        border-color: var(--light-blue);
+        background-color: var(--match-prediction-predicted-background-color);
     }
 }
 
 .match-team-name {
     font-weight: bold;
     font-size: 11px;
-    grid-row: 2;
     text-transform: uppercase;
 
     &.name-1 {
@@ -70,8 +88,4 @@
     &.score-2 {
         grid-column: 4;
     }
-}
-
-.match-team-flag {
-    grid-row: 2;
 }
