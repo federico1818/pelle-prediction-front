@@ -102,7 +102,7 @@
     padding: 8px 12px;
     font-size: 12px;
     font-weight: 600;
-    color: var(--blue);
+    color: var(--select-color);
     text-decoration: none;
     text-transform: uppercase;
     text-align: left;
@@ -112,8 +112,7 @@
 }
 
 .dropdown-item:hover {
-    background-color: rgba(var(--light-blue-rgb, 59, 130, 246), 0.05);
-    color: var(--light-blue);
+    color: var(--select-item-hover-color);
 }
 
 .dropdown-item.active {

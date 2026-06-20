@@ -3,20 +3,27 @@
     cursor: pointer;
     width: 100%;
     max-width: var(--content-width);
+    background-color: var(--match-background-color);
+    border-radius: 16px;
+    position: relative;
 }
 
-.match-box {
-    border-radius: 16px;
+.match-info {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 8px 16px;
+    align-items: center;
+    font-size: 9px;
 }
 
 .match-container {
     display: grid;
-    grid-template-columns: 32px 1fr 24px 24px 1fr 32px;
+    grid-template-columns: 32px 1fr 32px 32px 1fr 32px;
     align-items: center;
     gap: 4px 8px;
+    border-radius: inherit;
     position: relative;
     isolation: isolate;
-    border-radius: inherit;
     height: 48px;
     padding: 0 16px;
 
@@ -35,6 +42,7 @@
         inset: 0;
         border-radius: inherit;
         background-image: url('/assets/img/match-border.svg');
+        background-size: cover;
         opacity: .2;
         transition: opacity 0.3s ease-in-out;
         z-index: -2;
@@ -46,14 +54,14 @@
 }
 
 .match-prediction-box {
-    width: 24px;
-    height: 24px;
+    width: 32px;
+    height: 32px;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 4px;
     font-weight: normal;
-    font-size: 11px;
+    font-size: 14px;
     font-family: var(--font-family-gaming);
     background-color: var(--match-prediction-background-color);
     color: var(--match-prediction-color);
@@ -82,17 +90,26 @@
     align-items: center;
     justify-items: center;
     grid-template-columns: 1fr 8px 1fr;
-    width: 56px;
     margin-inline: auto;
-    margin-bottom: 2px;
     background-color: var(--match-score-background-color);
     font-size: 13px;
     font-weight: bold;
     color: var(--match-score-color);
     border-radius: 4px;
-    padding: 4px 0;
+    height: 24px;
+    width: 56px;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -8px;
 }
 
 .match-score-separator {
     font-size: 14px;
+}
+
+.match-date-time {
+    font-style: italic;
+    grid-column: 3;
+    justify-self: end;
 }
