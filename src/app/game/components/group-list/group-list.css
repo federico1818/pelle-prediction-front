@@ -7,6 +7,34 @@
     position: relative;
     width: 160px;
     margin: 0 auto;
+    position: relative;
+    isolation: isolate;
+    border-radius: 4px;
+
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 2px;
+        background-color: var(--select-background-color);
+        z-index: -1;
+        border-radius: inherit;
+    }
+
+    &::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background-image: url('/assets/img/select-border.svg');
+        background-size: cover;
+        opacity: .2;
+        transition: opacity 0.2s ease-in-out;
+        z-index: -2;
+    }
+
+    &:hover::after {
+        opacity: 1;
+    }
 }
 
 .select-trigger {
@@ -17,7 +45,6 @@
     justify-content: space-between;
     padding: 0 12px;
     border-radius: 4px;
-    background-color: var(--select-background-color);
     color: var(--select-color);
     font-size: 13px;
     font-weight: 700;
@@ -26,11 +53,6 @@
     cursor: pointer;
     transition: all 0.2s ease;
     box-sizing: border-box;
-}
-
-.select-trigger:hover {
-    border-color: var(--light-blue);
-    background-color: rgba(255, 255, 255, 0.8);
 }
 
 .arrow-icon {
