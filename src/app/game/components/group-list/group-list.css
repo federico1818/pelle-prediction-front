@@ -25,15 +25,13 @@
         position: absolute;
         inset: 0;
         border-radius: inherit;
-        background-image: url('/assets/img/select-border.svg');
-        background-size: cover;
-        opacity: .2;
-        transition: opacity 0.2s ease-in-out;
+        background-color: var(--select-border-color);
+        transition: background-color 0.2s ease-in-out;
         z-index: -2;
     }
 
     &:hover::after {
-        opacity: 1;
+        background-color: var(--select-hover-border-color);
     }
 }
 

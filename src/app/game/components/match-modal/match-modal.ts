@@ -10,11 +10,13 @@ import { MatchScoreComponent } from '../match-score/match-score'
 import { Loading } from '../../../shared/components/loading/loading'
 import { MatchPredictionList } from '../match-prediction-list/match-prediction-list'
 import { Prediction } from '../../models/prediction'
+import { ModalTitle } from '../../../shared/components/modal-title/modal-title'
 
 @Component({
     selector: 'app-match-modal',
     imports: [
         Modal,
+        ModalTitle,
         ModalContent,
         ModalFooter,
         TeamFlagComponent,

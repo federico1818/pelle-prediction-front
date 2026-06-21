@@ -12,7 +12,7 @@
     &::before {
         content: "";
         position: absolute;
-        inset: 1px;
+        inset: 2px;
         background-color: var(--match-content-background-color);
         z-index: -1;
         border-radius: inherit;
@@ -23,14 +23,14 @@
         position: absolute;
         inset: 0;
         border-radius: inherit;
-        background-image: url('/assets/img/button-border.svg');
-        opacity: .2;
-        transition: opacity 0.3s ease-in-out;
+        background: var(--button-border-color);
+        transition: background-image 0.1s ease-in-out;
         z-index: -2;
     }
 
     &:hover::after {
-        opacity: 1;
+        background: url('/assets/img/button-border.svg');
+        background-size: cover;
     }
 }
 

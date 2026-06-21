@@ -1,10 +1,11 @@
 :root {
-    --background-image: linear-gradient(rgba(15, 15, 15, 0.95), rgba(15, 15, 15, 0.8), rgba(15, 15, 15, 0.95)), url('/assets/img/background-40.svg');
-    --background-size: 48px;
+    --background-image: linear-gradient(rgba(0, 0, 0, 0.95), rgba(15, 15, 15, 0.8), rgba(0, 0, 0, 0.95)), url('/assets/img/background.svg');
+    --background-size: 512px;
 }
 
 body {
     display: grid;
+    background-color: var(--app-background-color);
 }
 
 app-root {
