@@ -16,6 +16,10 @@
     font-size: 9px;
 }
 
+.match-group {
+    text-transform: uppercase;
+}
+
 .match-container {
     display: grid;
     grid-template-columns: 32px 1fr 32px 32px 1fr 32px;
@@ -110,6 +114,11 @@
 
 .match-date-time {
     font-style: italic;
+    grid-column: 3;
+    justify-self: end;
+}
+
+.match-time-status {
     grid-column: 3;
     justify-self: end;
 }

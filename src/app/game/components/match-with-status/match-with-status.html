@@ -1,12 +1,24 @@
-<div class="group">Grupo {{ game().group }}</div>
-<app-match-time-status class="time-status" [game]="game()"></app-match-time-status>
+<div class="match-info">
+    <div class="match-group">
+        Grupo {{ game().group }}
+    </div>
 
-<app-team-flag class="match-team-flag" [team]="game().team_1"></app-team-flag>
-<div class="match-score score-1">{{ game().score_1 }}</div>
-<div class="match-score score-2">{{ game().score_2 }}</div>
+    @if(game().score_1 !== null && game().score_2 !== null) {
+        <div class="match-score-container">
+            <div class="match-score score-1">{{ game().score_1 }}</div>
+            <div class="match-score-separator">-</div>
+            <div class="match-score score-2">{{ game().score_2 }}</div>
+        </div>
+    }
 
-<div class="match-team-name name-1">{{ game().team_1.label }}</div>
-<div class="match-prediction-box" [class.predicted]="hasPrediction()">{{ game().prediction_score_1 ?? '' }}</div>
-<div class="match-prediction-box" [class.predicted]="hasPrediction()">{{ game().prediction_score_2 ?? '' }}</div>
-<div class="match-team-name name-2">{{ game().team_2.label }}</div>
-<app-team-flag class="match-team-flag" [team]="game().team_2"></app-team-flag>
+    <app-match-time-status class="match-time-status" [game]="game()"></app-match-time-status>
+</div>
+
+<div class="match-container">
+    <app-team-flag class="match-team-flag" [team]="game().team_1"></app-team-flag>
+    <div class="match-team-name name-1">{{ game().team_1.label }}</div>
+    <div class="match-prediction-box" [class.predicted]="hasPrediction()">{{ game().prediction_score_1 ?? '' }}</div>
+    <div class="match-prediction-box" [class.predicted]="hasPrediction()">{{ game().prediction_score_2 ?? '' }}</div>
+    <div class="match-team-name name-2">{{ game().team_2.label }}</div>
+    <app-team-flag class="match-team-flag" [team]="game().team_2"></app-team-flag>
+</div>

@@ -2,6 +2,7 @@
     display: flex;
     gap: 0 4px;
     align-items: center;
+    color: var(--match-time-live-color);
 }
 
 .material-symbols-outlined {
