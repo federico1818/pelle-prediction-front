@@ -1,6 +1,7 @@
 import { Component, ElementRef, viewChild, AfterViewInit, OnDestroy, input, effect } from '@angular/core';
 import * as THREE from 'three';
 import { FlagPhysicsService } from './flag-physics.service';
+import { PretzelService } from './pretzel.service';
 
 @Component({
     selector: 'app-stadium',
@@ -51,8 +52,9 @@ export class Stadium implements AfterViewInit, OnDestroy {
     private animationFrameId?: number;
     private isDestroyed = false;
     private spriteScale = 1.0; // Scale factor to make character 187.5px tall (25% increase)
+    private lastFrameTime = Date.now();
 
-    constructor(private flagPhysics: FlagPhysicsService) {
+    constructor(private flagPhysics: FlagPhysicsService, private pretzelService: PretzelService) {
         // Reactive effects using Angular Signals
         effect(() => {
             const name = this.nickname();
@@ -157,6 +159,7 @@ export class Stadium implements AfterViewInit, OnDestroy {
 
         this.loadCharacterSprite();
         this.loadFlagTexture();
+        this.pretzelService.init(this.scene);
     }
 
     private loadCharacterSprite(): void {
@@ -231,10 +234,16 @@ export class Stadium implements AfterViewInit, OnDestroy {
 
     private startAnimation(): void {
         this.stopAnimation();
+        this.lastFrameTime = Date.now();
         
         const animate = () => {
             if (this.isDestroyed) return;
-            this.updatePhysics();
+            
+            const now = Date.now();
+            const deltaTime = (now - this.lastFrameTime) / 1000;
+            this.lastFrameTime = now;
+
+            this.updatePhysics(deltaTime);
             this.renderer.render(this.scene, this.camera);
             this.animationFrameId = requestAnimationFrame(animate);
         };
@@ -249,7 +258,7 @@ export class Stadium implements AfterViewInit, OnDestroy {
         }
     }
 
-    private updatePhysics(): void {
+    private updatePhysics(deltaTime: number): void {
         if (!this.flag || !this.characterGroup) return;
 
         const timeSeconds = Date.now() / 1000;
@@ -278,6 +287,9 @@ export class Stadium implements AfterViewInit, OnDestroy {
         if (this.characterGroup.position.x > 35) {
             this.characterGroup.position.x = -35; // Loop back to the left
         }
+
+        // 4. Update pretzels falling simulation
+        this.pretzelService.update(timeSeconds, deltaTime);
     }
 }
 
