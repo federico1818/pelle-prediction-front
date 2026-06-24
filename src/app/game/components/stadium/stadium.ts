@@ -1,4 +1,4 @@
-import { Component, ElementRef, viewChild, AfterViewInit, OnDestroy, input, effect } from '@angular/core';
+import { Component, ElementRef, viewChild, AfterViewInit, OnDestroy, input, effect, output } from '@angular/core';
 import * as THREE from 'three';
 import { FlagPhysicsService } from './flag-physics.service';
 import { PretzelService } from './pretzel.service';
@@ -12,6 +12,8 @@ import { PretzelService } from './pretzel.service';
 })
 export class Stadium implements AfterViewInit, OnDestroy {
     flagCanvas = viewChild.required<ElementRef<HTMLCanvasElement>>('flagCanvas');
+    finished = output<void>();
+    private hasFinished = false;
 
     nickname = input.required<string>();
     country = input.required<string>();
@@ -121,7 +123,7 @@ export class Stadium implements AfterViewInit, OnDestroy {
 
         // Group to combine character sprite + flag so they move together
         this.characterGroup = new THREE.Group();
-        this.characterGroup.position.set(-30, -5, 0); // Start on the left
+        this.characterGroup.position.set(-55, -5, 0); // Start off-screen on the left
         this.scene.add(this.characterGroup);
 
         // Calculate scale factor so the 36-unit tall sprite is exactly 187.5px tall on the 400px canvas
@@ -276,20 +278,26 @@ export class Stadium implements AfterViewInit, OnDestroy {
             this.segH
         );
 
-        // 2. Animate Sprite walking frames (3 frames)
-        if (this.spriteTexture) {
+        // 2. Animate Sprite walking frames (3 frames) - only if walking
+        if (this.spriteTexture && this.characterGroup.position.x <= 70) {
             const currentFrame = Math.floor(timeSeconds * this.animSpeed()) % 3;
             this.spriteTexture.offset.x = currentFrame / 3;
         }
 
-        // 3. Move character walking from left to right
-        this.characterGroup.position.x += this.walkSpeed();
-        if (this.characterGroup.position.x > 35) {
-            this.characterGroup.position.x = -35; // Loop back to the left
+        // 3. Move character walking from left to right until it exits the canvas
+        if (this.characterGroup.position.x <= 70) {
+            this.characterGroup.position.x += this.walkSpeed();
+        } else {
+            if (!this.hasFinished) {
+                this.hasFinished = true;
+                this.finished.emit();
+            }
         }
 
-        // 4. Update pretzels falling simulation
-        this.pretzelService.update(timeSeconds, deltaTime);
+        // 4. Update pretzels falling simulation only after the character enters the screen (X >= -40)
+        if (this.characterGroup.position.x >= -50) {
+            this.pretzelService.update(timeSeconds, deltaTime);
+        }
     }
 }
 
