@@ -137,7 +137,7 @@ export class Stadium implements AfterViewInit, OnDestroy {
             side: THREE.DoubleSide
         });
         this.spriteMesh = new THREE.Mesh(spriteGeometry, spriteMaterial);
-        this.spriteMesh.renderOrder = 1; // Render player sprite first
+        this.spriteMesh.renderOrder = 10; // Render player sprite on top of pretzels
         this.characterGroup.add(this.spriteMesh);
 
         // Flag Mesh setup (no 3D pole cylinder needed since it's on the sprite)
@@ -151,7 +151,7 @@ export class Stadium implements AfterViewInit, OnDestroy {
             depthTest: false // Draw flag on top of player sprite regardless of Z coordinate waves
         });
         this.flag = new THREE.Mesh(flagGeometry, flagMaterial);
-        this.flag.renderOrder = 2; // Render flag on top of the player sprite
+        this.flag.renderOrder = 11; // Render flag on top of player sprite and pretzels
         
         // Position flag on the flagpole carried by character (Z=0.05 to eliminate perspective parallax)
         this.flag.position.set(this.flagOffsetX() * this.spriteScale, this.flagOffsetY() * this.spriteScale, 0.05);

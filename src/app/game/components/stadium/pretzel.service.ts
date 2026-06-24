@@ -19,8 +19,8 @@ export class PretzelService {
     private pretzels: PretzelParticle[] = [];
     private lastSpawnTime = 0;
     private readonly gravity = 25; // Gravity acceleration
-    private readonly groundY = -5; // Floor height matching characterGroup Y
-    private readonly maxPretzels = 100;
+    private readonly groundY = -12; // Floor height closer to the bottom edge
+    private readonly maxPretzels = 125;
 
     constructor() {
         const loader = new THREE.TextureLoader();
@@ -43,8 +43,8 @@ export class PretzelService {
     public update(timeSeconds: number, deltaTime: number): void {
         if (!this.scene || !this.texture) return;
 
-        // Spawn a pretzel periodically (e.g., every 0.3 - 0.7 seconds)
-        if (timeSeconds - this.lastSpawnTime > 0.4 && this.pretzels.length < this.maxPretzels) {
+        // Spawn a pretzel periodically (e.g., every 0.3 seconds)
+        if (timeSeconds - this.lastSpawnTime > 0.3 && this.pretzels.length < this.maxPretzels) {
             this.spawnPretzel();
             this.lastSpawnTime = timeSeconds;
         }
@@ -94,20 +94,35 @@ export class PretzelService {
         const side = Math.random() < 0.5 ? -1 : 1;
         
         // Spawn coordinates at the top sides
-        const startX = side * 35;
+        // Spawn coordinates at the top sides with depth variation (Z between 0.0 and 28.0)
+        // This corresponds to the front half of the soccer field (from the middle line to the bottom edge)
+        const startZ = Math.random() * 28.0; 
+        
+        // Calculate the camera perspective scale factor at this depth
+        // Camera is at Z=48. Distance to camera is (48 - startZ).
+        const perspectiveFactor = 48 / (48 - startZ);
+        
+        // Adjust startX so pretzels spawn exactly at the screen edges for their respective depth
+        const startX = side * (35 * perspectiveFactor);
         const startY = 15 + Math.random() * 10; // Random height between 15 and 25
-        const startZ = -1.0; // Behind the character sprite (which is at Z >= 0)
-
-        // Dimensions of the pretzel
-        const geom = new THREE.PlaneGeometry(2.5, 2.5);
+        
+        // Dimensions of the pretzel (reduced by 20% to 3.0)
+        const geom = new THREE.PlaneGeometry(3.0, 3.0);
         const mat = new THREE.MeshBasicMaterial({
             map: this.texture,
             transparent: true,
             side: THREE.DoubleSide,
+            depthTest: false, // Don't use depth buffer to allow renderOrder sorting (render behind player)
             opacity: 1
         });
 
         const mesh = new THREE.Mesh(geom, mat);
+        mesh.renderOrder = 1; // Render below the player (which has renderOrder = 10)
+        
+        // Use a constant scale so Three.js perspective naturally makes closer (lower Y) pretzels larger
+        const scale = 0.7; 
+        mesh.scale.set(scale, scale, 1);
+
         mesh.position.set(startX, startY, startZ);
         
         // Random initial rotation
