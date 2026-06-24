@@ -29,7 +29,7 @@ dialog {
         content: "";
         position: absolute;
         inset: 4px;
-        background-color: var(--match-content-background-color);
+        background-color: var(--dialog-background-color);
         background-size: cover;
         z-index: -1;
         border-radius: inherit;
@@ -53,7 +53,7 @@ dialog {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--light-blue);
+    color: var(--modal-button-close-color);
     cursor: pointer;
     width: 40px;
     height: 40px;
@@ -61,9 +61,10 @@ dialog {
     outline: none;
     border-radius: 50%;
     transition: all 0.3s ease;
+    background-color: transparent;
 }
 
 .modal-close:hover {
-    color: var(--white);
-    background-color: var(--light-blue);
+    color: var(--modal-button-close-hover-color);
+    background-color: var(--modal-button-close-hover-background-color);
 }

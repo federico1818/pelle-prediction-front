@@ -7,8 +7,8 @@
 }
 
 nav {
-    background: var(--menu-background-color);
-    color: var(--white);
+    background: var(--nav-background-color);
+    color: var(--nav-color);
     font-weight: normal;
     font-size: var(--nav-font-size);
     display: grid;
@@ -53,19 +53,19 @@ a.active span {
     width: 80px;
     border-radius: 50%;
     bottom: 24px;
-    background-color: var(--menu-base-background-color);
+    background-color: var(--nav-background-color);
 }
 
 .home a {
     padding: 16px;
-    background-color: var(--menu-background-color);
+    background-color: var(--nav-background-color);
     border-radius: 50%;
     border: 8px solid transparent;
 }
 
 .home a.active {
     background-color: var(--nav-active-background-color);
-    border-color: var(--menu-background-color);
+    border-color: var(--nav-background-color);
 }
 
 .home img {

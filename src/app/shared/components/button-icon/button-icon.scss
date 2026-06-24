@@ -23,14 +23,13 @@
         position: absolute;
         inset: 0;
         border-radius: inherit;
-        background: var(--button-border-color);
-        transition: background-image 0.1s ease-in-out;
+        background-color: var(--button-border-color);
+        transition: background-color 0.1s ease-in-out;
         z-index: -2;
     }
 
     &:hover::after {
-        background: url('/assets/img/button-border.svg');
-        background-size: cover;
+        background-color: var(--button-hover-border-color);
     }
 }
 

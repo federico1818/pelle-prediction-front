@@ -4,18 +4,17 @@
     align-items: center;
     width: 32px;
     height: 32px;
-    border: 2px solid var(--border-color);
+    border: 2px solid var(--match-score-border-color);
     border-radius: 2px;
     background-color: transparent;
     text-align: center;
     font-size: 14px;
     font-family: var(--font-family-gaming);
     font-weight: bold;
-    color: var(--blue);
+    color: var(--match-score-color);
 }
 
 .score.has-value {
-    background-color: var(--light-blue);
-    color: var(--white);
-    border-color: var(--light-blue);
+    background-color: var(--match-score-has-value-background-color);
+    color: var(--match-score-has-value-color);
 }
