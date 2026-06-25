@@ -4,6 +4,18 @@
         [country]="selectedPrediction()!.team.code"
         (finished)="onFinishedWalking()"
     />
+
+    @for (insult of activeInsults(); track insult.id) {
+        <app-insult
+            class="insult"
+            [position]="insult.side"
+            [style.top.px]="insult.top"
+            [style.left.px]="insult.side === 'left' ? 16 : null"
+            [style.right.px]="insult.side === 'right' ? 16 : null"
+        >
+            {{ insult.text }}
+        </app-insult>
+    }
 }
 
 <app-champion-prediction-user-list [predictions]="predictions()" />

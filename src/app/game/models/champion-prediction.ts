@@ -4,6 +4,7 @@ export interface ChampionPrediction {
     }
     team: {
         label: string
-        code: string
+        code: string,
+        insults: string[]
     }
 }

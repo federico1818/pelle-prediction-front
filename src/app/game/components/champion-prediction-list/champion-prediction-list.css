@@ -3,4 +3,9 @@
     gap: 16px 0;
     max-width: var(--content-width);
     margin-inline: auto;
+    position: relative;
+}
+
+.insult {
+    position: absolute;
 }
