@@ -1,7 +1,5 @@
-:host {
-    display: block;
-    height: 100%;
-    overflow-y: auto;
-    padding: 16px 0 32px;
-    box-sizing: border-box;
+.segmented-control {
+    width: 128px;
+    grid-template-columns: 1fr;
+    margin: 16px auto;
 }

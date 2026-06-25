@@ -1,26 +1,23 @@
 import { Component, inject, OnInit, Signal } from '@angular/core'
-import { TeamsService } from '../../services/teams-service'
-import { Team } from '../../models/team'
-import { ChampionListComponent } from '../../components/champion-list/champion-list'
-import { ChampionSelected } from '../../components/champion-selected/champion-selected'
+import { ChampionService } from '../../services/champion-service'
+import { ChampionPredictionList } from '../../components/champion-prediction-list/champion-prediction-list'
+import { ChampionPrediction } from '../../models/champion-prediction'
 
 @Component({
     selector: 'app-champion',
     imports: [
-        ChampionListComponent,
-        ChampionSelected,
+        ChampionPredictionList,
     ],
     templateUrl: './champion.html',
     styleUrl: './champion.css',
 })
 
 export class Champion implements OnInit {
-    private _teamsService: TeamsService = inject(TeamsService)
-    public teams: Signal<Team[]> = this._teamsService.teams
-    public canEdit!: Signal<boolean>
+    private _championService: ChampionService = inject(ChampionService)
+    public predictions: Signal<ChampionPrediction[]> = this._championService.predictions
 
     ngOnInit(): void {
-        this.canEdit = this._teamsService.canEdit
-        this._teamsService.all().subscribe()
+        this._championService.all().subscribe()
     }
 }
+
