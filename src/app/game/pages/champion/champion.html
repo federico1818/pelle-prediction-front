@@ -1,2 +1,7 @@
-<app-champion-selected></app-champion-selected>
-<app-champion-list [teams]="teams()"></app-champion-list>
+<div class="segmented-control">
+    <div class="segmented-item">
+        <div class="segmented-content active">Favoritos</div>
+    </div>
+</div>
+
+<app-champion-prediction-list [predictions]="predictions()" />

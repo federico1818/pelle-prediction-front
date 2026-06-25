@@ -1,0 +1,28 @@
+:host {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.user {
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--white);
+    color: var(--blue);
+    font-family: var(--font-family-gaming);
+    font-size: 8px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.user:hover {
+    border-color: var(--blue);
+}
+
+.user.selected {
+    background-color: var(--light-blue);
+    color: var(--white);
+}

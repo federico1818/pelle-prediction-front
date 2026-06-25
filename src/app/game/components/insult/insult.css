@@ -1,0 +1,66 @@
+:host {
+    display: inline-block;
+}
+
+.bubble {
+    position: relative;
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 0 16px;
+    color: var(--blue);
+    font-family: var(--font-family-gaming);
+    font-size: 9px;
+    height: 32px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* El piquito utilizando pseudoelementos ::after y ::before para tener un borde y fondo sólido */
+.bubble::after, .bubble::before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    display: block;
+    width: 0;
+    height: 0;
+}
+
+/* Posición left (piquito a la izquierda) */
+.bubble.left::after {
+    left: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 8px 10px 8px 0;
+    border-color: transparent var(--white) transparent transparent;
+    z-index: 2;
+}
+
+.bubble.left::before {
+    left: -11px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 9px 11px 9px 0;
+    border-color: transparent var(--border-color) transparent transparent;
+    z-index: 1;
+}
+
+/* Posición right (piquito a la derecha) */
+.bubble.right::after {
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 8px 0 8px 10px;
+    border-color: transparent transparent transparent var(--white);
+    z-index: 2;
+}
+
+.bubble.right::before {
+    right: -11px;
+    top: 50%;
+    transform: translateY(-50%);
+    border-width: 9px 0 9px 11px;
+    border-color: transparent transparent transparent var(--border-color);
+    z-index: 1;
+}
