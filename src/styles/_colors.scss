@@ -44,11 +44,15 @@
     --match-prediction-color: #000;
     --match-prediction-predicted-background-color: var(--cyan);
     --match-prediction-background-color: var(--white);
+    --match-prediction-item-color: var(--match-color);
+    --match-prediction-item-background-color: var(--match-background-color);
     --match-score-color: #000;
     --match-score-background-color: var(--white);
     --match-score-border-color: var(--cyan);
     --match-score-has-value-color: var(--match-prediction-color);
     --match-score-has-value-background-color: var(--cyan);
+    --match-score-has-value-border-color: var(--cyan);
+    --match-score-arrow-color: var(--white);
     --match-time-live-color: var(--cyan);
     --match-modal-color: var(--white);
     --modal-button-close-color: var(--cyan);

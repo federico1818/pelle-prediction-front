@@ -1,10 +1,11 @@
 <app-modal>
+    <app-modal-title>
+        @if(game){
+            {{ game.date_time_formatted }}
+        }
+    </app-modal-title>
     <app-modal-content>
         @if (game) {
-        <div class="match-date-time">
-            {{ game.date_time_formatted }}
-        </div>
-
         <div class="match-prediction-grid">
             <!-- Equipo 1 -->
             <app-team-flag [team]="game.team_1" class="team-flag team-1-flag"></app-team-flag>

@@ -8,11 +8,13 @@ import { ButtonPrimary } from '../../../shared/components/button-primary/button-
 import { TeamFlagComponent } from '../team-flag/team-flag'
 import { GamesService } from '../../services/games-service'
 import { MatchScoreInputComponent } from '../match-score-input/match-score-input'
+import { ModalTitle } from '../../../shared/components/modal-title/modal-title'
 
 @Component({
     selector: 'app-match-modal-edit',
     imports: [
         Modal,
+        ModalTitle,
         ModalContent,
         ModalFooter,
         ButtonPrimary,

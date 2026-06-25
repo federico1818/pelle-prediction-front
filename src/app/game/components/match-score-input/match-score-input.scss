@@ -8,7 +8,7 @@
 .arrow {
     background: none;
     border: none;
-    color: var(--light-blue);
+    color: var(--match-score-arrow-color);
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -30,7 +30,7 @@
 .score-input {
     width: 32px;
     height: 32px;
-    border: 2px solid var(--border-color);
+    border: 2px solid var(--match-score-border-color);
     border-radius: 2px;
     background-color: transparent;
     text-align: center;
@@ -43,9 +43,9 @@
 }
 
 .score-input.has-value {
-    background-color: var(--light-blue);
-    color: var(--white);
-    border-color: var(--light-blue);
+    background-color: var(--match-score-has-value-background-color);
+    color: var(--match-score-has-value-color);
+    border-color: var(--match-score-has-value-border-color);
 }
 
 /* Quitar spinners nativos */
