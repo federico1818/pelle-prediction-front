@@ -1,5 +1,7 @@
 @import "./styles/_reset.scss";
 @import "./styles/_colors.scss";
+@import "./styles/themes/fifa.scss";
+@import "./styles/themes/classic-light.scss";
 @import "./styles/_sizes.scss";
 @import "./styles/_font.scss";
 @import "./styles/_app.scss";
