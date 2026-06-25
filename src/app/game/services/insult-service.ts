@@ -53,7 +53,7 @@ export class InsultService {
         
         // Altura varía de 8 en 8 entre 16px y 300px (stadium tiene ~400px de altura)
         const minTop = 16
-        const maxTop = 256
+        const maxTop = 224
         const step = 8
         const stepsCount = Math.floor((maxTop - minTop) / step)
         const randomStep = Math.floor(Math.random() * (stepsCount + 1))
