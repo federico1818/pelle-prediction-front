@@ -12,7 +12,7 @@
     &::before {
         content: "";
         position: absolute;
-        inset: 2px;
+        inset: var(--button-icon-border-width);
         background-color: var(--match-content-background-color);
         z-index: -1;
         border-radius: inherit;
