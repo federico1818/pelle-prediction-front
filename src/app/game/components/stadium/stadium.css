@@ -9,7 +9,7 @@ canvas {
     display: block;
     width: 100%;
     height: 100%;
-    background-image: url('/assets/img/stadium.png');
+    background-image: var(--stadium-background-image);
     background-size: cover;
     background-position: center;
     border-radius: 16px;

@@ -9,6 +9,7 @@
     --light-blue-80: rgba(117, 170, 219, .8);
     --light-blue-secondary: rgb(186, 212, 237);
     --blue: #0B1F54;
+    --secondary-text-color: #b5b7bb;
     --gray-600: #718096;
     --sun-yellow: #fcbf45;
     --white: #ffffff;
@@ -50,7 +51,16 @@
     --match-prediction-predicted-background-color: var(--cyan);
     --match-prediction-background-color: var(--white);
     --match-prediction-item-color: var(--match-color);
-    --match-prediction-item-background-color: var(--match-background-color);
+    --match-prediction-item-background-color: transparent;
+    --match-prediction-item-border-color: #FFF;
+    --match-prediction-item-points-lose-color: var(--secondary-text-color);
+    --match-prediction-item-points-lose-border-color: var(--secondary-text-color);
+    --match-prediction-item-points-winner-color: var(--white);
+    --match-prediction-item-points-winner-background-color: var(--onyx);
+    --match-prediction-item-points-diff-color: #000;
+    --match-prediction-item-points-diff-background-color: var(--secondary-text-color);
+    --match-prediction-item-points-exact-color: #000;
+    --match-prediction-item-points-exact-background-color: var(--cyan);
     --match-score-color: #000;
     --match-score-background-color: var(--white);
     --match-score-border-color: var(--cyan);
@@ -76,6 +86,7 @@
     --select-item-selected-color: #000;
     --select-item-hover-color: var(--cyan);
     --select-item-selected-background-color: var(--cyan);
+    --stadium-background-image: url('/assets/img/stadium-night.png');
     --table-color: #FFF;
     --table-highlight-color: var(--cyan);
     --table-background-color: #000;

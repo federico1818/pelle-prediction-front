@@ -4,7 +4,7 @@
     grid-template-columns: repeat(3, 1fr);
     background: var(--match-prediction-item-background-color);
     color: var(--match-prediction-item-color);
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--match-prediction-item-border-color);
     border-radius: 8px;
     padding: 8px 16px;
     width: 100%;
@@ -38,23 +38,23 @@
 }
 
 .exact {
-    background-color: var(--blue);
-    color: var(--white);
+    background-color: var(--match-prediction-item-points-exact-background-color);
+    color: var(--match-prediction-item-points-exact-color);
 }
 
 .diff {
-    background-color: var(--light-blue-50);
-    color: var(--blue);
+    background-color: var(--match-prediction-item-points-diff-background-color);
+    color: var(--match-prediction-item-points-diff-color);
 }
 
 .winner {
-    background-color: var(--light-blue-30);
-    color: var(--blue);
+    background-color: var(--match-prediction-item-points-winner-background-color);
+    color: var(--match-prediction-item-points-winner-color);
 }
 
 .lose,
 .points-null {
     background-color: transparent;
-    color: var(--blue);
-    border: 1px dashed var(--border-color);
+    color: var(--match-prediction-item-points-lose-color);
+    border: 1px dashed var(--match-prediction-item-points-lose-border-color);
 }
