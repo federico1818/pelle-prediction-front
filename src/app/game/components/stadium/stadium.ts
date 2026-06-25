@@ -26,8 +26,8 @@ export class Stadium implements AfterViewInit, OnDestroy {
     s = input<number>(0.5); // speed
 
     // Offsets to align the flag to the flagpole inside the sprite sheet
-    flagOffsetX = input<number>(5.0);
-    flagOffsetY = input<number>(22.0);
+    flagOffsetX = input<number>(-11);
+    flagOffsetY = input<number>(28);
     
     // Character walking parameters
     walkSpeed = input<number>(0.08);
@@ -165,7 +165,7 @@ export class Stadium implements AfterViewInit, OnDestroy {
     }
 
     private loadCharacterSprite(): void {
-        const spriteUrl = `assets/img/champion/${this.nickname()}-walking.png`;
+        const spriteUrl = `assets/img/champion/${this.nickname().toLowerCase()}-walking.png`;
         const loader = new THREE.TextureLoader();
         
         loader.load(

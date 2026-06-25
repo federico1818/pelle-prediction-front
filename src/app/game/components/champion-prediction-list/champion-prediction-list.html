@@ -1,1 +1,9 @@
+@if (selectedPrediction()) {
+    <app-stadium
+        [nickname]="selectedPrediction()!.user.nickname"
+        [country]="selectedPrediction()!.team.code"
+        (finished)="onFinishedWalking()"
+    />
+}
+
 <app-champion-prediction-user-list [predictions]="predictions()" />
