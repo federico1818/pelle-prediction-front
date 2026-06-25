@@ -1,6 +1,6 @@
 .button-container {
     display: inline-flex;
-    border: 1px solid var(--border-color);
+    border: 1px solid var(--button-primary-border-color);
     border-radius: 4px;
     font-weight: bold;
     font-size: 13px;
@@ -8,7 +8,6 @@
     cursor: pointer;
     transition: all 0.3s ease;
     height: 40px;
-    padding: 4px;
 }
 
 .button {
@@ -16,7 +15,7 @@
     align-items: center;
     justify-content: center;
     color: var(--white);
-    background-color: var(--light-blue-80);
+    background-color: var(--button-background-color);
     padding: 0 16px;
     border-radius: inherit;
     outline: none;
@@ -24,17 +23,18 @@
 }
 
 .button:hover:not(:disabled) {
-    background-color: var(--light-blue);
+    background-color: var(--button-hover-background-color);
+    color: var(--button-hover-color);
 }
 
 .button:disabled {
-    background-color: var(--light-blue-50);
-    color: rgba(255, 255, 255, 0.6);
+    background-color: var(--button-disabled-background-color);
+    color: var(--button-disabled-color);
     cursor: not-allowed;
 }
 
 .button-container:has(button:disabled) {
-    border-color: var(--light-blue-50);
+    border-color: var(--button-disabled-background-color);
     opacity: 0.6;
     cursor: not-allowed;
 }

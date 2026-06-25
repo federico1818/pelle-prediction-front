@@ -21,6 +21,11 @@
     --button-color: #FFF;
     --button-background-color: #000;
     --button-border-color: var(--green);
+    --button-primary-border-color: var(--cyan);
+    --button-disabled-color: rgba(255, 255, 255, 0.6);
+    --button-disabled-background-color: var(--green);
+    --button-hover-color: #000;
+    --button-hover-background-color: var(--cyan);
     --button-hover-border-color: var(--cyan);
     --card-background: var(--flag-background);
     --champion-prediction-user-color: var(--white);
@@ -59,6 +64,7 @@
     --modal-button-close-hover-color: #FFF;
     --modal-button-close-hover-background-color: var(--cyan);
     --modal-title-color: #FFF;
+    --position-row-hover: var(--green-dark);
     --scene-title-color: var(--light-blue);
     --segmented-color: #FFF;
     --segmented-background-color: #000;
