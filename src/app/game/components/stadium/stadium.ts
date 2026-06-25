@@ -29,9 +29,7 @@ export class Stadium implements AfterViewInit, OnDestroy {
     flagOffsetX = input<number>(-11);
     flagOffsetY = input<number>(28);
     
-    // Character walking parameters
-    walkSpeed = input<number>(0.08);
-    animSpeed = input<number>(6); // frames per second
+    animSpeed = input<number>(6);
 
     private scene!: THREE.Scene;
     private camera!: THREE.PerspectiveCamera;
@@ -56,6 +54,7 @@ export class Stadium implements AfterViewInit, OnDestroy {
     private spriteScale = 1.0; // Scale factor to make character 187.5px tall (25% increase)
     private lastFrameTime = Date.now();
     private readonly initPosition = { x: -46, y: -5, z: 0 };
+    private readonly velocity = 0.14;
 
     constructor(private flagPhysics: FlagPhysicsService, private pretzelService: PretzelService) {
         // Reactive effects using Angular Signals
@@ -63,6 +62,7 @@ export class Stadium implements AfterViewInit, OnDestroy {
             const name = this.nickname();
             if (this.spriteMesh) {
                 this.loadCharacterSprite();
+                this.restartWalk();
             }
         });
 
@@ -287,7 +287,7 @@ export class Stadium implements AfterViewInit, OnDestroy {
 
         // 3. Move character walking from left to right until it exits the canvas
         if (this.characterGroup.position.x <= 70) {
-            this.characterGroup.position.x += this.walkSpeed();
+            this.characterGroup.position.x += this.velocity;
         } else {
             if (!this.hasFinished) {
                 this.hasFinished = true;
