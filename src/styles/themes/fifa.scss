@@ -15,6 +15,8 @@
     --button-hover-background-color: var(--cyan);
     --button-hover-border-color: var(--cyan);
     --button-icon-border-width: 2px;
+    --button-outline-hover-color: #FFF;
+    --button-outline-hover-background-color: #000;
     --card-background: var(--flag-background);
     --champion-prediction-user-color: var(--white);
     --champion-prediction-user-background-color: var(--onyx);
@@ -43,7 +45,12 @@
     --nav-active-background-color: var(--cyan);
     --match-color: var(--white);
     --match-background-color: rgba(39, 39, 39, 0.6);
+    --match-border-color: transparent;
+    --match-hover-border-color: transparent;
+    --match-border-radius: 16px;
     --match-content-background-color: var(--onyx);
+    --match-content-background-image: url('/assets/img/match-border.svg');
+    --match-info-padding: 8px 16px;
     --match-prediction-color: #000;
     --match-prediction-predicted-background-color: var(--cyan);
     --match-prediction-background-color: var(--white);

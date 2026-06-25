@@ -53,8 +53,8 @@
 }
 
 .button-icon-container.outline:hover {
-    background-color: var(--button-background-color);
-    color: var(--button-color);
+    background-color: var(--button-outline-hover-background-color);
+    color: var(--button-outline-hover-color);
 }
 
 .button-icon-container.outline.disabled {

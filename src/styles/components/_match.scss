@@ -4,14 +4,19 @@
     width: 100%;
     max-width: var(--content-width);
     background-color: var(--match-background-color);
-    border-radius: 16px;
+    border-radius: var(--match-border-radius);
+    border: 1px solid var(--match-border-color);
     position: relative;
+
+    &:hover {
+        border: 1px solid var(--match-hover-border-color);
+    } 
 }
 
 .match-info {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    padding: 8px 16px;
+    padding: var(--match-info-padding);
     align-items: center;
     font-size: 9px;
 }
@@ -45,7 +50,7 @@
         position: absolute;
         inset: 0;
         border-radius: inherit;
-        background-image: url('/assets/img/match-border.svg');
+        background-image: var(--match-content-background-image);
         background-size: cover;
         opacity: .3;
         transition: opacity 0.3s ease-in-out;
