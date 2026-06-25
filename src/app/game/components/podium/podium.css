@@ -36,7 +36,7 @@
 .points {
     position: absolute;
     font-family: var(--font-family-gaming);
-    color: var(--blue);
+    color: var(--podium-points-color);
     font-size: 24px;
     text-align: center;
 }

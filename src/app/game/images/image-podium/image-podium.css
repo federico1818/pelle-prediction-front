@@ -1,0 +1,7 @@
+.podium-base-color {
+    fill: var(--podium-base-color);
+}
+
+.podium-base-shadow-color {
+    fill: var(--podium-base-color);
+}
