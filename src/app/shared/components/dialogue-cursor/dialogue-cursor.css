@@ -6,7 +6,7 @@
 
 :host.mode-line {
     animation: blink 1s infinite;
-    background-color: var(--blue);
+    background-color: var(--dialogue-text-cursor-color);
     position: relative;
     top: 2px;
     height: 16px;
