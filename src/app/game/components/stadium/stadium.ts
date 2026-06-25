@@ -55,6 +55,7 @@ export class Stadium implements AfterViewInit, OnDestroy {
     private isDestroyed = false;
     private spriteScale = 1.0; // Scale factor to make character 187.5px tall (25% increase)
     private lastFrameTime = Date.now();
+    private readonly initPosition = { x: -46, y: -5, z: 0 };
 
     constructor(private flagPhysics: FlagPhysicsService, private pretzelService: PretzelService) {
         // Reactive effects using Angular Signals
@@ -123,7 +124,7 @@ export class Stadium implements AfterViewInit, OnDestroy {
 
         // Group to combine character sprite + flag so they move together
         this.characterGroup = new THREE.Group();
-        this.characterGroup.position.set(-55, -5, 0); // Start off-screen on the left
+        this.resetCharacterPosition(); // Start off-screen on the left
         this.scene.add(this.characterGroup);
 
         // Calculate scale factor so the 36-unit tall sprite is exactly 187.5px tall on the 400px canvas
@@ -297,6 +298,17 @@ export class Stadium implements AfterViewInit, OnDestroy {
         // 4. Update pretzels falling simulation only after the character enters the screen (X >= -40)
         if (this.characterGroup.position.x >= -50) {
             this.pretzelService.update(timeSeconds, deltaTime);
+        }
+    }
+
+    public restartWalk(): void {
+        this.resetCharacterPosition();
+        this.hasFinished = false;
+    }
+
+    private resetCharacterPosition(): void {
+        if (this.characterGroup) {
+            this.characterGroup.position.set(this.initPosition.x, this.initPosition.y, this.initPosition.z);
         }
     }
 }
