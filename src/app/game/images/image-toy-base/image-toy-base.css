@@ -1,0 +1,4 @@
+.toy-base-fill-stroke {
+    fill: var(--toy-base-fill-color);
+    stroke: var(--toy-base-stroke-color);
+}
