@@ -5,7 +5,7 @@
 }
 
 :host ::ng-deep app-modal dialog[open]:has(app-modal-footer) {
-    max-height: 352px;
+    max-height: 368px;
     grid-template-rows: 40px 1fr 72px;
 }
 

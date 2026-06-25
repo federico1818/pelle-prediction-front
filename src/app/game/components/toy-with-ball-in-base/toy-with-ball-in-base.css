@@ -36,7 +36,7 @@
 .points {
     position: absolute;
     bottom: 9px;
-    color: var(--blue);
+    color: var(--toy-base-points-color);
     font-family: var(--font-family-dialogue);
     font-size: 13px;
     font-weight: bold;

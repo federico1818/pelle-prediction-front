@@ -2,6 +2,7 @@
     --onyx: #454545; 
     --cyan: #61FFD9;
     --green: #004C3A;
+    --green-dark: #011c16;
     --light-blue: #75aadb;
     --light-blue-30: rgba(117, 170, 219, .3);
     --light-blue-50: rgba(117, 170, 219, .5);
@@ -11,13 +12,17 @@
     --gray-600: #718096;
     --sun-yellow: #fcbf45;
     --white: #ffffff;
+    /* PROPIEDADES */
     --app-background: url('/assets/img/background.png');
     --app-background-color: rgba(0, 0, 0, .5);
+    --alert-title-color: var(--blue);
+    --alert-message-color: var(--blue);
     --border-color: var(--green);
     --button-color: #FFF;
     --button-background-color: #000;
     --button-border-color: var(--green);
     --button-hover-border-color: var(--cyan);
+    --card-background: var(--flag-background);
     --champion-prediction-user-color: var(--white);
     --champion-prediction-user-background-color: var(--onyx);
     --champion-prediction-user-border-color: transparent;
@@ -50,10 +55,6 @@
     --modal-button-close-hover-color: #FFF;
     --modal-button-close-hover-background-color: var(--cyan);
     --modal-title-color: #FFF;
-    --team-name-border-color: var(--sun-yellow);
-    --alert-title-color: var(--blue);
-    --alert-message-color: var(--blue);
-    --card-background: var(--flag-background);
     --scene-title-color: var(--light-blue);
     --segmented-color: #FFF;
     --segmented-background-color: #000;
@@ -69,7 +70,9 @@
     --table-highlight-color: var(--cyan);
     --table-background-color: #000;
     --table-border-color: var(--border-color);
+    --team-name-border-color: var(--sun-yellow);
     --toy-shadow-color: rgba(0, 0, 0, .5);
+    --toy-base-points-color: #000;
     --toy-base-fill-color: var(--cyan);
     --toy-base-stroke-color: #000;
 }
