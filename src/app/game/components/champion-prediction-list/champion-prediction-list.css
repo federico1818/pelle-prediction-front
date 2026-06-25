@@ -1,4 +1,6 @@
 :host {
     display: grid;
     gap: 16px 0;
+    max-width: var(--content-width);
+    margin-inline: auto;
 }
