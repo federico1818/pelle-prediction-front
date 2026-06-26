@@ -118,8 +118,8 @@
     --theme-item-background-color: var(--onyx);
     --theme-item-border-color: var(--border-color);
     --theme-item-hover-color: var(--white);
-    --theme-item-hover-background-color: transparent;
+    --theme-item-hover-background-color: var(--onyx);
     --theme-item-hover-border-color: var(--cyan);
-    --theme-item-selected-color: var(--white);
+    --theme-item-selected-color: #000;
     --theme-item-selected-background-color: var(--cyan);
 }

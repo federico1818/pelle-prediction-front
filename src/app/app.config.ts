@@ -1,4 +1,4 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core'
+import { ApplicationConfig, provideBrowserGlobalErrorListeners, provideAppInitializer, inject } from '@angular/core'
 import { provideRouter } from '@angular/router'
 import { provideHttpClient, withInterceptors } from '@angular/common/http'
 
@@ -7,6 +7,7 @@ import { authInterceptor } from './shared/interceptors/auth-interceptor'
 import { sessionExpiredInterceptor } from './shared/interceptors/session-expired-interceptor'
 import { errorInterceptor } from './shared/interceptors/error-interceptor'
 import { unauthorizedInterceptor } from './shared/interceptors/unauthorized-interceptor'
+import { ThemeService } from './game/services/theme-service'
 
 export const appConfig: ApplicationConfig = {
     providers: [
@@ -17,6 +18,9 @@ export const appConfig: ApplicationConfig = {
             sessionExpiredInterceptor,
             errorInterceptor,
             unauthorizedInterceptor,
-        ]))
+        ])),
+        provideAppInitializer(() => {
+            inject(ThemeService)
+        })
     ]
 }
