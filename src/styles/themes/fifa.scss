@@ -96,7 +96,7 @@
     --select-border-width: 2px;
     --select-color: #FFF;
     --select-background-color: #000;
-    --select-border-color: var(--border-color);
+    --select-border-color: var(--cyan);
     --select-hover-border-color: var(--cyan);
     --select-item-selected-color: #000;
     --select-item-hover-color: var(--cyan);
@@ -109,7 +109,7 @@
     --table-border-color: var(--border-color);
     --table-team-color: #FFF;
     --team-name-border-color: var(--sun-yellow);
-    --team-flag-img-border-color: transparent;
+    --team-flag-img-border-color: var(--secondary-text-color);
     --toy-shadow-color: rgba(0, 0, 0, .5);
     --toy-base-points-color: #000;
     --toy-base-fill-color: var(--lime);
