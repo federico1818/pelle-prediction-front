@@ -92,13 +92,15 @@ body.classic-light {
     --segmented-color: var(--nav-color);
     --segmented-background-color: var(--white);
     --segmented-border-color: var(--border-color);
+    --select-border-width: 1px;
     --select-color: var(--blue);
     --select-background-color: var(--white);
     --select-border-color: var(--border-color);
     --select-hover-border-color: var(--light-blue);
-    --select-item-selected-color: #000;
-    --select-item-hover-color: var(--cyan);
-    --select-item-selected-background-color: var(--cyan);
+    --select-item-selected-color: var(--white);
+    --select-item-hover-color: var(--blue);
+    --select-item-hover-background-color: var(--light-blue-30);
+    --select-item-selected-background-color: var(--light-blue);
     --stadium-background-image: url('/assets/img/stadium.png');
     --table-color: var(--gray-600);
     --table-highlight-color: var(--blue);

@@ -14,7 +14,7 @@
     &::before {
         content: "";
         position: absolute;
-        inset: 2px;
+        inset: var(--select-border-width);
         background-color: var(--select-background-color);
         z-index: -1;
         border-radius: inherit;
@@ -111,6 +111,7 @@
 
 .dropdown-item:hover {
     color: var(--select-item-hover-color);
+    background-color: var(--select-item-hover-background-color);
 }
 
 .dropdown-item.active {

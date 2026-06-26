@@ -92,12 +92,14 @@
     --segmented-color: #FFF;
     --segmented-background-color: #000;
     --segmented-border-color: var(--cyan);
+    --select-border-width: 2px;
     --select-color: #FFF;
     --select-background-color: #000;
     --select-border-color: var(--border-color);
     --select-hover-border-color: var(--cyan);
     --select-item-selected-color: #000;
     --select-item-hover-color: var(--cyan);
+    --select-item-hover-background-color: transparent;
     --select-item-selected-background-color: var(--cyan);
     --stadium-background-image: url('/assets/img/stadium-night.png');
     --table-color: #FFF;
