@@ -6,7 +6,7 @@
 .match-list-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-    gap: 32px 0;
+    gap: var(--match-list-gap);
     width: 100%;
     max-width: var(--content-width);
     margin-inline: auto;
