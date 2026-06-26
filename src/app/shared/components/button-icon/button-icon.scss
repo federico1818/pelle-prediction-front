@@ -28,7 +28,7 @@
         z-index: -2;
     }
 
-    &:hover::after {
+    &:not(.disabled):hover::after {
         background-color: var(--button-hover-border-color);
     }
 }
@@ -42,8 +42,8 @@
     }
 }
 
-.button-icon-container.outline {
-    background-color: var(--button-background-color);
+.button-icon-container.outline:not(.disabled) {
+    background-color: var(--button-icon-background-color);
     color: var(--button-color);
 
     & .button {
@@ -58,9 +58,14 @@
 }
 
 .button-icon-container.outline.disabled {
-    background-color: transparent;
+    background-color: var(--button-outline-disabled-hover-background-color);
     border-color: var(--light-blue-50);
     color: var(--light-blue-50);
+
+    & .button-icon {
+        background-color: inherit;
+        color: inherit;
+    }
 }
 
 .button-icon {

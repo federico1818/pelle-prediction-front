@@ -15,6 +15,7 @@ dialog[open]:has(app-modal-footer) {
 
 dialog {
     border-radius: 16px;
+    border: 1px solid var(--dialog-border-color);
     top: 5%;
     margin: 0 auto;
     padding: 16px;
@@ -29,8 +30,7 @@ dialog {
         content: "";
         position: absolute;
         inset: 4px;
-        background-color: var(--dialog-background-color);
-        background-size: cover;
+        background: var(--dialog-background);
         z-index: -1;
         border-radius: inherit;
     }
@@ -39,7 +39,7 @@ dialog {
         content: "";
         position: absolute;
         inset: 0;
-        background-image: url('/assets/img/modal-border.svg');
+        background-image: var(--dialog-border);
         background-size: cover;
         transition: opacity 0.3s ease-in-out;
         z-index: -2;

@@ -9,14 +9,17 @@
     --button-background-color: #000;
     --button-border-color: var(--green);
     --button-primary-border-color: var(--cyan);
+    --button-primary-container-padding: 0;
     --button-disabled-color: rgba(255, 255, 255, 0.6);
     --button-disabled-background-color: var(--green);
     --button-hover-color: #000;
     --button-hover-background-color: var(--cyan);
     --button-hover-border-color: var(--cyan);
     --button-icon-border-width: 2px;
+    --button-icon-background-color: #000;
     --button-outline-hover-color: #FFF;
     --button-outline-hover-background-color: #000;
+    --button-outline-disabled-hover-background-color: #000;
     --card-background: var(--flag-background);
     --champion-prediction-user-color: var(--white);
     --champion-prediction-user-background-color: var(--onyx);
@@ -24,11 +27,13 @@
     --champion-prediction-user-hover-border-color: transparent;
     --champion-prediction-user-selected-color: #000;
     --champion-prediction-user-selected-background-color: var(--cyan);
-    --dialog-background-color: rgba(0, 0, 0, 1);
+    --dialog-background: rgba(0, 0, 0, 1);
+    --dialog-border: url('/assets/img/modal-border.svg');
+    --dialog-border-color: transparent;
     --dialog-backdrop-background-color: rgba(0, 0, 0, .7);
     --dialogue-text-color: var(--white);
     --dialogue-text-background-color: var(--onyx);
-    --dialogue-text-border-color: var(--cyan);
+    --dialogue-text-border-color: var(--emerald);
     --dialogue-text-arrow-color: #000;
     --dialogue-text-cursor-color: #FFF;
     --flag-background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.8)), url('/assets/img/player-background.png');
@@ -53,6 +58,7 @@
     --match-info-padding: 8px 16px;
     --match-prediction-color: #000;
     --match-prediction-predicted-background-color: var(--cyan);
+    --match-prediction-box-border-color: transparent;
     --match-prediction-background-color: var(--white);
     --match-prediction-item-color: var(--match-color);
     --match-prediction-item-background-color: transparent;
@@ -72,6 +78,7 @@
     --match-score-has-value-background-color: var(--cyan);
     --match-score-has-value-border-color: var(--cyan);
     --match-score-arrow-color: var(--white);
+    --match-score-container-top: -4px;
     --match-time-live-color: var(--cyan);
     --match-modal-color: var(--white);
     --modal-button-close-color: var(--cyan);
@@ -80,7 +87,7 @@
     --modal-title-color: #FFF;
     --position-row-hover: var(--green-dark);
     --podium-points-color: #000;
-    --podium-base-color: var(--cyan);
+    --podium-base-color: var(--lime);
     --scene-title-color: var(--light-blue);
     --segmented-color: #FFF;
     --segmented-background-color: #000;
@@ -97,9 +104,11 @@
     --table-highlight-color: var(--cyan);
     --table-background-color: #000;
     --table-border-color: var(--border-color);
+    --table-team-color: #FFF;
     --team-name-border-color: var(--sun-yellow);
+    --team-flag-img-border-color: transparent;
     --toy-shadow-color: rgba(0, 0, 0, .5);
     --toy-base-points-color: #000;
-    --toy-base-fill-color: var(--cyan);
+    --toy-base-fill-color: var(--lime);
     --toy-base-stroke-color: #000;
 }

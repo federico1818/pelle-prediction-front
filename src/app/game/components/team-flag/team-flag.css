@@ -8,4 +8,5 @@ img {
     width: 100%;
     border-radius: 2px;
     object-fit: cover;
+    box-shadow: 0 0 1px 0 var(--team-flag-img-border-color);
 }

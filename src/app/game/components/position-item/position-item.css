@@ -36,12 +36,14 @@
     align-items: center;
     border-radius: 2px;
     overflow: hidden;
+    border: 1px solid var(--team-flag-img-border-color);
 }
 
 .team-label {
     font-weight: 600;
     text-transform: uppercase;
     font-size: 9px;
+    color: var(--table-team-color);
 }
 
 .col-stat {
