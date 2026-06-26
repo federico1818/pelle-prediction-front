@@ -114,4 +114,12 @@ body.classic-light {
     --toy-base-points-color: var(--blue);
     --toy-base-fill-color: var(--light-blue-soft);
     --toy-base-stroke-color: var(--blue);
+    --theme-item-color: var(--light-blue);
+    --theme-item-hover-color: var(--light-blue);
+    --theme-item-background-color: #FFF;
+    --theme-item-border-color: var(--border-color);
+    --theme-item-hover-background-color: var(--white);
+    --theme-item-hover-border-color: var(--light-blue);
+    --theme-item-selected-color: #FFF;
+    --theme-item-selected-background-color: var(--light-blue);
 }

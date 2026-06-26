@@ -1,0 +1,23 @@
+.theme-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--theme-item-color);
+    background-color: var(--theme-item-background-color);
+    border: 1px solid var(--theme-item-border-color);
+    border-radius: 8px;
+    cursor: pointer;
+    height: 48px;
+    font-weight: bold;
+}
+
+.theme-item:hover {
+    color: var(--theme-item-hover-color);
+    background-color: var(--theme-item-hover-background-color);
+    border-color: var(--theme-item-hover-border-color);
+}
+
+.theme-item.selected {
+    color: var(--theme-item-selected-color);
+    background-color: var(--theme-item-selected-background-color);
+}

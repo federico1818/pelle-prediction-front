@@ -1,0 +1,7 @@
+:host {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: var(--content-width);
+    gap: 0 16px;
+    margin: 32px auto;
+}
