@@ -10,6 +10,7 @@ import { environment } from '../../../environments/environment'
 @Injectable({
     providedIn: 'root',
 })
+
 export class GamesService {
     protected _groupedGames: WritableSignal<GroupedGames[]> = signal<GroupedGames[]>([])
     protected _http: HttpClient = inject(HttpClient)
