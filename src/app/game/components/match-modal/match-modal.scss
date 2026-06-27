@@ -11,7 +11,10 @@
 :host ::ng-deep app-modal-footer {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    overflow-y: auto;
+    width: 100%;
+    min-height: 0;
 }
 
 .match-prediction-grid {

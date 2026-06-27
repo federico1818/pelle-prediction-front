@@ -1,3 +1,5 @@
 :host {
     grid-column: 1 / span 2;
+    overflow-y: auto;
+    min-height: 0;
 }
