@@ -4,3 +4,7 @@ nav {
     display: flex;
     justify-content: center;
 }
+
+.segmented-control {
+    grid-template-columns: repeat(3, minmax(0, var(--nav-item-width)));
+}

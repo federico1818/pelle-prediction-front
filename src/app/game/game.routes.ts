@@ -2,9 +2,10 @@ import { Routes } from '@angular/router'
 import { Champion } from './pages/champion/champion'
 import { Ranking } from './pages/ranking/ranking'
 import { Matches } from './pages/matches/matches'
-import { Game } from './pages/game/game';
-import { Home } from './pages/home/home';
-import { Calendar } from './pages/calendar/calendar';
+import { Game } from './pages/game/game'
+import { Home } from './pages/home/home'
+import { Calendar } from './pages/calendar/calendar'
+import { Playoffs } from './pages/playoffs/playoffs'
 
 export const gameRoutes: Routes = [
     {
@@ -26,6 +27,7 @@ export const gameRoutes: Routes = [
                 component: Matches,
                 children: [
                     { path: '', redirectTo: 'calendar', pathMatch: 'full' },
+                    { path: 'playoffs', component: Playoffs },
                     { path: 'calendar', component: Calendar },
                     { path: 'calendar/:month/:day', component: Calendar },
                     {
