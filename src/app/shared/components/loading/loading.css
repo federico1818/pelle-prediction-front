@@ -10,7 +10,7 @@
 
 .loading-icon {
     font-size: 32px;
-    color: var(--light-blue);
+    color: var(--loading-color);
     animation: spin 1.5s linear infinite;
     user-select: none;
 }
