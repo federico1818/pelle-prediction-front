@@ -13,10 +13,12 @@ import { environment } from '../../../environments/environment'
 
 export class GamesService {
     protected _groupedGames: WritableSignal<GroupedGames[]> = signal<GroupedGames[]>([])
+    protected _playoffGames: WritableSignal<Game[]> = signal<Game[]>([])
     protected _http: HttpClient = inject(HttpClient)
     private _router = inject(Router)
 
     public readonly games = computed(() => this._groupedGames())
+    public readonly playoffGames = computed(() => this._playoffGames())
 
     public readonly currentUrl = toSignal(
         this._router.events.pipe(
@@ -40,6 +42,18 @@ export class GamesService {
         return allGroups.find(g => g.group.name === letter) || null
     })
 
+    public readonly selectedPhaseName = computed(() => {
+        const url = this.currentUrl()
+        const parts = url.split('/')
+        const lastPart = parts[parts.length - 1]?.toLowerCase()
+        return lastPart || 'round-16'
+    })
+
+    public readonly selectedPhaseGames = computed(() => {
+        const phaseName = this.selectedPhaseName()?.toLowerCase()
+        return this.playoffGames().filter(g => g.phase?.toLowerCase() === phaseName)
+    })
+
     public getByDate(month: number, day: number): Game[] {
         return this.games()
             .flatMap(g => g.matches)
@@ -60,6 +74,14 @@ export class GamesService {
         )
     }
 
+    public getPlayoffs(): Observable<Game[]> {
+        return this._http.get<Game[]>(environment.api.url + '/playoff').pipe(
+            tap((games: Game[]) => {
+                this._playoffGames.set(games)
+            })
+        )
+    }
+
     public predict(gameId: number, score1: number, score2: number): Observable<any> {
         return this._http.post<any>(environment.api.url + `/games/${gameId}/predict`, {
             prediction_score_1: score1,
@@ -72,6 +94,9 @@ export class GamesService {
                         ...group,
                         matches: group.matches.map((g) => (g.id === updatedGame.id ? updatedGame : g))
                     }))
+                )
+                this._playoffGames.update((games) =>
+                    games.map((g) => (g.id === updatedGame.id ? updatedGame : g))
                 )
             })
         )

@@ -1,0 +1,21 @@
+<div class="custom-select-container">
+    <button type="button" class="select-trigger" (click)="toggleDropdown()">
+        <span class="select-label">{{ selectedPhase()?.label || 'Seleccionar Fase' }}</span>
+        <span class="material-symbols-outlined arrow-icon" [class.open]="isOpen()">expand_more</span>
+    </button>
+
+    @if (isOpen()) {
+    <div class="dropdown-menu">
+        @for (phase of phases; track phase.name) {
+        <a 
+            [routerLink]="[phase.name.toLowerCase()]" 
+            routerLinkActive="active" 
+            class="dropdown-item" 
+            (click)="selectPhase()"
+        >
+            {{ phase.label }}
+        </a>
+        }
+    </div>
+    }
+</div>

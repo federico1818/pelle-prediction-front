@@ -8,7 +8,7 @@
 
 a {
     display: block;
-    background: linear-gradient(to right, var(--blue) 20%, var(--light-blue) 50%, var(--blue) 80%);
+    background: linear-gradient(to right, var(--cyan) 20%, var(--lavender-dark) 40%, var(--emerald) 60%, var(--lime) 80%);
     background-size: 200% auto;
     -webkit-background-clip: text;
     background-clip: text;

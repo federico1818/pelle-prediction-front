@@ -1,0 +1,5 @@
+@if (filteredGames().length > 0) {
+    <app-match-list [games]="filteredGames()"></app-match-list>
+} @else {
+    <div class="no-matches">No hay partidos para esta fase.</div>
+}

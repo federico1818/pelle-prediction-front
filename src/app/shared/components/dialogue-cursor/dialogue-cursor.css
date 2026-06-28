@@ -15,7 +15,7 @@
 
 :host.mode-arrow {
     animation: bounce 0.8s infinite alternate;
-    color: var(--blue);
+    color: var(--dialogue-text-cursor-color);
     font-size: 12px;
 }
 

@@ -1,1 +1,7 @@
-<p>playoffs works!</p>
+<div class="playoffs-layout">
+    <app-phase-list [phases]="phases()"></app-phase-list>
+
+    <div class="playoffs-content">
+        <router-outlet></router-outlet>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+.no-matches {
+    text-align: center;
+    padding: 30px;
+    color: var(--select-color);
+    font-weight: 600;
+    font-size: 14px;
+    opacity: 0.7;
+}

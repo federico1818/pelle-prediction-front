@@ -27,7 +27,19 @@ export const gameRoutes: Routes = [
                 component: Matches,
                 children: [
                     { path: '', redirectTo: 'calendar', pathMatch: 'full' },
-                    { path: 'playoffs', component: Playoffs },
+                    {
+                        path: 'playoffs',
+                        component: Playoffs,
+                        children: [
+                            { path: '', redirectTo: 'round-16', pathMatch: 'full' },
+                            {
+                                path: ':phase',
+                                loadComponent: () => import(
+                                    './pages/playoffs-matches/playoffs-matches'
+                                ).then(m => m.PlayoffsMatches)
+                            }
+                        ]
+                    },
                     { path: 'calendar', component: Calendar },
                     { path: 'calendar/:month/:day', component: Calendar },
                     {
