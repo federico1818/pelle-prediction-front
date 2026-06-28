@@ -6,13 +6,13 @@ import { FixtureNav } from '../../components/fixture-nav/fixture-nav'
 import { MatchListComponent } from '../../components/match-list/match-list'
 
 @Component({
-    selector: 'app-fixture',
+    selector: 'app-calendar',
     imports: [FixtureNav, MatchListComponent],
-    templateUrl: './fixture.html',
-    styleUrl: './fixture.css',
+    templateUrl: './calendar.html',
+    styleUrl: './calendar.css',
 })
 
-export class Fixture implements OnInit {
+export class Calendar implements OnInit {
     private _route = inject(ActivatedRoute)
     private _router = inject(Router)
     private _fixtureService = inject(FixtureService)
@@ -34,7 +34,7 @@ export class Fixture implements OnInit {
                 const today = new Date()
                 const month = today.getMonth() + 1
                 const day = today.getDate()
-                this._router.navigate(['/game/matches/fixture', month, day])
+                this._router.navigate(['/game/matches/calendar', month, day])
             } else {
                 const month = parseInt(monthParam, 10)
                 const day = parseInt(dayParam, 10)

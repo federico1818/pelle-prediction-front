@@ -4,7 +4,7 @@ import { Ranking } from './pages/ranking/ranking'
 import { Matches } from './pages/matches/matches'
 import { Game } from './pages/game/game';
 import { Home } from './pages/home/home';
-import { Fixture } from './pages/fixture/fixture';
+import { Calendar } from './pages/calendar/calendar';
 
 export const gameRoutes: Routes = [
     {
@@ -25,9 +25,9 @@ export const gameRoutes: Routes = [
                 path: 'matches',
                 component: Matches,
                 children: [
-                    { path: '', redirectTo: 'fixture', pathMatch: 'full' },
-                    { path: 'fixture', component: Fixture },
-                    { path: 'fixture/:month/:day', component: Fixture },
+                    { path: '', redirectTo: 'calendar', pathMatch: 'full' },
+                    { path: 'calendar', component: Calendar },
+                    { path: 'calendar/:month/:day', component: Calendar },
                     {
                         path: 'group',
                         loadComponent: () => import(

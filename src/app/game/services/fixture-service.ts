@@ -56,12 +56,12 @@ export class FixtureService {
     public goPrevious(): void {
         if (this.isBackDisabled()) return
         const prev = this.getPreviousDate(this.currentMonth(), this.currentDay())
-        this._router.navigate(['/game/matches/fixture', prev.month, prev.day])
+        this._router.navigate(['/game/matches/calendar', prev.month, prev.day])
     }
 
     public goNext(): void {
         if (this.isNextDisabled()) return
         const next = this.getNextDate(this.currentMonth(), this.currentDay())
-        this._router.navigate(['/game/matches/fixture', next.month, next.day])
+        this._router.navigate(['/game/matches/calendar', next.month, next.day])
     }
 }
