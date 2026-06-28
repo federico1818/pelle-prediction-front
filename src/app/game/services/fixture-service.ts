@@ -23,8 +23,8 @@ export class FixtureService {
         const month = this.currentMonth()
         const day = this.currentDay()
 
-        if (month > 6) return true
-        if (month === 6 && day >= 27) return true
+        if (month > 7) return true
+        if (month === 7 && day >= 4) return true
         return false
     })
 

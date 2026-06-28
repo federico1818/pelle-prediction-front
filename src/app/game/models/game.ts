@@ -11,6 +11,7 @@ export interface Game {
     penalties_score_1: number | null
     penalties_score_2: number | null
     phase: string
+    phase_name: string
     group: string | null
     prediction_score_1: number | null
     prediction_score_2: number | null

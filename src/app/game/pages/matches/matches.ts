@@ -15,5 +15,6 @@ export class Matches implements OnInit {
 
     public ngOnInit(): void {
         this._gamesService.all().subscribe()
+        this._gamesService.getPlayoffs().subscribe()
     }
 }

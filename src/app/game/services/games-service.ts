@@ -19,6 +19,10 @@ export class GamesService {
 
     public readonly games = computed(() => this._groupedGames())
     public readonly playoffGames = computed(() => this._playoffGames())
+    public readonly allGames = computed(() => [
+        ...this.games().flatMap(g => g.matches),
+        ...this.playoffGames()
+    ])
 
     public readonly currentUrl = toSignal(
         this._router.events.pipe(
@@ -51,12 +55,11 @@ export class GamesService {
 
     public readonly selectedPhaseGames = computed(() => {
         const phaseName = this.selectedPhaseName()?.toLowerCase()
-        return this.playoffGames().filter(g => g.phase?.toLowerCase() === phaseName)
+        return this.playoffGames().filter(g => g.phase_name?.toLowerCase() === phaseName)
     })
 
     public getByDate(month: number, day: number): Game[] {
-        return this.games()
-            .flatMap(g => g.matches)
+        return this.allGames()
             .filter(game => {
                 const date = new Date(game.date_time)
                 return (date.getMonth() + 1) === month && date.getDate() === day
@@ -107,7 +110,7 @@ export class GamesService {
     }
 
     public readonly upcoming = computed(() => {
-        const allMatches = this.games().flatMap(g => g.matches)
+        const allMatches = this.allGames()
 
         const finished = allMatches
             .filter(game => isGameFinished(game))
