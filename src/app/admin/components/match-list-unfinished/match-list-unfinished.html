@@ -1,0 +1,11 @@
+@if (isLoading()) {
+    <app-loading></app-loading>
+} @else {
+    <div class="match-list-grid">
+        @for (game of games(); track game.id) {
+            <app-match-admin-item [game]="game"></app-match-admin-item>
+        }
+    </div>
+}
+
+<app-match-modal-edit-admin></app-match-modal-edit-admin>

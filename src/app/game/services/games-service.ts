@@ -14,11 +14,13 @@ import { environment } from '../../../environments/environment'
 export class GamesService {
     protected _groupedGames: WritableSignal<GroupedGames[]> = signal<GroupedGames[]>([])
     protected _playoffGames: WritableSignal<Game[]> = signal<Game[]>([])
+    protected _unfinishedGames: WritableSignal<Game[]> = signal<Game[]>([])
     protected _http: HttpClient = inject(HttpClient)
     private _router = inject(Router)
 
     public readonly games = computed(() => this._groupedGames())
     public readonly playoffGames = computed(() => this._playoffGames())
+    public readonly unfinishedGames = computed(() => this._unfinishedGames())
     public readonly allGames = computed(() => [
         ...this.games().flatMap(g => g.matches),
         ...this.playoffGames()
@@ -126,4 +128,33 @@ export class GamesService {
             return new Date(a.date_time).getTime() - new Date(b.date_time).getTime()
         })
     })
+
+    public getUnfinished(): Observable<Game[]> {
+        return this._http.get<Game[]>(environment.api.url + '/games/unfinished').pipe(
+            tap((games: Game[]) => {
+                this._unfinishedGames.set(games)
+            })
+        )
+    }
+
+    public update(gameId: number, score1: number, score2: number): Observable<any> {
+        return this._http.put<any>(environment.api.url + `/games/${gameId}`, {
+            score_1: score1,
+            score_2: score2
+        }).pipe(
+            tap((res) => {
+                const updatedGame = res.game || res
+                this._groupedGames.update((groups) =>
+                    groups.map((group) => ({
+                        ...group,
+                        matches: group.matches.map((g) => (g.id === updatedGame.id ? updatedGame : g))
+                    }))
+                )
+                this._playoffGames.update((games) =>
+                    games.map((g) => (g.id === updatedGame.id ? updatedGame : g))
+                )
+                this.getUnfinished().subscribe()
+            })
+        )
+    }
 }

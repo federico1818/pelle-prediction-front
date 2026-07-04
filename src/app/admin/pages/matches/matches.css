@@ -1,0 +1,15 @@
+:host {
+    padding: 8px;
+}
+
+.segmented-control {
+    grid-template-columns: 1fr;
+    margin-inline: auto;
+    max-width: 128px;
+}
+
+app-match-list-unfinished {
+    display: grid;
+    max-width: var(--content-width);
+    margin-inline: auto;
+}
