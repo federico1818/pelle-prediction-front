@@ -23,7 +23,7 @@ export class MatchListUpcoming implements OnInit {
         dialogues: [
             {
                 text: '¡Que no se te escape la tortuga! Hacé tu pronóstico',
-                src: 'scenes/maradona.png',
+                src: 'scenes/maradona.webp',
                 type: 'rpg'
             }
         ]
