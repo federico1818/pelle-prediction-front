@@ -166,7 +166,7 @@ export class Stadium implements AfterViewInit, OnDestroy {
     }
 
     private loadCharacterSprite(): void {
-        const spriteUrl = `assets/img/champion/${this.nickname().toLowerCase()}-walking.png`;
+        const spriteUrl = `assets/img/champion/${this.nickname().toLowerCase()}-walking.webp`;
         const loader = new THREE.TextureLoader();
         
         loader.load(
