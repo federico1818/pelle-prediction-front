@@ -18,8 +18,9 @@ export class Callback implements OnInit {
         this.route.queryParamMap.subscribe(params => {
             const token = params.get('token')
             const intro = params.get('intro')
+            const role = params.get('role') || 'user'
             if (token) {
-                this.authService.login(token)
+                this.authService.login(token, role)
                 if (intro === 'true') {
                     this.router.navigate(['/intro'])
                 } else {
