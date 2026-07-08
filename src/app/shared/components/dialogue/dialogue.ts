@@ -34,7 +34,7 @@ export class Dialogue {
             if (this.dialogue().type === 'image') {
                 this.videoIsFinished.set(true)
             } else {
-                this.videoIsFinished.set(!!this.dialogue().loop)
+                this.videoIsFinished.set(true)
                 this.videoElement()?.play()
             }
             this.textElement()?.play()

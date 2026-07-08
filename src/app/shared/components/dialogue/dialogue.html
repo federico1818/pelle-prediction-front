@@ -5,7 +5,7 @@
     @if (dialogue().type === 'image' || dialogue().type === 'rpg') {
     <img [src]="'/assets/img/' + dialogue().src" class="dialogue-image" />
     } @else {
-    <app-video #videoRef [src]="dialogue().src" [loop]="dialogue().loop ?? false"
+    <app-video #videoRef [src]="dialogue().src" [loop]="true"
         (finished)="onVideoFinished()"></app-video>
     }
     <app-dialogue-text #textRef [text]="dialogue().text"

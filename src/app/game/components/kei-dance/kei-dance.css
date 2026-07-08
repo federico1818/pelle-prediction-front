@@ -1,0 +1,15 @@
+.kei-dance-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem auto;
+    width: fit-content;
+}
+
+canvas {
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    height: 196px;
+    width: auto;
+    border-radius: 8px;
+}

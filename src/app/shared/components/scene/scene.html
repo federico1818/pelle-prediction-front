@@ -7,3 +7,6 @@
         [hasNext]="i < scene().dialogues.length - 1" (next)="onNext()"></app-dialogue>
     }
 </div>
+@if(scene().name == 'happy-birthday-kei') {
+    <app-kei-dance></app-kei-dance>
+}

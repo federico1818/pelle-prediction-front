@@ -2,13 +2,15 @@ import { CommonModule } from '@angular/common'
 import { AfterViewInit, Component, input, InputSignal, signal, Signal, viewChildren, WritableSignal, output } from '@angular/core'
 import { Scene as SceneModel } from '../../models/scene'
 import { Dialogue } from '../dialogue/dialogue'
+import { KeiDance } from '../../../game/components/kei-dance/kei-dance'
 
 @Component({
     selector: 'app-scene',
     standalone: true,
     imports: [
         CommonModule,
-        Dialogue
+        Dialogue,
+        KeiDance
     ],
     templateUrl: './scene.html',
     styleUrl: './scene.css',
