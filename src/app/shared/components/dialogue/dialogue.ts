@@ -50,6 +50,7 @@ export class Dialogue {
     }
 
     public onHostClick(): void {
+        this.videoElement()?.unmute()
         this._emitWhenFinished()
     }
 

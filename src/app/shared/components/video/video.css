@@ -4,6 +4,8 @@
     border-radius: 8px;
     overflow: hidden;
     transform: translateZ(0);
+    max-width: var(--content-width);
+    margin-inline: auto;
 }
 
 video {

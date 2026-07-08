@@ -20,7 +20,14 @@ export class Video {
     public play(): void {
         if (this.video?.nativeElement) {
             this.video.nativeElement.currentTime = 0
+            this.video.nativeElement.muted = true
             this.video.nativeElement.play()
+        }
+    }
+
+    public unmute(): void {
+        if (this.video?.nativeElement) {
+            this.video.nativeElement.muted = false
         }
     }
 
