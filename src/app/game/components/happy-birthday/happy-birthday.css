@@ -1,0 +1,68 @@
+.party-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 9999;
+    font-family: 'New Rocker', cursive, serif;
+    color: var(--happy-birthday-color);
+}
+
+.party-text {
+    font-size: 2.5rem;
+    position: absolute;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-shadow: 0 0 15px currentColor, 0 0 35px currentColor;
+    animation: party-animation 11s infinite ease-in-out;
+    opacity: 0;
+}
+
+/* 4 textos distribuidos en la pantalla con delay ajustado a un ciclo de 11s (para repetirse 2 veces en 22s) */
+.text-1 {
+    top: 25%;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.text-2 {
+    bottom: 30%;
+    right: 25%;
+    animation-delay: 2.75s;
+}
+
+.text-3 {
+    top: 45%;
+    left: 40%;
+    animation-delay: 5.5s;
+}
+
+.text-4 {
+    top: 30%;
+    right: 20%;
+    animation-delay: 8.25s;
+}
+
+@keyframes party-animation {
+    /* 0% a 25% representa los 2.75s en los que el texto está activo en escena */
+    0% {
+        transform: scale(0.3) rotate(-20deg);
+        opacity: 0;
+    }
+    12.5% {
+        transform: scale(1.4) rotate(15deg);
+        opacity: 1;
+    }
+    25% {
+        transform: scale(0.3) rotate(-20deg);
+        opacity: 0;
+    }
+    /* El 75% restante de los 11s el texto permanece oculto esperando su turno en el siguiente ciclo */
+    100% {
+        transform: scale(0.3) rotate(-20deg);
+        opacity: 0;
+    }
+}

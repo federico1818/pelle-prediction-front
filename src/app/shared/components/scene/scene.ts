@@ -3,6 +3,7 @@ import { AfterViewInit, Component, input, InputSignal, signal, Signal, viewChild
 import { Scene as SceneModel } from '../../models/scene'
 import { Dialogue } from '../dialogue/dialogue'
 import { KeiDance } from '../../../game/components/kei-dance/kei-dance'
+import { HappyBirthday } from '../../../game/components/happy-birthday/happy-birthday'
 
 @Component({
     selector: 'app-scene',
@@ -10,7 +11,8 @@ import { KeiDance } from '../../../game/components/kei-dance/kei-dance'
     imports: [
         CommonModule,
         Dialogue,
-        KeiDance
+        KeiDance,
+        HappyBirthday
     ],
     templateUrl: './scene.html',
     styleUrl: './scene.css',
