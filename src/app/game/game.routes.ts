@@ -31,7 +31,7 @@ export const gameRoutes: Routes = [
                         path: 'playoffs',
                         component: Playoffs,
                         children: [
-                            { path: '', redirectTo: 'round-16', pathMatch: 'full' },
+                            { path: '', redirectTo: 'round-4', pathMatch: 'full' },
                             {
                                 path: ':phase',
                                 loadComponent: () => import(
