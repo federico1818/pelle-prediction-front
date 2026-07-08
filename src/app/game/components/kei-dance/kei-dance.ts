@@ -30,7 +30,7 @@ export class KeiDance implements OnInit, OnDestroy {
     this.ctx = canvasEl.getContext('2d');
 
     this.image = new Image();
-    this.image.src = 'assets/img/scenes/kei-dance.png';
+    this.image.src = 'assets/img/scenes/kei-dance.webp';
     this.image.onload = () => {
       this.frameWidth = this.image.width / this.COLS;
       this.frameHeight = this.image.height / this.ROWS;
