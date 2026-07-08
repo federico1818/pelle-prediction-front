@@ -21,7 +21,6 @@
     opacity: 0;
 }
 
-/* 4 textos distribuidos en la pantalla con delay ajustado a un ciclo de 11s (para repetirse 2 veces en 22s) */
 .text-1 {
     top: 25%;
     left: 20%;
@@ -47,7 +46,6 @@
 }
 
 @keyframes party-animation {
-    /* 0% a 25% representa los 2.75s en los que el texto está activo en escena */
     0% {
         transform: scale(0.3) rotate(-20deg);
         opacity: 0;
@@ -60,7 +58,6 @@
         transform: scale(0.3) rotate(-20deg);
         opacity: 0;
     }
-    /* El 75% restante de los 11s el texto permanece oculto esperando su turno en el siguiente ciclo */
     100% {
         transform: scale(0.3) rotate(-20deg);
         opacity: 0;
