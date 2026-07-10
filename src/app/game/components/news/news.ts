@@ -1,6 +1,6 @@
-import { Component, inject, OnInit } from '@angular/core'
-import { NewsService } from '../../services/news-service'
+import { Component, input } from '@angular/core'
 import { SceneComponent } from '../../../shared/components/scene/scene'
+import { Notice } from '../../models/notice'
 
 @Component({
     selector: 'app-news',
@@ -10,12 +10,6 @@ import { SceneComponent } from '../../../shared/components/scene/scene'
     styleUrl: './news.css',
 })
 
-export class News implements OnInit {
-    private _newsService = inject(NewsService)
-
-    public notices = this._newsService.notices
-
-    public ngOnInit(): void {
-        this._newsService.get().subscribe()
-    }
+export class News {
+    public notices = input.required<Notice[]>()
 }
