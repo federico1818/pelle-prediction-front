@@ -8,7 +8,7 @@
 }
 
 .loser:nth-child(2) {
-    left: 56px;
+    left: 40px;
 }
 
 .loser:nth-child(3) {
@@ -19,10 +19,14 @@
     left: 196px;
 }
 
-.loser:nth-child(5) {
+.loser:nth-child(6) {
     right: 8px;
 }
 
-.loser:nth-child(6) {
-    right: 56px;
+.loser:nth-child(5) {
+    right: 40px;
+}
+
+.loser:nth-child(even) {
+    transform: scaleX(-1);
 }
