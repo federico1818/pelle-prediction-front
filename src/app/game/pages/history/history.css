@@ -76,25 +76,25 @@
 }
 
 .exact {
-    background-color: var(--match-prediction-item-points-exact-background-color);
-    color: var(--match-prediction-item-points-exact-color);
+    background-color: var(--points-badge-exact-background-color);
+    color: var(--points-badge-exact-color);
 }
 
 .diff {
-    background-color: var(--match-prediction-item-points-diff-background-color);
-    color: var(--match-prediction-item-points-diff-color);
+    background-color: var(--points-badge-diff-background-color);
+    color: var(--points-badge-diff-color);
 }
 
 .winner {
-    background-color: var(--match-prediction-item-points-winner-background-color);
-    color: var(--match-prediction-item-points-winner-color);
+    background-color: var(--points-badge-winner-background-color);
+    color: var(--points-badge-winner-color);
 }
 
 .lose,
 .points-null {
     background-color: transparent;
-    color: var(--match-prediction-item-points-lose-color);
-    border: 1px dashed var(--match-prediction-item-points-lose-border-color);
+    color: var(--points-badge-lose-color);
+    border: 1px dashed var(--points-badge-lose-border-color);
 }
 
 .empty-history {

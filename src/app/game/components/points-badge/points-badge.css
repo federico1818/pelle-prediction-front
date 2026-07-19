@@ -1,0 +1,35 @@
+.points {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 64px;
+    height: 32px;
+    border-radius: 16px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 0 12px;
+    box-sizing: border-box;
+    max-width: 80px;
+}
+
+.exact {
+    background-color: var(--points-badge-exact-background-color);
+    color: var(--points-badge-exact-color);
+}
+
+.diff {
+    background-color: var(--points-badge-diff-background-color);
+    color: var(--points-badge-diff-color);
+}
+
+.winner {
+    background-color: var(--points-badge-winner-background-color);
+    color: var(--points-badge-winner-color);
+}
+
+.lose,
+.points-null {
+    background-color: transparent;
+    color: var(--points-badge-lose-color);
+    border: 1px dashed var(--points-badge-lose-border-color);
+}

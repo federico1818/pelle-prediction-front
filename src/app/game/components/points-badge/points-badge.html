@@ -1,0 +1,7 @@
+<div class="points" [ngClass]="points()?.label || 'points-null'">
+    @if (points(); as pts) {
+        {{ pts.value }} {{ 'pts' }}
+    } @else {
+        -
+    }
+</div>

@@ -22,39 +22,6 @@
     justify-self: center;
 }
 
-.points {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+app-points-badge {
     justify-self: end;
-    min-width: 64px;
-    height: 32px;
-    border-radius: 16px;
-    font-size: 12px;
-    font-weight: bold;
-
-    padding: 0 12px;
-    box-sizing: border-box;
-}
-
-.exact {
-    background-color: var(--match-prediction-item-points-exact-background-color);
-    color: var(--match-prediction-item-points-exact-color);
-}
-
-.diff {
-    background-color: var(--match-prediction-item-points-diff-background-color);
-    color: var(--match-prediction-item-points-diff-color);
-}
-
-.winner {
-    background-color: var(--match-prediction-item-points-winner-background-color);
-    color: var(--match-prediction-item-points-winner-color);
-}
-
-.lose,
-.points-null {
-    background-color: transparent;
-    color: var(--match-prediction-item-points-lose-color);
-    border: 1px dashed var(--match-prediction-item-points-lose-border-color);
 }

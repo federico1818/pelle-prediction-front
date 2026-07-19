@@ -6,10 +6,4 @@
     {{ prediction().score_1 }} - {{ prediction().score_2 }}
 </div>
 
-<div class="points" [ngClass]="prediction().points?.label || 'points-null'">
-    @if (prediction().points; as points) {
-    {{ points.value }} {{ 'pts' }}
-    } @else {
-    -
-    }
-</div>
+<app-points-badge [points]="prediction().points"></app-points-badge>
