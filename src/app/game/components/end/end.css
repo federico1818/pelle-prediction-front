@@ -1,16 +1,33 @@
+.segmented-control {
+    max-width: 128px;
+    grid-template-columns: 1fr;
+    margin-inline: auto;
+    margin-bottom: 16px;
+}
+
 .end-container {
     position: relative;
     width: 100%;
-    overflow: hidden;
     border-radius: 8px;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     margin-inline: auto;
     max-width: var(--content-width);
+    gap: 8px 0;
 }
 
 .background-stadium {
     width: 100%;
     display: block;
+}
+
+.losers-overlay {
+    width: 100%;
+    position: relative;
+}
+
+.winner-overlay {
+    width: 144px;
 }
