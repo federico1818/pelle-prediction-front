@@ -1,7 +1,6 @@
 import { Component, inject, OnInit, OnDestroy, signal } from '@angular/core';
 
 import { StadiumOnFire } from '../stadium-on-fire/stadium-on-fire'
-import { ToyFighting } from '../toy-fighting/toy-fighting'
 import { Losers } from '../losers/losers'
 import { Winner } from '../winner/winner'
 import { Loading } from '../../../shared/components/loading/loading'
@@ -10,7 +9,7 @@ import { Ranking } from '../../models/ranking'
 
 @Component({
     selector: 'app-end',
-    imports: [StadiumOnFire, ToyFighting, Losers, Winner, Loading],
+    imports: [StadiumOnFire, Losers, Winner, Loading],
     templateUrl: './end.html',
     styleUrl: './end.css',
 })
