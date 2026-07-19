@@ -3,6 +3,9 @@
     gap: 24px 0;
     padding-bottom: 48px;
     align-content: start;
+    max-width: var(--content-width);
+    width: 100%;
+    margin-inline: auto;
 }
 
 .history-container {
