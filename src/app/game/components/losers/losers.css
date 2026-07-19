@@ -1,0 +1,28 @@
+.loser {
+    position: absolute;
+    bottom: 16px;
+}
+
+.loser:nth-child(1) {
+    left: 8px;
+}
+
+.loser:nth-child(2) {
+    left: 56px;
+}
+
+.loser:nth-child(3) {
+    left: 160px;
+}
+
+.loser:nth-child(4) {
+    left: 196px;
+}
+
+.loser:nth-child(5) {
+    right: 8px;
+}
+
+.loser:nth-child(6) {
+    right: 56px;
+}
