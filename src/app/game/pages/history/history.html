@@ -1,1 +1,7 @@
-<p>history works!</p>
+<app-history-user-list [selectedNickname]="currentNickname()"></app-history-user-list>
+
+@if (currentNickname()) {
+    <div style="margin-top: 16px; font-family: var(--font-family-gaming); color: var(--white); font-size: 14px;">
+        Historial de: {{ currentNickname() }}
+    </div>
+}
