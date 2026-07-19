@@ -6,7 +6,7 @@
 }
 
 video {
-    width: 130%;
+    width: 100%;
     flex-shrink: 0;
     border-radius: 8px;
 }
