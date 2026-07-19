@@ -10,3 +10,19 @@ video {
     flex-shrink: 0;
     border-radius: 8px;
 }
+
+.day-stadium {
+    display: none;
+}
+
+.night-stadium {
+    display: block;
+}
+
+:host-context(body.classic-light) .day-stadium {
+    display: block;
+}
+
+:host-context(body.classic-light) .night-stadium {
+    display: none;
+}

@@ -1,4 +1,4 @@
-import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core'
+import { Component, ElementRef, ViewChildren, QueryList, AfterViewInit } from '@angular/core'
 
 @Component({
     selector: 'app-stadium-on-fire',
@@ -8,15 +8,15 @@ import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core'
 })
 
 export class StadiumOnFire implements AfterViewInit {
-    @ViewChild('videoPlayer') videoPlayer!: ElementRef<HTMLVideoElement>;
+    @ViewChildren('videoPlayer') videoPlayers!: QueryList<ElementRef<HTMLVideoElement>>;
 
     public ngAfterViewInit(): void {
-        if (this.videoPlayer) {
-            const video = this.videoPlayer.nativeElement;
+        this.videoPlayers.forEach(player => {
+            const video = player.nativeElement;
             video.muted = true;
             video.play().catch(err => {
-            console.warn('Autoplay failed or was prevented:', err);
+                console.warn('Autoplay failed or was prevented:', err);
             });
-        }
+        });
     }
 }
