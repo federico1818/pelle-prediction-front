@@ -1,6 +1,9 @@
-<!-- @if (notices().length > 0) {
-    <app-news [notices]="notices()"></app-news>
+@if (gameFinished()) {
+    <app-end></app-end>
 } @else {
-    <app-match-list-upcoming></app-match-list-upcoming>
-} -->
-<app-end></app-end>
+    @if (notices().length > 0) {
+        <app-news [notices]="notices()"></app-news>
+    } @else {
+        <app-match-list-upcoming></app-match-list-upcoming>
+    }
+}

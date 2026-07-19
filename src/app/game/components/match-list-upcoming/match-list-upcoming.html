@@ -1,7 +1,7 @@
-<app-scene [scene]="scene"></app-scene>
 @if (isLoading()) {
     <app-loading></app-loading>
 } @else {
+    <app-scene [scene]="scene"></app-scene>
     <div class="match-list-grid">
         @for (game of games(); track game.id) {
             <app-match-with-status [game]="game"></app-match-with-status>
