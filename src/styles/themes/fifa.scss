@@ -21,12 +21,12 @@
     --button-outline-hover-background-color: #000;
     --button-outline-disabled-hover-background-color: #000;
     --card-background: var(--flag-background);
-    --champion-prediction-user-color: var(--white);
-    --champion-prediction-user-background-color: var(--onyx);
-    --champion-prediction-user-border-color: transparent;
-    --champion-prediction-user-hover-border-color: transparent;
-    --champion-prediction-user-selected-color: #000;
-    --champion-prediction-user-selected-background-color: var(--cyan);
+    --chip-color: var(--white);
+    --chip-background-color: var(--onyx);
+    --chip-border-color: transparent;
+    --chip-hover-border-color: transparent;
+    --chip-selected-color: #000;
+    --chip-selected-background-color: var(--cyan);
     --dialog-background: rgba(0, 0, 0, 1);
     --dialog-border: url('/assets/img/modal-border.svg');
     --dialog-border-color: transparent;

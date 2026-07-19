@@ -3,26 +3,3 @@
     grid-template-columns: repeat(4, 1fr);
     gap: 8px;
 }
-
-.user {
-    border: 1px solid var(--champion-prediction-user-border-color);
-    border-radius: 8px;
-    background-color: var(--champion-prediction-user-background-color);
-    color: var(--champion-prediction-user-color);
-    font-family: var(--font-family-gaming);
-    font-size: 8px;
-    height: 32px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    cursor: pointer;
-}
-
-.user:hover {
-    border-color: var(--champion-prediction-user-hover-border-color);
-}
-
-.user.selected {
-    background-color: var(--champion-prediction-user-selected-background-color);
-    color: var(--champion-prediction-user-selected-color);
-}

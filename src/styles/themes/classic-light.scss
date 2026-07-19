@@ -21,12 +21,12 @@ body.classic-light {
     --button-outline-hover-background-color: var(--light-blue);
     --button-outline-disabled-hover-background-color: var(--white);
     --card-background: var(--flag-background);
-    --champion-prediction-user-color: var(--blue);
-    --champion-prediction-user-background-color: var(--white);
-    --champion-prediction-user-border-color: var(--border-color);
-    --champion-prediction-user-hover-border-color: var(--light-blue);
-    --champion-prediction-user-selected-color: var(--white);
-    --champion-prediction-user-selected-background-color: var(--light-blue);
+    --chip-color: var(--blue);
+    --chip-background-color: var(--white);
+    --chip-border-color: var(--border-color);
+    --chip-hover-border-color: var(--light-blue);
+    --chip-selected-color: var(--white);
+    --chip-selected-background-color: var(--light-blue);
     --dialog-background: var(--app-background-image) left top / var(--app-background-size);
     --dialog-border: none;
     --dialog-border-color: var(--light-blue);

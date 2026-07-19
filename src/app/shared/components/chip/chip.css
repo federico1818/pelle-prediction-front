@@ -1,0 +1,22 @@
+.chip {
+    border: 1px solid var(--chip-border-color);
+    border-radius: 8px;
+    background-color: var(--chip-background-color);
+    color: var(--chip-color);
+    font-family: var(--font-family-gaming);
+    font-size: 8px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.chip:hover {
+    border-color: var(--chip-hover-border-color);
+}
+
+.chip.selected {
+    background-color: var(--chip-selected-background-color);
+    color: var(--chip-selected-color);
+}

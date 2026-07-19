@@ -1,9 +1,8 @@
 @for (prediction of predictions(); track prediction.user.nickname) {
-    <div 
-        class="user"
-        [class.selected]="selectedPrediction()?.user?.nickname === prediction.user.nickname"
-        (click)="select(prediction)"
+    <app-chip 
+        [selected]="selectedPrediction()?.user?.nickname === prediction.user.nickname"
+        (clicked)="select(prediction)"
     >
         {{ prediction.user.nickname }}
-    </div>
+    </app-chip>
 }
