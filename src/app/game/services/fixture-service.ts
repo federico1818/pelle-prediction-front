@@ -24,7 +24,7 @@ export class FixtureService {
         const day = this.currentDay()
 
         if (month > 7) return true
-        if (month === 7 && day >= 12) return true
+        if (month === 7 && day >= 19) return true
         return false
     })
 
