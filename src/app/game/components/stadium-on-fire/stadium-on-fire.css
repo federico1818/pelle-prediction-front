@@ -1,4 +1,12 @@
-video {
+:host {
+    display: flex;
+    justify-content: center;
+    overflow-x: auto;
     width: 100%;
+}
+
+video {
+    width: 130%;
+    flex-shrink: 0;
     border-radius: 8px;
 }

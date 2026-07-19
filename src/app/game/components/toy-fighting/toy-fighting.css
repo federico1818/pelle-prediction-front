@@ -1,0 +1,23 @@
+:host {
+    display: block;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.fighting {
+    width: 76px;
+    height: 128px;
+    background-repeat: no-repeat;
+    background-size: 300% 100%;
+    animation: fight-anim 0.6s steps(2) infinite;
+}
+
+@keyframes fight-anim {
+    from {
+        background-position: 0% 0%;
+    }
+    to {
+        background-position: 100% 0%;
+    }
+}
