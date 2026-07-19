@@ -19,7 +19,9 @@ export class End implements OnInit {
 
     public ngOnInit(): void {
         this._rankingService.get().subscribe(rankings => {
-            this.losers.set(rankings.slice(0, -1));
+            const list = rankings.slice(0, -1);
+            const shuffled = [...list].sort(() => Math.random() - 0.5);
+            this.losers.set(shuffled);
         });
     }
 }
