@@ -3,10 +3,11 @@ import { Game } from '../../models/game'
 import { TeamFlagComponent } from '../team-flag/team-flag'
 import { MatchModalService } from '../../services/match-modal-service'
 import { MatchModalEditService } from '../../services/match-modal-edit-service'
+import { MatchPredictionBox } from '../match-prediction-box/match-prediction-box'
 
 @Component({
     selector: 'app-match',
-    imports: [TeamFlagComponent],
+    imports: [TeamFlagComponent, MatchPredictionBox],
     templateUrl: './match.html',
     styleUrl: './match.css',
     host: {

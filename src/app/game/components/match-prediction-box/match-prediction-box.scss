@@ -1,0 +1,18 @@
+:host {
+    width: 24px;
+    height: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    font-weight: normal;
+    font-size: 11px;
+    font-family: var(--font-family-gaming);
+    background-color: var(--match-prediction-background-color);
+    border: 1px solid var(--match-prediction-box-border-color);
+    color: var(--match-prediction-color);
+
+    &.predicted {
+        background-color: var(--match-prediction-predicted-background-color);
+    }
+}
