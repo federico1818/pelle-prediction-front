@@ -1,6 +1,6 @@
 :host {
     display: grid;
-    grid-template-columns: 48px 24px 24px 48px 1fr;
+    grid-template-columns: 48px 24px 24px 48px 1fr 64px;
     gap: 0 16px;
     align-items: center;
     background: var(--match-background-color);
@@ -17,6 +17,25 @@
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.match-score-container {
+    display: grid;
+    align-items: center;
+    justify-items: center;
+    grid-template-columns: 1fr 4px 1fr;
+    background-color: var(--match-score-background-color);
+    font-size: 11px;
+    font-weight: bold;
+    color: var(--match-score-color);
+    border-radius: 4px;
+    height: 20px;
+    width: 48px;
+    position: initial;
+}
+
+.match-score-separator {
+    font-size: 14px;
 }
 
 app-points-badge {

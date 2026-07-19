@@ -2,6 +2,11 @@
 <app-match-prediction-box [predicted]="item().prediction !== null">{{ item().prediction?.score_1 ?? '' }}</app-match-prediction-box>
 <app-match-prediction-box [predicted]="item().prediction !== null">{{ item().prediction?.score_2 ?? '' }}</app-match-prediction-box>
 <app-team-flag class="team-flag" [team]="item().team_2"></app-team-flag>
-
-<!-- Puntos -->
+@if(item().score_1 !== null && item().score_2 !== null) {
+    <div class="match-score-container">
+        <div class="match-score score-1">{{ item().score_1 }}</div>
+        <div class="match-score-separator">-</div>
+        <div class="match-score score-2">{{ item().score_2 }}</div>
+    </div>
+}
 <app-points-badge [points]="item().points"></app-points-badge>
