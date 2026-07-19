@@ -4,10 +4,15 @@ import { TeamFlagComponent } from '../team-flag/team-flag'
 import { MatchTimeStatusComponent } from '../match-time-status/match-time-status'
 import { MatchModalService } from '../../services/match-modal-service'
 import { MatchModalEditService } from '../../services/match-modal-edit-service'
+import { MatchPredictionBox } from '../match-prediction-box/match-prediction-box'
 
 @Component({
     selector: 'app-match-with-status',
-    imports: [TeamFlagComponent, MatchTimeStatusComponent],
+    imports: [
+        TeamFlagComponent,
+        MatchTimeStatusComponent,
+        MatchPredictionBox
+    ],
     templateUrl: './match-with-status.html',
     styleUrl: './match-with-status.css',
     host: {

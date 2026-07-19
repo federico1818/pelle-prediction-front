@@ -17,8 +17,8 @@
 <div class="match-container">
     <app-team-flag class="match-team-flag" [team]="game().team_1"></app-team-flag>
     <div class="match-team-name name-1">{{ game().team_1.label }}</div>
-    <div class="match-prediction-box" [class.predicted]="hasPrediction()">{{ game().prediction_score_1 ?? '' }}</div>
-    <div class="match-prediction-box" [class.predicted]="hasPrediction()">{{ game().prediction_score_2 ?? '' }}</div>
+    <app-match-prediction-box [predicted]="hasPrediction()">{{ game().prediction_score_1 ?? '' }}</app-match-prediction-box>
+    <app-match-prediction-box [predicted]="hasPrediction()">{{ game().prediction_score_2 ?? '' }}</app-match-prediction-box>
     <div class="match-team-name name-2">{{ game().team_2.label }}</div>
     <app-team-flag class="match-team-flag" [team]="game().team_2"></app-team-flag>
 </div>
