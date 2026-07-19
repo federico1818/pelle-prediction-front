@@ -1,11 +1,5 @@
 :host {
-    margin-inline: auto;
-    display: grid;
-    align-content: start;
-    gap: 24px 0;
-    width: 100%;
-    overflow-y: scroll;
-    padding-bottom: 48px;
+    padding-top: 24px;
 }
 
 .segmented-control {

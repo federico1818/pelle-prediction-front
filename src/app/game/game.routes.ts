@@ -6,6 +6,8 @@ import { Game } from './pages/game/game'
 import { Home } from './pages/home/home'
 import { Calendar } from './pages/calendar/calendar'
 import { Playoffs } from './pages/playoffs/playoffs'
+import { Stats } from './pages/stats/stats'
+import { History } from './pages/history/history'
 
 export const gameRoutes: Routes = [
     {
@@ -14,7 +16,15 @@ export const gameRoutes: Routes = [
         children: [
             { path: '', redirectTo: 'home', pathMatch: 'full' },
             { path: 'champion', component: Champion },
-            { path: 'ranking', component: Ranking },
+            {
+                path: 'stats',
+                component: Stats,
+                children: [
+                    { path: '', redirectTo: 'ranking', pathMatch: 'full' },
+                    { path: 'ranking', component: Ranking },
+                    { path: 'history', component: History }
+                ]
+            },
             { path: 'home', component: Home },
             {
                 path: 'settings',
