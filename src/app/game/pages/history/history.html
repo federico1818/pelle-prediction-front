@@ -1,44 +1,13 @@
 <app-history-user-list [selectedNickname]="currentNickname()"></app-history-user-list>
 
 @if (currentNickname()) {
-    <div class="history-container">
-        @for (item of historyItems(); track item.game_id) {
-            <div class="history-item">
-                <div class="teams-score">
-                    <!-- Bandera 1 -->
-                    <app-team-flag class="team-flag" [team]="item.team_1"></app-team-flag>
-                    
-                    <!-- Resultados Real y Prediccion -->
-                    <div class="score-container">
-                        <div class="real-score">
-                            @if (item.score_1 !== null && item.score_2 !== null) {
-                                {{ item.score_1 }} - {{ item.score_2 }}
-                            } @else {
-                                -- - --
-                            }
-                        </div>
-                        <div class="prediction-score">
-                            @if (item.prediction) {
-                                ({{ item.prediction.score_1 }} - {{ item.prediction.score_2 }})
-                            } @else {
-                                (sin pronóstico)
-                            }
-                        </div>
-                    </div>
-                    
-                    <!-- Bandera 2 -->
-                    <app-team-flag class="team-flag" [team]="item.team_2"></app-team-flag>
-                </div>
-                
-                <!-- Puntos -->
-                <div class="points-badge" [class]="item.points?.type ?? 'points-null'">
-                    +{{ item.points?.value ?? 0 }}
-                </div>
-            </div>
-        } @empty {
-            <div class="empty-history">
-                No hay partidos registrados.
-            </div>
-        }
-    </div>
+    @if (isLoading()) {
+        <app-loading></app-loading>
+    } @else {
+        <div class="history-container">
+            @for (item of historyItems(); track item.game_id) {
+                <app-history-item [item]="item"></app-history-item>
+            }
+        </div>
+    }
 }

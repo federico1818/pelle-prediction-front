@@ -1,0 +1,28 @@
+<div class="teams-score">
+    <!-- Bandera 1 -->
+    <app-team-flag class="team-flag" [team]="item().team_1"></app-team-flag>
+    
+    <!-- Resultados Real y Prediccion -->
+    <div class="score-container">
+        <div class="real-score">
+            @if (item().score_1 !== null && item().score_2 !== null) {
+                {{ item().score_1 }} - {{ item().score_2 }}
+            } @else {
+                -- - --
+            }
+        </div>
+        <div class="prediction-score">
+            @if (item().prediction) {
+                ({{ item().prediction?.score_1 }} - {{ item().prediction?.score_2 }})
+            } @else {
+                (sin pronóstico)
+            }
+        </div>
+    </div>
+    
+    <!-- Bandera 2 -->
+    <app-team-flag class="team-flag" [team]="item().team_2"></app-team-flag>
+</div>
+
+<!-- Puntos -->
+<app-points-badge [points]="item().points"></app-points-badge>

@@ -1,4 +1,5 @@
 import { Team } from './team'
+import { Points } from './points'
 
 export interface UserHistoryItem {
     game_id: number
@@ -10,9 +11,6 @@ export interface UserHistoryItem {
         score_1: number | null
         score_2: number | null
     } | null
-    points: {
-        value: number
-        type: 'exact' | 'diff' | 'winner' | 'lose'
-    } | null
+    points: Points | null
     date_time: string
 }
