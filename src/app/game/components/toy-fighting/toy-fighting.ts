@@ -11,6 +11,6 @@ export class ToyFighting {
     public nickname = input.required<string>()
 
     public backgroundImage = computed(() => {
-        return `url('/assets/img/fight/${this.nickname()}-fighting.png')`
+        return `url('/assets/img/fight/${this.nickname()}-fighting.webp')`
     })
 }
