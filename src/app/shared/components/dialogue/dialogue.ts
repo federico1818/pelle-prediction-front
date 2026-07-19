@@ -21,6 +21,7 @@ export class Dialogue {
     public dialogue: InputSignal<DialogueModel> = input.required<DialogueModel>()
     public visible: InputSignal<boolean> = input<boolean>(true)
     public hasNext: InputSignal<boolean> = input<boolean>(false)
+    public loop: InputSignal<boolean> = input<boolean>(true)
 
     public textElement: Signal<DialogueText | undefined> = viewChild<DialogueText>('textRef')
     public videoElement: Signal<Video | undefined> = viewChild<Video>('videoRef')

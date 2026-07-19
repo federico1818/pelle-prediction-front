@@ -4,7 +4,7 @@
 <div class="dialogues-container">
     @for(dialogue of scene().dialogues; track $index; let i = $index) {
     <app-dialogue #dialogueRef [dialogue]="dialogue" [visible]="visibleIndex() === i"
-        [hasNext]="i < scene().dialogues.length - 1" (next)="onNext()"></app-dialogue>
+        [hasNext]="i < scene().dialogues.length - 1" [loop]="scene().name !== 'end'" (next)="onNext()"></app-dialogue>
     }
 </div>
 @if(scene().name == 'happy-birthday-kei') {

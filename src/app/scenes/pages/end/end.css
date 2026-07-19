@@ -1,0 +1,29 @@
+:host {
+    display: grid;
+    grid-template-rows: 85dvh 15dvh;
+}
+
+:host ::ng-deep app-scene h2 {
+    margin-top: 24px;
+}
+
+.start {
+    position: absolute;
+}
+
+:host ::ng-deep app-video video {
+    height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+    border-radius: 8px;
+}
+
+app-button-primary {
+    justify-self: center;
+}
+
+:host ::ng-deep .dialogue-image {
+    max-height: 60dvh !important;
+}

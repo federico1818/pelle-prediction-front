@@ -1,0 +1,11 @@
+@if (visibleStart()) {
+<app-end-start (started)="play()"></app-end-start>
+}
+@else if (scene()) {
+<app-scene [scene]="scene()!" (finished)="onSceneFinished()" />
+@if (showPlayButton()) {
+<app-button-primary (click)="onPlayClick()">
+    Continuar
+</app-button-primary>
+}
+}

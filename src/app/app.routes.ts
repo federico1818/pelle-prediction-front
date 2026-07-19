@@ -32,5 +32,10 @@ export const routes: Routes = [
         path: 'intro',
         loadComponent: () => import('./scenes/pages/intro/intro').then(m => m.Intro),
         canActivate: [authGuard],
+    },
+    {
+        path: 'end',
+        loadComponent: () => import('./scenes/pages/end/end').then(m => m.End),
+        canActivate: [authGuard],
     }
 ];
