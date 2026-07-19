@@ -2,10 +2,15 @@ import { Component, inject, OnInit } from '@angular/core'
 import { News } from '../../components/news/news'
 import { MatchListUpcoming } from '../../components/match-list-upcoming/match-list-upcoming'
 import { NewsService } from '../../services/news-service'
+import { StadiumOnFire } from '../../components/stadium-on-fire/stadium-on-fire'
 
 @Component({
     selector: 'app-home',
-    imports: [News, MatchListUpcoming],
+    imports: [
+        News,
+        MatchListUpcoming,
+        StadiumOnFire
+    ],
     templateUrl: './home.html',
     styleUrl: './home.css',
 })
