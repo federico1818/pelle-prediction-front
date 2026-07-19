@@ -4,6 +4,7 @@ import { Observable, of } from 'rxjs'
 import { tap } from 'rxjs/operators'
 import { environment } from '../../../environments/environment'
 import { User } from '../models/user'
+import { UserHistoryItem } from '../models/user-history-item'
 
 @Injectable({
     providedIn: 'root',
@@ -24,6 +25,12 @@ export class UserService {
             tap((data: User[]) => {
                 this._users.set(data)
             })
+        )
+    }
+
+    public getHistory(userId: number): Observable<UserHistoryItem[]> {
+        return this._http.get<UserHistoryItem[]>(
+            environment.api.url + `/users/${userId}/history`
         )
     }
 }
